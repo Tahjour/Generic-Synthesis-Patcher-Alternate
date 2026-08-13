@@ -100,9 +100,9 @@ namespace GenericSynthesisPatcher.Helpers
         }
 
         /// <summary>
-        ///     Type-neutral HPU implementation used by forwarding. Values are normalized by the
-        ///     property-path engine, so nullable form links compare as FormKeys and ordered lists
-        ///     compare by contents rather than object identity.
+        ///     Type-neutral HPU implementation used by forwarding. Root fields use Mutagen's
+        ///     generated field equality masks, while paths crossing collections retain structural
+        ///     per-parent comparison in the property-path engine.
         /// </summary>
         public static IModContext<IMajorRecordGetter>? FindHPUIndex (ProcessingKeys proKeys, IEnumerable<IModContext<IMajorRecordGetter>> allRecordMods, IEnumerable<ModKey>? endNodes, int callerClassCode, [CallerLineNumber] int line = 0)
         {

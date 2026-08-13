@@ -5,22 +5,32 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Text;
 
+using Common;
+
 using GenericSynthesisPatcher.Games.Universal;
 using GenericSynthesisPatcher.Rules;
+
+using Loqui;
 
 using Mutagen.Bethesda.Plugins;
 using Mutagen.Bethesda.Plugins.Cache;
 using Mutagen.Bethesda.Plugins.Records;
+using Mutagen.Bethesda.Strings;
 
 namespace GenericSynthesisPatcher.Helpers
 {
     /// <summary>
-    ///     Collection-aware runtime for cached property-path descriptors. All comparisons flow
-    ///     through one canonical representation, including form links and ordered collections.
+    ///     Collection-aware runtime for cached property-path descriptors. Root HPU comparisons
+    ///     use generated Mutagen equality masks; deep collection leaves use bounded structural
+    ///     normalization to preserve per-parent comparison semantics.
     /// </summary>
     internal static class PropertyPathEngine
     {
         private const char IdentitySeparator = '\u001f';
+        private const int MaxCanonicalDepth = 64;
+        private const int MaxCanonicalCollectionItems = 100_000;
+        private static readonly ConcurrentDictionary<(Type RecordType, string Path), Lazy<MajorRecord.TranslationMask?>> HpuMasks = new();
+        private static readonly ConcurrentDictionary<Type, PropertyInfo[]> CanonicalProperties = new();
         private static readonly ConcurrentDictionary<(Type RuntimeType, string Name), PropertyInfo?> RuntimeProperties = new();
         private static readonly ConcurrentDictionary<(Type Source, Type Target), MethodInfo?> DeepCopyMethods = new();
 
@@ -55,7 +65,7 @@ namespace GenericSynthesisPatcher.Helpers
             foreach (string key in keys)
             {
                 var history = new List<string>();
-                history.Add(origin.TryGetValue(key, out var originValue) ? Canonicalize(originValue) : "<missing>");
+                history.Add(origin.TryGetValue(key, out var originValue) ? Canonicalize(originValue, descriptor.CanonicalPath) : "<missing>");
 
                 IModContext<IMajorRecordGetter>? selected = null;
                 int selectedHistory = -1;
@@ -65,7 +75,7 @@ namespace GenericSynthesisPatcher.Helpers
                     if (!maps[context.ModKey].TryGetValue(key, out var value) || (nonNull && Mod.IsNullOrEmpty(value)))
                         continue;
 
-                    string canonical = Canonicalize(value);
+                    string canonical = Canonicalize(value, descriptor.CanonicalPath);
                     int historyIndex = history.IndexOf(canonical);
                     if (historyIndex < 0)
                     {
@@ -128,23 +138,27 @@ namespace GenericSynthesisPatcher.Helpers
 
         public static IModContext<IMajorRecordGetter>? FindHPU (ProcessingKeys proKeys, IEnumerable<IModContext<IMajorRecordGetter>> allRecordMods, IEnumerable<ModKey>? endNodes)
         {
+            var descriptor = RequireDescriptor(proKeys.Property);
+            if (!descriptor.HasCollectionBoundary && TryGetHpuMask(descriptor, out var mask))
+                return FindHPUWithMask(proKeys, allRecordMods, endNodes, descriptor, mask);
+
             bool nonNull = proKeys.Rule.HasForwardOption(ForwardOptions._nonNullMod);
-            if (!TryReadSingleValue(proKeys.GetOriginRecord(), RequireDescriptor(proKeys.Property), out var defaultValue))
+            if (!TryReadSingleValue(proKeys.GetOriginRecord(), descriptor, out var defaultValue))
                 return null;
 
-            var history = new List<string> { Canonicalize(defaultValue) };
+            var history = new List<string> { Canonicalize(defaultValue, descriptor.CanonicalPath) };
             IModContext<IMajorRecordGetter>? hpu = null;
             int hpuHistory = -1;
 
             foreach (var context in allRecordMods.Reverse())
             {
-                if (!TryReadSingleValue(context.Record, RequireDescriptor(proKeys.Property), out var current)
+                if (!TryReadSingleValue(context.Record, descriptor, out var current)
                     || (nonNull && Mod.IsNullOrEmpty(current)))
                 {
                     continue;
                 }
 
-                string canonical = Canonicalize(current);
+                string canonical = Canonicalize(current, descriptor.CanonicalPath);
                 int historyIndex = history.IndexOf(canonical);
                 if (historyIndex < 0)
                 {
@@ -162,15 +176,58 @@ namespace GenericSynthesisPatcher.Helpers
             return hpu;
         }
 
-        internal static string Canonicalize (object? value)
+        private static IModContext<IMajorRecordGetter>? FindHPUWithMask (ProcessingKeys proKeys, IEnumerable<IModContext<IMajorRecordGetter>> allRecordMods, IEnumerable<ModKey>? endNodes, PropertyPathDescriptor descriptor, MajorRecord.TranslationMask mask)
+        {
+            bool nonNull = proKeys.Rule.HasForwardOption(ForwardOptions._nonNullMod);
+            var history = new List<IMajorRecordGetter> { proKeys.GetOriginRecord() };
+            IModContext<IMajorRecordGetter>? hpu = null;
+            int hpuHistory = -1;
+
+            foreach (var context in allRecordMods.Reverse())
+            {
+                if (nonNull
+                    && (!TryReadSingleValue(context.Record, descriptor, out var current) || Mod.IsNullOrEmpty(current)))
+                {
+                    continue;
+                }
+
+                int historyIndex = history.FindIndex(record => record.Equals(context.Record, mask));
+                if (historyIndex < 0)
+                {
+                    historyIndex = history.Count;
+                    history.Add(context.Record);
+                }
+
+                if ((endNodes is null || endNodes.Contains(context.ModKey)) && hpuHistory <= historyIndex)
+                {
+                    hpu = context;
+                    hpuHistory = historyIndex;
+                }
+            }
+
+            return hpu;
+        }
+
+        internal static bool EqualsByFieldMask (PropertyAction property, IMajorRecordGetter left, IMajorRecordGetter right)
+        {
+            var descriptor = RequireDescriptor(property);
+            return !descriptor.HasCollectionBoundary
+                && TryGetHpuMask(descriptor, out var mask)
+                && left.Equals(right, mask);
+        }
+
+        internal static string Canonicalize (object? value, string path = "$value")
         {
             var builder = new StringBuilder();
-            AppendCanonical(builder, value, new HashSet<object>(ReferenceEqualityComparer.Instance));
+            AppendCanonical(builder, value, new HashSet<object>(ReferenceEqualityComparer.Instance), path, 0);
             return builder.ToString();
         }
 
-        private static void AppendCanonical (StringBuilder builder, object? value, HashSet<object> visited)
+        private static void AppendCanonical (StringBuilder builder, object? value, HashSet<object> visited, string path, int depth)
         {
+            if (depth > MaxCanonicalDepth)
+                throw new InvalidDataException($"Structural comparison exceeded the maximum depth of {MaxCanonicalDepth} at '{path}' ({value?.GetType().FullName ?? "null"}).");
+
             if (value is null)
             {
                 builder.Append("null");
@@ -184,6 +241,13 @@ namespace GenericSynthesisPatcher.Helpers
                 return;
             }
 
+            if (value is ITranslatedStringGetter translatedString)
+            {
+                builder.Append("TranslatedString:");
+                AppendCanonical(builder, translatedString.String, visited, path + ".String", depth + 1);
+                return;
+            }
+
             if (type.IsEnum || type.IsPrimitive || value is decimal || value is Guid || value is DateTime || value is TimeSpan || value is FormKey || value is ModKey)
             {
                 builder.Append(type.FullName).Append(':').Append(Convert.ToString(value, CultureInfo.InvariantCulture));
@@ -194,48 +258,65 @@ namespace GenericSynthesisPatcher.Helpers
             if (formKeyProperty?.PropertyType == typeof(FormKey))
             {
                 builder.Append("FormLink:");
-                AppendCanonical(builder, formKeyProperty.GetValue(value), visited);
+                AppendCanonical(builder, formKeyProperty.GetValue(value), visited, path + ".FormKey", depth + 1);
                 return;
             }
 
-            if (value is IEnumerable enumerable)
+            bool tracked = false;
+            if (!type.IsValueType)
             {
-                builder.Append('[');
-                foreach (object? item in enumerable)
+                if (!visited.Add(value))
+                    throw new InvalidDataException($"Structural comparison detected a reference cycle at '{path}' ({type.FullName}).");
+                tracked = true;
+            }
+
+            try
+            {
+                if (value is IEnumerable enumerable)
                 {
-                    AppendCanonical(builder, item, visited);
-                    builder.Append(';');
+                    builder.Append('[');
+                    int index = 0;
+                    foreach (object? item in enumerable)
+                    {
+                        if (index >= MaxCanonicalCollectionItems)
+                            throw new InvalidDataException($"Structural comparison exceeded the maximum collection size of {MaxCanonicalCollectionItems} at '{path}' ({type.FullName}).");
+
+                        AppendCanonical(builder, item, visited, $"{path}[{index}]", depth + 1);
+                        builder.Append(';');
+                        index++;
+                    }
+                    builder.Append(']');
+                    return;
                 }
-                builder.Append(']');
-                return;
-            }
 
-            if (!type.IsValueType && !visited.Add(value))
-            {
-                builder.Append("<cycle>");
-                return;
-            }
-
-            builder.Append('{').Append(type.FullName).Append('|');
-            foreach (var property in type.GetProperties(BindingFlags.Public | BindingFlags.Instance)
-                         .Where(x => x.CanRead && x.GetIndexParameters().Length == 0 && !IsInfrastructureProperty(x.Name))
-                         .OrderBy(x => x.Name, StringComparer.Ordinal))
-            {
-                try
+                builder.Append('{').Append(type.FullName).Append('|');
+                foreach (var property in CanonicalProperties.GetOrAdd(type, static runtimeType => runtimeType
+                             .GetProperties(BindingFlags.Public | BindingFlags.Instance)
+                             .Where(IsEligibleCanonicalProperty)
+                             .OrderBy(x => x.Name, StringComparer.Ordinal)
+                             .ToArray()))
                 {
                     builder.Append(property.Name).Append('=');
-                    AppendCanonical(builder, property.GetValue(value), visited);
+                    object? propertyValue;
+                    try
+                    {
+                        propertyValue = property.GetValue(value);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new InvalidDataException($"Structural comparison could not read '{path}.{property.Name}' on {type.FullName}.", ex);
+                    }
+
+                    AppendCanonical(builder, propertyValue, visited, path + "." + property.Name, depth + 1);
                     builder.Append(';');
                 }
-                catch (TargetInvocationException)
-                {
-                    builder.Append("<unavailable>;");
-                }
+                builder.Append('}');
             }
-            builder.Append('}');
-
-            if (!type.IsValueType)
-                visited.Remove(value);
+            finally
+            {
+                if (tracked)
+                    visited.Remove(value);
+            }
         }
 
         private static int ForwardRecursive (object? source, object? target, PropertyPathDescriptor descriptor, int segmentIndex, List<string> identityPath, string[]? desiredPath, int identityDepth)
@@ -463,7 +544,7 @@ namespace GenericSynthesisPatcher.Helpers
 
             var sourceItems = Enumerate(sourceValue).ToList();
             var targetItems = Enumerate(targetValue).ToList();
-            if (targetItems.Select(Canonicalize).SequenceEqual(sourceItems.Select(Canonicalize), StringComparer.Ordinal))
+            if (targetItems.Select(item => Canonicalize(item)).SequenceEqual(sourceItems.Select(item => Canonicalize(item)), StringComparer.Ordinal))
                 return 0;
 
             int changes = targetItems.Count;
@@ -481,7 +562,7 @@ namespace GenericSynthesisPatcher.Helpers
             if (targetValue is null)
                 throw new InvalidOperationException("Target list is null and cannot be merged.");
 
-            var existing = new HashSet<string>(Enumerate(targetValue).Select(Canonicalize), StringComparer.Ordinal);
+            var existing = new HashSet<string>(Enumerate(targetValue).Select(item => Canonicalize(item)), StringComparer.Ordinal);
             int changes = 0;
             foreach (object? item in Enumerate(sourceValue))
             {
@@ -621,11 +702,63 @@ namespace GenericSynthesisPatcher.Helpers
         private static PropertyInfo? GetRuntimeProperty (Type type, string name)
             => RuntimeProperties.GetOrAdd((type, name), static key => key.RuntimeType.GetProperty(key.Name, BindingFlags.Public | BindingFlags.Instance | BindingFlags.IgnoreCase));
 
+        private static bool TryGetHpuMask (PropertyPathDescriptor descriptor, out MajorRecord.TranslationMask mask)
+        {
+            var lazy = HpuMasks.GetOrAdd(
+                (descriptor.RecordType.GetterType, descriptor.CanonicalPath),
+                _ => new Lazy<MajorRecord.TranslationMask?>(() => CreateHpuMask(descriptor), LazyThreadSafetyMode.ExecutionAndPublication));
+
+            mask = lazy.Value!;
+            return mask is not null;
+        }
+
+        private static MajorRecord.TranslationMask? CreateHpuMask (PropertyPathDescriptor descriptor)
+        {
+            if (!TranslationMaskFactory.TryCreate(descriptor.RecordType, false, [], out var rootMask)
+                || rootMask is not MajorRecord.TranslationMask majorRecordMask)
+                return null;
+
+            ITranslationMask currentMask = rootMask;
+            for (int index = 0; index < descriptor.Segments.Count; index++)
+            {
+                string segmentName = descriptor.Segments[index].Property.Name;
+                bool leaf = index == descriptor.Segments.Count - 1;
+                if (leaf)
+                    return currentMask.TrySetValue(segmentName, true, StringComparison.OrdinalIgnoreCase) ? majorRecordMask : null;
+
+                if (!currentMask.TryGetMaskField(segmentName, StringComparison.OrdinalIgnoreCase, out var maskField)
+                    || !maskField.FieldType.IsAssignableTo(typeof(ITranslationMask))
+                    || !TranslationMaskFactory.TryCreate(maskField.FieldType, false, out var childMask)
+                    || !currentMask.TrySetValue(segmentName, childMask, StringComparison.OrdinalIgnoreCase))
+                {
+                    return null;
+                }
+
+                currentMask = childMask;
+            }
+
+            return null;
+        }
+
         private static PropertyPathDescriptor RequireDescriptor (PropertyAction property)
             => property.Descriptor ?? throw new InvalidOperationException($"No property-path descriptor was built for '{property.PropertyName}'.");
 
+        private static bool IsEligibleCanonicalProperty (PropertyInfo property)
+        {
+            if (!property.CanRead || property.GetIndexParameters().Length != 0 || IsInfrastructureProperty(property.Name))
+                return false;
+
+            Type propertyType = property.PropertyType;
+            return propertyType != typeof(Type)
+                && !typeof(MemberInfo).IsAssignableFrom(propertyType)
+                && !typeof(Delegate).IsAssignableFrom(propertyType)
+                && !typeof(ILoquiRegistration).IsAssignableFrom(propertyType)
+                && !typeof(ITranslationMask).IsAssignableFrom(propertyType);
+        }
+
         private static bool IsInfrastructureProperty (string name)
-            => name is "Registration" or "StaticRegistration" or "CommonInstance" or "GameRelease";
+            => name is "Registration" or "StaticRegistration" or "CommonInstance" or "GameRelease"
+                or "GetterType" or "SetterType" or "ClassType";
 
         private sealed class ReferenceEqualityComparer : IEqualityComparer<object>
         {
