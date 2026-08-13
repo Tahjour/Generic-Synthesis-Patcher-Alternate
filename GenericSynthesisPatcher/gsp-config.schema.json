@@ -29,6 +29,10 @@
           "description": "Type(s) that this rule applies to.",
           "$ref": "#/definitions/recordTypes"
         },
+        "recordTypes": {
+          "description": "Case-insensitive synonym for types. If both are supplied their values are unioned.",
+          "$ref": "#/definitions/recordTypes"
+        },
         "masters": {
           "description": "List of mod names where record must originate from.",
           "type": [ "array", "string" ]
@@ -149,6 +153,7 @@
         "debug": true,
         "priority": true,
         "types": true,
+        "recordTypes": true,
         "masters": true,
         "!masters": true,
         "patchedBy": true,
@@ -186,7 +191,7 @@
           "type": "object"
         },
         "forward": {
-          "description": "On matched records forward listed property from non-winning version of record.",
+          "description": "On matched records forward listed property from a non-winning version. In default mod-indexed form, an empty field array forwards every eligible field. In field-indexed form, an empty source array selects every enabled source plugin.",
           "type": "object"
         },
         "forwardOptions": {
@@ -265,6 +270,7 @@
         "debug": true,
         "priority": true,
         "types": true,
+        "recordTypes": true,
         "masters": true,
         "!masters": true,
         "patchedBy": true,
@@ -339,7 +345,8 @@
         "sort",
         "HPU",
         "random",
-        "defaultThenSelfMasterOnly"
+        "defaultThenSelfMasterOnly",
+        "merge"
       ]
     },
     "forwardOptions": {
@@ -360,6 +367,9 @@
         { "$ref": "#/definitions/recordType" }
       ]
     },
-    "recordType": { }
+    "recordType": {
+      "description": "A case- and separator-insensitive record selector. Game schemas suggest known Mutagen names, GSP names, signatures, and aliases; runtime preflight validates the final value.",
+      "type": "string"
+    }
   }
 }

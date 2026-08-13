@@ -64,6 +64,13 @@
   },
   {
     "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Model.AlternateTextures\": []",
+    "Flags": 81,
+    "Name": "Model.AlternateTextures"
+  },
+  {
+    "Aliases": "",
     "Description": "Memory slice in form of array of bytes",
     "Example": "\"Model.Data\": [0x1A,0x00,0x3F]",
     "Flags": 25,
@@ -157,7 +164,7 @@
     "Aliases": "QUAL",
     "Description": "Possible values (Novice, Apprentice, Journeyman, Expert, Master)",
     "Example": "\"Quality\": \"Novice\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "Quality"
   },
   {
@@ -201,6 +208,13 @@
     "Example": "\"VirtualMachineAdapter.ObjectFormat\": 7",
     "Flags": 29,
     "Name": "VirtualMachineAdapter.ObjectFormat"
+  },
+  {
+    "Aliases": "VMAD.Scripts",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"VirtualMachineAdapter.Scripts\": []",
+    "Flags": 81,
+    "Name": "VirtualMachineAdapter.Scripts"
   },
   {
     "Aliases": "VMAD.Version",

@@ -1,9 +1,9 @@
 [
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"CounterEffects\": []",
+    "Flags": 80,
     "Name": "CounterEffects"
   },
   {
@@ -36,8 +36,8 @@
   },
   {
     "Aliases": "",
-    "Description": "Flags (Hostile, Recover, Detrimental, MagnitudePercent, Self, Touch, Target, NoDuration, NoMagnitude, NoArea, FXPersist, Spellmaking, Enchanting, NoIngredient, UNKNOWN_14, UNKNOWN_15, UseWeapon, UseArmor, UseCreature, UseSkill, UseAttribute, UNKNWOWN_21, UNKNWOWN_22, UNKNWOWN_23, UseActorValue, SprayProjectileOrFog, BoltProjectile, NoHitEffect, UNKNOWN_28, UNKNOWN_29, UNKNOWN_30)",
-    "Example": "\"Data.Flags\": [ \"Hostile\", \"-UNKNOWN_30\" ]",
+    "Description": "Flags (Hostile, Recover, Detrimental, MagnitudePercent, Self, Touch, Target, NoDuration, NoMagnitude, NoArea, FXPersist, Spellmaking, Enchanting, NoIngredient, UseWeapon, UseArmor, UseCreature, UseSkill, UseAttribute, UseActorValue, SprayProjectileOrFog, BoltProjectile, NoHitEffect)",
+    "Example": "\"Data.Flags\": [ \"Hostile\", \"-NoHitEffect\" ]",
     "Flags": 93,
     "Name": "Data.Flags"
   },
@@ -52,7 +52,7 @@
     "Aliases": "",
     "Description": "Possible values (Alteration, Conjuration, Destruction, Illusion, Mysticism, Restoration)",
     "Example": "\"Data.MagicSchool\": \"Alteration\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "Data.MagicSchool"
   },
   {
@@ -66,7 +66,7 @@
     "Aliases": "",
     "Description": "Possible values (ResistFire, ResistFrost, ResistDisease, ResistMagic, ResistNormalWeapons, ResistParalysis, ResistPoison, ResistShock, None)",
     "Example": "\"Data.Resistance\": \"ResistFire\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "Data.Resistance"
   },
   {

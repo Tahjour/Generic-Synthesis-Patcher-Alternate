@@ -52,7 +52,7 @@
     "Aliases": "XCLX.Flags",
     "Description": "Possible values (Quad1, Quad2, Quad3, Quad4)",
     "Example": "\"Grid.Flags\": \"Quad1\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "Grid.Flags"
   },
   {
@@ -141,6 +141,13 @@
   },
   {
     "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Landscape.Layers\": []",
+    "Flags": 81,
+    "Name": "Landscape.Layers"
+  },
+  {
+    "Aliases": "",
     "Description": "Numeric value",
     "Example": "\"Landscape.MajorRecordFlagsRaw\": 7",
     "Flags": 31,
@@ -176,6 +183,20 @@
   },
   {
     "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Landscape.VertexColors\": []",
+    "Flags": 81,
+    "Name": "Landscape.VertexColors"
+  },
+  {
+    "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Landscape.VertexHeightMap.HeightMap\": []",
+    "Flags": 81,
+    "Name": "Landscape.VertexHeightMap.HeightMap"
+  },
+  {
+    "Aliases": "",
     "Description": "Decimal value",
     "Example": "\"Landscape.VertexHeightMap.Offset\": 3.14",
     "Flags": 29,
@@ -208,6 +229,13 @@
     "Example": "\"Landscape.VertexHeightMap.Unknown.Z\": 7",
     "Flags": 29,
     "Name": "Landscape.VertexHeightMap.Unknown.Z"
+  },
+  {
+    "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Landscape.VertexNormals\": []",
+    "Flags": 81,
+    "Name": "Landscape.VertexNormals"
   },
   {
     "Aliases": "XCLL",
@@ -456,9 +484,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"NavigationMeshes\": []",
+    "Flags": 80,
     "Name": "NavigationMeshes"
   },
   {
@@ -477,9 +505,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Persistent\": []",
+    "Flags": 80,
     "Name": "Persistent"
   },
   {
@@ -519,9 +547,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Temporary\": []",
+    "Flags": 80,
     "Name": "Temporary"
   },
   {

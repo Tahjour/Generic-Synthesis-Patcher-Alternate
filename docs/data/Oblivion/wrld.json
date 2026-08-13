@@ -122,7 +122,7 @@
     "Aliases": "",
     "Description": "Possible values (Default, Public, Dungeon)",
     "Example": "\"Music\": \"Default\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "Music"
   },
   {
@@ -141,10 +141,38 @@
   },
   {
     "Aliases": "",
+    "Description": "Decimal value",
+    "Example": "\"ObjectBoundsMax.X\": 3.14",
+    "Flags": 29,
+    "Name": "ObjectBoundsMax.X"
+  },
+  {
+    "Aliases": "",
+    "Description": "Decimal value",
+    "Example": "\"ObjectBoundsMax.Y\": 3.14",
+    "Flags": 29,
+    "Name": "ObjectBoundsMax.Y"
+  },
+  {
+    "Aliases": "",
     "Description": "Array of 2 Single values",
     "Example": "\"ObjectBoundsMin\": [1, 2]",
     "Flags": 24,
     "Name": "ObjectBoundsMin"
+  },
+  {
+    "Aliases": "",
+    "Description": "Decimal value",
+    "Example": "\"ObjectBoundsMin.X\": 3.14",
+    "Flags": 29,
+    "Name": "ObjectBoundsMin.X"
+  },
+  {
+    "Aliases": "",
+    "Description": "Decimal value",
+    "Example": "\"ObjectBoundsMin.Y\": 3.14",
+    "Flags": 29,
+    "Name": "ObjectBoundsMin.Y"
   },
   {
     "Aliases": "",
@@ -211,6 +239,13 @@
   },
   {
     "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Road.Points\": []",
+    "Flags": 81,
+    "Name": "Road.Points"
+  },
+  {
+    "Aliases": "",
     "Description": "Numeric value",
     "Example": "\"Road.VersionControl\": 7",
     "Flags": 31,
@@ -218,9 +253,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"SubCells\": []",
+    "Flags": 80,
     "Name": "SubCells"
   },
   {

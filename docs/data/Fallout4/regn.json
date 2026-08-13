@@ -36,6 +36,13 @@
   },
   {
     "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Grasses.Grasses\": []",
+    "Flags": 81,
+    "Name": "Grasses.Grasses"
+  },
+  {
+    "Aliases": "",
     "Description": "String value",
     "Example": "\"Grasses.Icons.InventoryImage\": \"Hello\"",
     "Flags": 29,
@@ -246,6 +253,13 @@
   },
   {
     "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Objects.Objects\": []",
+    "Flags": 81,
+    "Name": "Objects.Objects"
+  },
+  {
+    "Aliases": "",
     "Description": "Decimal value",
     "Example": "\"Objects.OcclusionAccuracyDist\": 3.14",
     "Flags": 29,
@@ -260,9 +274,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"RegionAreas\": []",
+    "Flags": 80,
     "Name": "RegionAreas"
   },
   {
@@ -320,6 +334,13 @@
     "Example": "\"Sounds.Priority\": 7",
     "Flags": 29,
     "Name": "Sounds.Priority"
+  },
+  {
+    "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Sounds.Sounds\": []",
+    "Flags": 81,
+    "Name": "Sounds.Sounds"
   },
   {
     "Aliases": "",
@@ -383,6 +404,13 @@
     "Example": "\"Weather.Priority\": 7",
     "Flags": 29,
     "Name": "Weather.Priority"
+  },
+  {
+    "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Weather.Weathers\": []",
+    "Flags": 81,
+    "Name": "Weather.Weathers"
   },
   {
     "Aliases": "",

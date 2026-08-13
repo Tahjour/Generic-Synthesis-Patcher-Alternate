@@ -8,9 +8,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"InterCellConnections\": []",
+    "Flags": 80,
     "Name": "InterCellConnections"
   },
   {
@@ -50,16 +50,16 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"PointToPointConnections\": []",
+    "Flags": 80,
     "Name": "PointToPointConnections"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"PointToReferenceMappings\": []",
+    "Flags": 80,
     "Name": "PointToReferenceMappings"
   },
   {

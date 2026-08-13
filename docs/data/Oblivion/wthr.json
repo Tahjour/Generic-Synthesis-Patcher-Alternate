@@ -1,9 +1,9 @@
 [
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Colors\": []",
+    "Flags": 80,
     "Name": "Colors"
   },
   {
@@ -17,7 +17,7 @@
     "Aliases": "",
     "Description": "Possible values (None, Pleasant, Cloudy, Unknown3, Rainy, Snow, Pleasant2)",
     "Example": "\"Data.Classification\": \"None\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "Data.Classification"
   },
   {
@@ -309,9 +309,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Sounds\": []",
+    "Flags": 80,
     "Name": "Sounds"
   },
   {

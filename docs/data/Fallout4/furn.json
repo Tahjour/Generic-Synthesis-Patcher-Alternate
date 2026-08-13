@@ -24,14 +24,14 @@
     "Aliases": "",
     "Description": "Possible values (None, CreateObject, Weapons, Enchanting, EnchantingExperiment, Alchemy, AlchemyExperiment, Armor, PowerArmor, RobotMod)",
     "Example": "\"BenchType\": \"None\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "BenchType"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Conditions\": []",
+    "Flags": 80,
     "Name": "Conditions"
   },
   {
@@ -134,9 +134,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"MarkerEntryPoints\": []",
+    "Flags": 80,
     "Name": "MarkerEntryPoints"
   },
   {
@@ -148,9 +148,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"MarkerParameters\": []",
+    "Flags": 80,
     "Name": "MarkerParameters"
   },
   {
@@ -281,6 +281,13 @@
   },
   {
     "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"ObjectTemplates\": []",
+    "Flags": 80,
+    "Name": "ObjectTemplates"
+  },
+  {
+    "Aliases": "",
     "Description": "Memory slice in form of array of bytes",
     "Example": "\"PNAM\": [0x1A,0x00,0x3F]",
     "Flags": 24,
@@ -295,16 +302,16 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Properties\": []",
+    "Flags": 80,
     "Name": "Properties"
   },
   {
     "Aliases": "",
     "Description": "Possible values (OneHanded, TwoHanded, Archery, Block, Smithing, HeavyArmor, LightArmor, Pickpocket, Lockpicking, Sneak, Alchemy, Speech, Alteration, Conjuration, Destruction, Illusion, Restoration, Enchanting)",
     "Example": "\"UsesSkill\": \"OneHanded\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "UsesSkill"
   },
   {
@@ -334,6 +341,13 @@
     "Example": "\"VirtualMachineAdapter.ObjectFormat\": 7",
     "Flags": 29,
     "Name": "VirtualMachineAdapter.ObjectFormat"
+  },
+  {
+    "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"VirtualMachineAdapter.Scripts\": []",
+    "Flags": 81,
+    "Name": "VirtualMachineAdapter.Scripts"
   },
   {
     "Aliases": "",

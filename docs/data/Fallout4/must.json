@@ -1,16 +1,16 @@
 [
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Conditions\": []",
+    "Flags": 80,
     "Name": "Conditions"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"CuePoints\": []",
+    "Flags": 80,
     "Name": "CuePoints"
   },
   {
@@ -122,7 +122,7 @@
     "Aliases": "",
     "Description": "Possible values (Palette, SingleTrack, SilentTrack)",
     "Example": "\"Type\": \"Palette\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "Type"
   },
   {

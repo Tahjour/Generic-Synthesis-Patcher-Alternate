@@ -10,14 +10,14 @@
     "Aliases": "",
     "Description": "Possible values (None, Easy, Medium, Hard, AlwaysSucceeds, EasyRepeatable, MediumRepeatable, HardRepeatable)",
     "Example": "\"Challenge\": \"None\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "Challenge"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Conditions\": []",
+    "Flags": 80,
     "Name": "Conditions"
   },
   {
@@ -148,9 +148,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Responses\": []",
+    "Flags": 80,
     "Name": "Responses"
   },
   {
@@ -206,7 +206,7 @@
     "Aliases": "",
     "Description": "Possible values (Low, Normal, Force)",
     "Example": "\"SubtitlePriority\": \"Low\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "SubtitlePriority"
   },
   {
@@ -297,7 +297,7 @@
     "Aliases": "",
     "Description": "Possible values (Local, Inherited, Removed, InheritedAndRemoved)",
     "Example": "\"VirtualMachineAdapter.ScriptFragments.Script.Flags\": \"Local\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "VirtualMachineAdapter.ScriptFragments.Script.Flags"
   },
   {
@@ -306,6 +306,20 @@
     "Example": "\"VirtualMachineAdapter.ScriptFragments.Script.Name\": \"Hello\"",
     "Flags": 29,
     "Name": "VirtualMachineAdapter.ScriptFragments.Script.Name"
+  },
+  {
+    "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"VirtualMachineAdapter.ScriptFragments.Script.Properties\": []",
+    "Flags": 81,
+    "Name": "VirtualMachineAdapter.ScriptFragments.Script.Properties"
+  },
+  {
+    "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"VirtualMachineAdapter.Scripts\": []",
+    "Flags": 81,
+    "Name": "VirtualMachineAdapter.Scripts"
   },
   {
     "Aliases": "",

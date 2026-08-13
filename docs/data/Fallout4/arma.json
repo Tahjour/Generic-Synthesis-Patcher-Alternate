@@ -29,9 +29,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"BoneData\": []",
+    "Flags": 80,
     "Name": "BoneData"
   },
   {
@@ -57,9 +57,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"FirstPersonModel\": []",
+    "Flags": 80,
     "Name": "FirstPersonModel"
   },
   {
@@ -106,9 +106,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Priority\": []",
+    "Flags": 80,
     "Name": "Priority"
   },
   {
@@ -120,16 +120,16 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"SkinTexture\": []",
+    "Flags": 80,
     "Name": "SkinTexture"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"TextureSwapList\": []",
+    "Flags": 80,
     "Name": "TextureSwapList"
   },
   {
@@ -169,16 +169,16 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"WeightSliderEnabled\": []",
+    "Flags": 80,
     "Name": "WeightSliderEnabled"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"WorldModel\": []",
+    "Flags": 80,
     "Name": "WorldModel"
   }
 ]

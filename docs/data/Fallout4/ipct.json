@@ -213,7 +213,7 @@
     "Aliases": "",
     "Description": "Possible values (SurfaceNormal, ProjectileVector, ProjectileReflection)",
     "Example": "\"Orientation\": \"SurfaceNormal\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "Orientation"
   },
   {
@@ -227,7 +227,7 @@
     "Aliases": "",
     "Description": "Possible values (Default, Destroy, Bounce, Impale, Stick)",
     "Example": "\"Result\": \"Default\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "Result"
   },
   {
@@ -255,7 +255,7 @@
     "Aliases": "",
     "Description": "Possible values (Loud, Normal, Silent, VeryLoud, Quiet)",
     "Example": "\"SoundLevel\": \"Loud\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "SoundLevel"
   },
   {

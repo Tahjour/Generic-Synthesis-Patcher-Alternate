@@ -80,7 +80,7 @@
     "Aliases": "",
     "Description": "Possible values (DerivedAttribute, SpecialAttribute, Skill, AiAttribute, Resistance, Condition, Charge, IntValue, Variable, Resource)",
     "Example": "\"Type\": \"DerivedAttribute\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "Type"
   },
   {

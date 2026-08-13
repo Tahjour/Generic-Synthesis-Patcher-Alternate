@@ -57,16 +57,16 @@
   },
   {
     "Aliases": "",
-    "Description": "* Only valid for 'Damage Type' record types. ",
-    "Example": "",
-    "Flags": 144,
+    "Description": "* Only valid for 'Damage Type' record types. A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"DamageTypes\": []",
+    "Flags": 80,
     "Name": "DamageTypes *"
   },
   {
     "Aliases": "",
-    "Description": "* Only valid for 'Damage Type Indexed' record types. ",
-    "Example": "",
-    "Flags": 144,
+    "Description": "* Only valid for 'Damage Type Indexed' record types. A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"DamageTypes\": []",
+    "Flags": 80,
     "Name": "DamageTypes *"
   }
 ]

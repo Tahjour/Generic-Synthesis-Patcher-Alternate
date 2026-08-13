@@ -8,6 +8,27 @@
   },
   {
     "Aliases": "",
+    "Description": "Decimal value",
+    "Example": "\"AngularVelocity.X\": 3.14",
+    "Flags": 29,
+    "Name": "AngularVelocity.X"
+  },
+  {
+    "Aliases": "",
+    "Description": "Decimal value",
+    "Example": "\"AngularVelocity.Y\": 3.14",
+    "Flags": 29,
+    "Name": "AngularVelocity.Y"
+  },
+  {
+    "Aliases": "",
+    "Description": "Decimal value",
+    "Example": "\"AngularVelocity.Z\": 3.14",
+    "Flags": 29,
+    "Name": "AngularVelocity.Z"
+  },
+  {
+    "Aliases": "",
     "Description": "Form Key or Editor ID",
     "Example": "\"ConsumeSpell\": \"123:Skyrim.esm\" or \"ConsumeSpell\": \"MyEditorID\"",
     "Flags": 28,
@@ -187,6 +208,27 @@
     "Example": "\"LinearVelocity\": [1, 2, 3]",
     "Flags": 24,
     "Name": "LinearVelocity"
+  },
+  {
+    "Aliases": "",
+    "Description": "Decimal value",
+    "Example": "\"LinearVelocity.X\": 3.14",
+    "Flags": 29,
+    "Name": "LinearVelocity.X"
+  },
+  {
+    "Aliases": "",
+    "Description": "Decimal value",
+    "Example": "\"LinearVelocity.Y\": 3.14",
+    "Flags": 29,
+    "Name": "LinearVelocity.Y"
+  },
+  {
+    "Aliases": "",
+    "Description": "Decimal value",
+    "Example": "\"LinearVelocity.Z\": 3.14",
+    "Flags": 29,
+    "Name": "LinearVelocity.Z"
   },
   {
     "Aliases": "",

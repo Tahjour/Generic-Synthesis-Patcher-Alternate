@@ -31,7 +31,7 @@
     "Aliases": "",
     "Description": "Possible values (Scroll, Staff, Weapon, Apparel)",
     "Example": "\"Data.Type\": \"Scroll\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "Data.Type"
   },
   {

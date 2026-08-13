@@ -24,14 +24,14 @@
     "Aliases": "",
     "Description": "Possible values (Apprentice, Novice, Journeyman, Expert, Master)",
     "Example": "\"Data.Level\": \"Apprentice\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "Data.Level"
   },
   {
     "Aliases": "",
     "Description": "Possible values (Spell, Disease, Power, LesserPower, Ability, Poison)",
     "Example": "\"Data.Type\": \"Spell\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "Data.Type"
   },
   {

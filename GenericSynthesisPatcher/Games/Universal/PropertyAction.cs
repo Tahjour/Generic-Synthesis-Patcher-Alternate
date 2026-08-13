@@ -18,7 +18,7 @@ namespace GenericSynthesisPatcher.Games.Universal
         /// <param name="recordType">Record property is for.</param>
         /// <param name="propertyName">Real property name</param>
         /// <param name="action">Record action to use or null if no valid action found.</param>
-        public PropertyAction (ILoquiRegistration? recordType, PropertyInfo[] properties, string propertyName, IRecordAction? action)
+        public PropertyAction (ILoquiRegistration? recordType, PropertyInfo[] properties, string propertyName, IRecordAction? action, PropertyPathDescriptor? descriptor = null)
         {
             bool valid = properties.Length != 0 && properties[^1] is not null;
 
@@ -29,6 +29,7 @@ namespace GenericSynthesisPatcher.Games.Universal
             Properties = properties;
             PropertyName = propertyName;
             this.recordType = recordType;
+            Descriptor = descriptor;
         }
 
         public IRecordAction Action => action ?? throw new InvalidOperationException("Invalid Property so no Action");
@@ -38,6 +39,7 @@ namespace GenericSynthesisPatcher.Games.Universal
         public bool IsValid => action is not null;
 
         public PropertyInfo[] Properties { get; }
+        public PropertyPathDescriptor? Descriptor { get; }
         public string PropertyName { get; }
         public ILoquiRegistration RecordType => recordType ?? throw new InvalidOperationException("Invalid Property so no RecordType");
     }

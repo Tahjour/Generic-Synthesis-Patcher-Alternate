@@ -10,7 +10,7 @@
     "Aliases": "",
     "Description": "Possible values (Topic, Favor, Scene, Combat, Favors, Detection, Service, Misc)",
     "Example": "\"Category\": \"Topic\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "Category"
   },
   {
@@ -71,9 +71,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Responses\": []",
+    "Flags": 80,
     "Name": "Responses"
   },
   {
@@ -87,7 +87,7 @@
     "Aliases": "SNAM",
     "Description": "Possible values (Custom, ForceGreet, Rumors, Intimidate, Flatter, Bribe, AskGift, Gift, AskFavor, Favor, ShowRelationships, Follow, Reject, Scene, Show, Agree, Refuse, ExitFavorState, MoralRefusal, FlyingMountLand, FlyingMountCancelLand, FlyingMountAcceptTarget, FlyingMountRejectTarget, FlyingMountNoTarget, FlyingMountDestinationReached, Attack, PowerAttack, Bash, Hit, Flee, Bleedout, AvoidThreat, Death, GroupStrategy, Block, Taunt, AllyKilled, Steal, Yield, AcceptYield, PickpocketCombat, Assault, Murder, AssaultNC, MurderNC, PickpocketNC, StealFromNC, TrespassAgainstNC, Trespass, WerewolfTransformCrime, VoicePowerStartShort, VoicePowerStartLong, VoicePowerEndShort, VoicePowerEndLong, AlertIdle, LostIdle, NormalToAlert, AlertToCombat, NormalToCombat, AlertToNormal, CombatToNormal, CombatToLost, LostToNormal, LostToCombat, DetectFriendDie, ServiceRefusal, Repair, Travel, Training, BarterExit, RepairExit, Recharge, RechargeExit, TrainingExit, ObserveCombat, NoticeCorpse, TimeToGo, Goodbye, Hello, SwingMeleeWeapon, ShootBow, ZKeyObject, Jump, KnockOverObject, DestroyObject, StandOnFurniture, LockedObject, PickpocketTopic, PursueIdleTopic, SharedInfo, PlayerCastProjectileSpell, PlayerCastSelfSpell, PlayerShout, Idle, EnterSprintBreath, EnterBowZoomBreath, ExitBowZoomBreath, ActorCollideWithActor, PlayerInIronSights, OutOfBreath, CombatGrunt, LeaveWaterBreath)",
     "Example": "\"Subtype\": \"Custom\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "Subtype"
   },
   {

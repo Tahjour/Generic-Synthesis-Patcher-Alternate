@@ -8,9 +8,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Armatures\": []",
+    "Flags": 80,
     "Name": "Armatures"
   },
   {
@@ -225,6 +225,13 @@
   },
   {
     "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"ObjectTemplates\": []",
+    "Flags": 80,
+    "Name": "ObjectTemplates"
+  },
+  {
+    "Aliases": "",
     "Description": "Form Key or Editor ID",
     "Example": "\"PickUpSound\": \"123:Skyrim.esm\" or \"PickUpSound\": \"MyEditorID\"",
     "Flags": 28,
@@ -253,9 +260,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Resistances\": []",
+    "Flags": 80,
     "Name": "Resistances"
   },
   {
@@ -316,6 +323,13 @@
   },
   {
     "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"VirtualMachineAdapter.Scripts\": []",
+    "Flags": 81,
+    "Name": "VirtualMachineAdapter.Scripts"
+  },
+  {
+    "Aliases": "",
     "Description": "Numeric value",
     "Example": "\"VirtualMachineAdapter.Version\": 7",
     "Flags": 29,
@@ -330,9 +344,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"WorldModel\": []",
+    "Flags": 80,
     "Name": "WorldModel"
   }
 ]

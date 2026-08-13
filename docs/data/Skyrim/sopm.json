@@ -311,7 +311,7 @@
     "Aliases": "MNAM",
     "Description": "Possible values (UsesHrtf, DefinedSpeakerOutput)",
     "Example": "\"Type\": \"UsesHrtf\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "Type"
   },
   {

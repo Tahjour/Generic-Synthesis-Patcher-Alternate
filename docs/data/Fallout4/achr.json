@@ -15,6 +15,13 @@
   },
   {
     "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"ActivateParents.Parents\": []",
+    "Flags": 81,
+    "Name": "ActivateParents.Parents"
+  },
+  {
+    "Aliases": "",
     "Description": "Form Key or Editor ID",
     "Example": "\"Base\": \"123:Skyrim.esm\" or \"Base\": \"MyEditorID\"",
     "Flags": 28,
@@ -185,14 +192,14 @@
     "Aliases": "",
     "Description": "Possible values (Easy, Medium, Hard, VeryHard)",
     "Example": "\"LevelModifier\": \"Easy\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "LevelModifier"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"LinkedReferences\": []",
+    "Flags": 80,
     "Name": "LinkedReferences"
   },
   {
@@ -295,6 +302,13 @@
   },
   {
     "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Patrol.Topics\": []",
+    "Flags": 81,
+    "Name": "Patrol.Topics"
+  },
+  {
+    "Aliases": "",
     "Description": "Form Key or Editor ID",
     "Example": "\"PersistentLocation\": \"123:Skyrim.esm\" or \"PersistentLocation\": \"MyEditorID\"",
     "Flags": 28,
@@ -344,9 +358,30 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "Decimal value",
+    "Example": "\"RagdollBipedRotation.X\": 3.14",
+    "Flags": 29,
+    "Name": "RagdollBipedRotation.X"
+  },
+  {
+    "Aliases": "",
+    "Description": "Decimal value",
+    "Example": "\"RagdollBipedRotation.Y\": 3.14",
+    "Flags": 29,
+    "Name": "RagdollBipedRotation.Y"
+  },
+  {
+    "Aliases": "",
+    "Description": "Decimal value",
+    "Example": "\"RagdollBipedRotation.Z\": 3.14",
+    "Flags": 29,
+    "Name": "RagdollBipedRotation.Z"
+  },
+  {
+    "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"RagdollData\": []",
+    "Flags": 80,
     "Name": "RagdollData"
   },
   {
@@ -393,9 +428,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"SplineConnections\": []",
+    "Flags": 80,
     "Name": "SplineConnections"
   },
   {
@@ -425,6 +460,13 @@
     "Example": "\"VirtualMachineAdapter.ObjectFormat\": 7",
     "Flags": 29,
     "Name": "VirtualMachineAdapter.ObjectFormat"
+  },
+  {
+    "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"VirtualMachineAdapter.Scripts\": []",
+    "Flags": 81,
+    "Name": "VirtualMachineAdapter.Scripts"
   },
   {
     "Aliases": "",

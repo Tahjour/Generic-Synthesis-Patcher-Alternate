@@ -44,7 +44,7 @@
                 <h2>Filters</h2>
 
                 <p>
-                    All rules must list, at least 1 record type, in the Types filter, either directly in the rule or via a group.
+                    All rules must list at least one record type in the Types or RecordTypes filter, either directly in the rule or via a group.
                     All other filters are optional, but when using multiple filters record must match all.
                 </p>
 
@@ -52,10 +52,10 @@
                 <p>These filters can be used when creating a rule or group.</p>
 
                 <div class="setting">
-                    <div class="label">Types:</div>
+                    <div class="label">Types / RecordTypes:</div>
                     <div>
-                        List valid record types for this rule. Types are case insensitive. You can see list of implemented types <a href="./fields.html">here</a>.<br />
-                        You can either enter the full type name excluding spaces, or the alias. So "WordOfPower" is the same as "WOOP".
+                        List valid record types for this rule. The two keys are case-insensitive synonyms; if both are present their values are unioned and deduplicated. You can see the implemented types <a href="./fields.html">here</a>.<br />
+                        Mutagen/GSP names, UESP names, and record signatures are accepted without regard to case or separators. For example, "ANIO", "AnimationObject", "animation-object", and "AnimatedObject" all select the same Skyrim record type.
                     </div>
                 </div>
 
@@ -202,6 +202,12 @@
                     <div>
                         This will forward fields from a parent that the current winning record.<br />
                         By default this is just a straight replace including if it is a list field like Items. It doesn't do any merging.<br />
+                        A dotted path can traverse collections. For example, <code>Aliases</code> replaces the whole Quest alias list, while <code>Aliases.Conditions</code> correlates aliases by alias ID and changes only each alias's Conditions. Missing parents are deep-cloned from the selected source.<br />
+                        <strong>Empty arrays have two intentionally different meanings:</strong>
+                        <ul>
+                            <li>Default/mod-indexed: <code>"Forward": { "Plugin.esp": [] }</code> forwards every eligible writable field for the selected record type.</li>
+                            <li>Field-indexed: <code>"Forward": { "Field": [] }</code> selects every enabled source plugin for that field.</li>
+                        </ul>
                     </div>
                 </div>
 
@@ -277,11 +283,25 @@
                             <div class="label">HPU</div>
                             <div>
                                 This one is complex for me to explain in full. Firstly had troubles coming up with name so for now it is Highest Priority Unique (HPU).<br />
-                                This could be seen as the "Merge" for non list fields, and on that HPU is invalid on list fields that implement the Merge action.<br />
+                                HPU works on scalar values, enums, flags, nullable form links, complex objects, and ordered whole-list values. On a dotted collection path it is evaluated separately for every correlated parent.<br />
                                 Basically HPU will look at all values a record's field has had across all mods, and find the highest priority unique value. However it does respect defined Masters of mods.<br />
                                 So if a patch mod has defined Master(s) then patch record's value will still be used for those defined master(s) even if setting it back to previous value.<br />
                                 This is mainly for record types that are often validly included in mods but not changed like Worldspace and Cell records.<br />
                                 Automatically adds <font class="good">Default</font> and <font class="good">IndexedByField</font> options.
+                            </div>
+                        </div>
+                        <div class="setting">
+                            <div class="label">Merge</div>
+                            <div>
+                                Implies <font class="good">IndexedByField</font> and merges the winning list leaf with the selected sources instead of replacing it. An empty source array selects all enabled overrides.<br />
+                                It operates only on list leaves, so <code>Aliases.Conditions</code> is valid while <code>Aliases.Type</code> is not. Merge cannot be combined with HPU, Random, SelfMasterOnly, or DefaultThenSelfMasterOnly.
+<pre>
+{
+    "RecordTypes": "QUST",
+    "ForwardOptions": "Merge",
+    "Forward": { "Aliases.Conditions": [] }
+}
+</pre>
                             </div>
                         </div>
                         <div class="setting">

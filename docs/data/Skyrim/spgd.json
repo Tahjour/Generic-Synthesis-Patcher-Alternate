@@ -136,7 +136,7 @@
     "Aliases": "",
     "Description": "Possible values (Rain, Snow)",
     "Example": "\"Type\": \"Rain\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "Type"
   },
   {

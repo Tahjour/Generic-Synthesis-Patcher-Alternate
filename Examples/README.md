@@ -15,6 +15,10 @@ Forward a couple of fields that can get overwritten.
 Forwards Outfit changes made by Cloaks of Skyrim to make sure not overwritten.  
 Also sets survival warmth on some cloaks.
 
+## Deep Quest Forwarding.json
+
+Demonstrates `RecordTypes`, UESP/signature aliases, all-field default forwarding, and per-alias Conditions Merge/HPU through `Aliases.Conditions`.
+
 ## NARC Remade.json
 Synthesis version of jss2a98aj's remake of Pharros's NARC mod.  
 [NARC Remade - No Animals Report Crimes for Skyrim SE](https://www.nexusmods.com/skyrimspecialedition/mods/17946)  

@@ -1,0 +1,32 @@
+[
+  {
+    "$comment": "Merge conditions independently for every Quest alias, selecting all enabled overrides.",
+    "recordTypes": "QUST",
+    "forwardOptions": "merge",
+    "forward": {
+      "Aliases.Conditions": []
+    }
+  },
+  {
+    "$comment": "Choose the HPU ordered Conditions list independently for every correlated alias.",
+    "types": "Quest",
+    "forwardOptions": "HPU",
+    "forward": {
+      "Aliases.CTDA": []
+    }
+  },
+  {
+    "$comment": "An empty field array in default mod-indexed forwarding means all safe writable fields.",
+    "recordTypes": "Quest",
+    "forward": {
+      "QuestPatch.esp": []
+    }
+  },
+  {
+    "$comment": "UESP record and field selectors are accepted alongside existing GSP/Mutagen names.",
+    "recordTypes": "AnimationObject",
+    "forward": {
+      "AnimationPatch.esp": [ "MODL" ]
+    }
+  }
+]

@@ -78,9 +78,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Markers\": []",
+    "Flags": 80,
     "Name": "Markers"
   },
   {
@@ -89,6 +89,13 @@
     "Example": "[{ \"types\": [\"Book\"], \"Forward\": { \"SomeMod.esp\": [\"Model\"] } }]",
     "Flags": 16,
     "Name": "Model"
+  },
+  {
+    "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Model.AlternateTextures\": []",
+    "Flags": 81,
+    "Name": "Model.AlternateTextures"
   },
   {
     "Aliases": "",
@@ -217,6 +224,13 @@
     "Name": "VirtualMachineAdapter.ObjectFormat"
   },
   {
+    "Aliases": "VMAD.Scripts",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"VirtualMachineAdapter.Scripts\": []",
+    "Flags": 81,
+    "Name": "VirtualMachineAdapter.Scripts"
+  },
+  {
     "Aliases": "VMAD.Version",
     "Description": "Numeric value",
     "Example": "\"VirtualMachineAdapter.Version\": 7",
@@ -234,14 +248,14 @@
     "Aliases": "WBDT.BenchType",
     "Description": "Possible values (None, CreateObject, SmithingWeapon, Enchanting, EnchantingExperiment, Alchemy, AlchemyExperiment, SmithingArmor)",
     "Example": "\"WorkbenchData.BenchType\": \"None\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "WorkbenchData.BenchType"
   },
   {
     "Aliases": "WBDT.UsesSkill",
     "Description": "Possible values (OneHanded, TwoHanded, Archery, Block, Smithing, HeavyArmor, LightArmor, Pickpocket, Lockpicking, Sneak, Alchemy, Speech, Alteration, Conjuration, Destruction, Illusion, Restoration, Enchanting)",
     "Example": "\"WorkbenchData.UsesSkill\": \"OneHanded\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "WorkbenchData.UsesSkill"
   }
 ]

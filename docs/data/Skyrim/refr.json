@@ -3,7 +3,7 @@
     "Aliases": "",
     "Description": "Possible values (UseDefault, Activate, Open, OpenByDefault)",
     "Example": "\"Action\": \"UseDefault\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "Action"
   },
   {
@@ -19,6 +19,13 @@
     "Example": "\"ActivateParents.Flags\": \"ParentActivateOnly\"",
     "Flags": 93,
     "Name": "ActivateParents.Flags"
+  },
+  {
+    "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"ActivateParents.Parents\": []",
+    "Flags": 81,
+    "Name": "ActivateParents.Parents"
   },
   {
     "Aliases": "",
@@ -61,6 +68,27 @@
     "Example": "\"BoundHalfExtents\": [1, 2, 3]",
     "Flags": 24,
     "Name": "BoundHalfExtents"
+  },
+  {
+    "Aliases": "",
+    "Description": "Decimal value",
+    "Example": "\"BoundHalfExtents.X\": 3.14",
+    "Flags": 29,
+    "Name": "BoundHalfExtents.X"
+  },
+  {
+    "Aliases": "",
+    "Description": "Decimal value",
+    "Example": "\"BoundHalfExtents.Y\": 3.14",
+    "Flags": 29,
+    "Name": "BoundHalfExtents.Y"
+  },
+  {
+    "Aliases": "",
+    "Description": "Decimal value",
+    "Example": "\"BoundHalfExtents.Z\": 3.14",
+    "Flags": 29,
+    "Name": "BoundHalfExtents.Z"
   },
   {
     "Aliases": "",
@@ -227,7 +255,7 @@
     "Aliases": "",
     "Description": "Possible values (Easy, Medium, Hard, VeryHard)",
     "Example": "\"LevelModifier\": \"Easy\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "LevelModifier"
   },
   {
@@ -288,9 +316,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"LinkedReferences\": []",
+    "Flags": 80,
     "Name": "LinkedReferences"
   },
   {
@@ -346,7 +374,7 @@
     "Aliases": "",
     "Description": "Possible values (Novice, Apprentice, Adept, Expert, Master, RequiresKey)",
     "Example": "\"Lock.Level\": \"Novice\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "Lock.Level"
   },
   {
@@ -395,7 +423,7 @@
     "Aliases": "",
     "Description": "Possible values (None, City, Town, Settlement, Cave, Camp, Fort, NordicRuins, DwemerRuin, Shipwreck, Grove, Landmark, DragonLair, Farm, WoodMill, Mine, ImperialCamp, StormcloakCamp, Doomstone, WheatMill, Smelter, Stable, ImperialTower, Clearing, Pass, Altar, Rock, Lighthouse, OrcStronghold, GiantCamp, Shack, NordicTower, NordicDwelling, Docks, Shrine, RiftenCastle, RiftenCapitol, WindhelmCastle, WindhelmCapitol, WhiterunCastle, WhiterunCapitol, SolitudeCastle, SolitudeCapitol, MarkarthCastle, MarkarthCapitol, WinterholdCastle, WinterholdCapitol, MorthalCastle, MorthalCapitol, FalkreathCastle, FalkreathCapitol, DawnstarCastle, DawnstarCapitol, TempleOfMiraak, RavenRock, BeastStone, TelMithryn, ToSkyrim, ToSolstheim, CastleKarstaag)",
     "Example": "\"MapMarker.Type\": \"None\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "MapMarker.Type"
   },
   {
@@ -554,6 +582,13 @@
   },
   {
     "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Patrol.Topics\": []",
+    "Flags": 81,
+    "Name": "Patrol.Topics"
+  },
+  {
+    "Aliases": "",
     "Description": "Form Key or Editor ID",
     "Example": "\"PersistentLocation\": \"123:Skyrim.esm\" or \"PersistentLocation\": \"MyEditorID\"",
     "Flags": 28,
@@ -624,9 +659,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Portals\": []",
+    "Flags": 80,
     "Name": "Portals"
   },
   {
@@ -675,7 +710,7 @@
     "Aliases": "",
     "Description": "Possible values (None, Box, Sphere, PortalBox)",
     "Example": "\"Primitive.Type\": \"None\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "Primitive.Type"
   },
   {
@@ -708,9 +743,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Reflections\": []",
+    "Flags": 80,
     "Name": "Reflections"
   },
   {
@@ -929,6 +964,13 @@
     "Example": "\"VirtualMachineAdapter.ObjectFormat\": 7",
     "Flags": 29,
     "Name": "VirtualMachineAdapter.ObjectFormat"
+  },
+  {
+    "Aliases": "VMAD.Scripts",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"VirtualMachineAdapter.Scripts\": []",
+    "Flags": 81,
+    "Name": "VirtualMachineAdapter.Scripts"
   },
   {
     "Aliases": "VMAD.Version",

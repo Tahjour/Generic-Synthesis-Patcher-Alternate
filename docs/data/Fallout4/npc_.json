@@ -17,7 +17,7 @@
     "Aliases": "",
     "Description": "Possible values (Unaggressive, Aggressive, VeryAggressive, Frenzied)",
     "Example": "\"Aggression\": \"Unaggressive\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "Aggression"
   },
   {
@@ -59,7 +59,7 @@
     "Aliases": "",
     "Description": "Possible values (HelpsNobody, HelpsAllies, HelpsFriendsAndAllies)",
     "Example": "\"Assistance\": \"HelpsNobody\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "Assistance"
   },
   {
@@ -78,9 +78,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Attacks\": []",
+    "Flags": 80,
     "Name": "Attacks"
   },
   {
@@ -185,7 +185,7 @@
     "Aliases": "",
     "Description": "Possible values (Cowardly, Cautious, Average, Brave, Foolhardy)",
     "Example": "\"Confidence\": \"Cowardly\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "Confidence"
   },
   {
@@ -253,16 +253,16 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"FaceMorphs\": []",
+    "Flags": 80,
     "Name": "FaceMorphs"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"FaceTintingLayers\": []",
+    "Flags": 80,
     "Name": "FaceTintingLayers"
   },
   {
@@ -281,9 +281,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Factions\": []",
+    "Flags": 80,
     "Name": "Factions"
   },
   {
@@ -472,14 +472,14 @@
     "Aliases": "",
     "Description": "Possible values (Neutral, Angry, Fear, Happy, Sad, Surprised, Puzzled, Disgusted)",
     "Example": "\"Mood\": \"Neutral\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "Mood"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Morphs\": []",
+    "Flags": 80,
     "Name": "Morphs"
   },
   {
@@ -582,6 +582,13 @@
   },
   {
     "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"ObjectTemplates\": []",
+    "Flags": 80,
+    "Name": "ObjectTemplates"
+  },
+  {
+    "Aliases": "",
     "Description": "Form Key or Editor ID",
     "Example": "\"ObserveDeadBodyOverridePackageList\": \"123:Skyrim.esm\" or \"ObserveDeadBodyOverridePackageList\": \"MyEditorID\"",
     "Flags": 28,
@@ -596,9 +603,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Perks\": []",
+    "Flags": 80,
     "Name": "Perks"
   },
   {
@@ -617,9 +624,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Properties\": []",
+    "Flags": 80,
     "Name": "Properties"
   },
   {
@@ -633,7 +640,7 @@
     "Aliases": "",
     "Description": "Possible values (AnyCrime, ViolenceAgainstEnemies, PropertyCrimeOnly, NoCrime)",
     "Example": "\"Responsibility\": \"AnyCrime\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "Responsibility"
   },
   {
@@ -661,14 +668,14 @@
     "Aliases": "",
     "Description": "Possible values (Loud, Normal, Silent, VeryLoud, Quiet)",
     "Example": "\"SoundLevel\": \"Loud\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "SoundLevel"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Sounds\": []",
+    "Flags": 80,
     "Name": "Sounds"
   },
   {
@@ -808,7 +815,7 @@
     "Aliases": "",
     "Description": "Possible values (Traits, Stats, Factions, SpellList, AiData, AiPackages, ModelOrAnimation, BaseData, Inventory, Script, DefPackList, AttackData, Keywords)",
     "Example": "\"UseTemplateActors\": \"Traits\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "UseTemplateActors"
   },
   {
@@ -838,6 +845,13 @@
     "Example": "\"VirtualMachineAdapter.ObjectFormat\": 7",
     "Flags": 29,
     "Name": "VirtualMachineAdapter.ObjectFormat"
+  },
+  {
+    "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"VirtualMachineAdapter.Scripts\": []",
+    "Flags": 81,
+    "Name": "VirtualMachineAdapter.Scripts"
   },
   {
     "Aliases": "",

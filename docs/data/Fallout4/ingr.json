@@ -267,6 +267,13 @@
   },
   {
     "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"VirtualMachineAdapter.Scripts\": []",
+    "Flags": 81,
+    "Name": "VirtualMachineAdapter.Scripts"
+  },
+  {
+    "Aliases": "",
     "Description": "Numeric value",
     "Example": "\"VirtualMachineAdapter.Version\": 7",
     "Flags": 29,

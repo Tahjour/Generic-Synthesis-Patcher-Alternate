@@ -1,9 +1,9 @@
 [
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Aliases\": []",
+    "Flags": 80,
     "Name": "Aliases"
   },
   {
@@ -38,7 +38,7 @@
     "Aliases": "",
     "Description": "Possible values (None, MainQuest, BrotherhoodOfSteel, Institute, Minutemen, Railroad, Misc, SideQuests, DLC01, DLC02, DLC03, DLC04, DLC05, DLC06, DLC07)",
     "Example": "\"Data.Type\": \"None\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "Data.Type"
   },
   {
@@ -57,23 +57,23 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"DialogBranches\": []",
+    "Flags": 80,
     "Name": "DialogBranches"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"DialogConditions\": []",
+    "Flags": 80,
     "Name": "DialogConditions"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"DialogTopics\": []",
+    "Flags": 80,
     "Name": "DialogTopics"
   },
   {
@@ -155,9 +155,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Objectives\": []",
+    "Flags": 80,
     "Name": "Objectives"
   },
   {
@@ -176,16 +176,16 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Scenes\": []",
+    "Flags": 80,
     "Name": "Scenes"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Stages\": []",
+    "Flags": 80,
     "Name": "Stages"
   },
   {
@@ -218,9 +218,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"UnusedConditions\": []",
+    "Flags": 80,
     "Name": "UnusedConditions"
   },
   {
@@ -246,10 +246,24 @@
   },
   {
     "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"VirtualMachineAdapter.Aliases\": []",
+    "Flags": 81,
+    "Name": "VirtualMachineAdapter.Aliases"
+  },
+  {
+    "Aliases": "",
     "Description": "Numeric value",
     "Example": "\"VirtualMachineAdapter.ExtraBindDataVersion\": 7",
     "Flags": 29,
     "Name": "VirtualMachineAdapter.ExtraBindDataVersion"
+  },
+  {
+    "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"VirtualMachineAdapter.Fragments\": []",
+    "Flags": 81,
+    "Name": "VirtualMachineAdapter.Fragments"
   },
   {
     "Aliases": "",
@@ -262,7 +276,7 @@
     "Aliases": "",
     "Description": "Possible values (Local, Inherited, Removed, InheritedAndRemoved)",
     "Example": "\"VirtualMachineAdapter.Script.Flags\": \"Local\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "VirtualMachineAdapter.Script.Flags"
   },
   {
@@ -271,6 +285,20 @@
     "Example": "\"VirtualMachineAdapter.Script.Name\": \"Hello\"",
     "Flags": 29,
     "Name": "VirtualMachineAdapter.Script.Name"
+  },
+  {
+    "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"VirtualMachineAdapter.Script.Properties\": []",
+    "Flags": 81,
+    "Name": "VirtualMachineAdapter.Script.Properties"
+  },
+  {
+    "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"VirtualMachineAdapter.Scripts\": []",
+    "Flags": 81,
+    "Name": "VirtualMachineAdapter.Scripts"
   },
   {
     "Aliases": "",

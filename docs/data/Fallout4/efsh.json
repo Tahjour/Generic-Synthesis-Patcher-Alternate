@@ -311,14 +311,14 @@
     "Aliases": "",
     "Description": "Possible values (Add, Subtract, ReverseSubtract, Minimum, Maximum)",
     "Example": "\"MembraneBlendOperation\": \"Add\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "MembraneBlendOperation"
   },
   {
     "Aliases": "",
     "Description": "Possible values (Zero, One, SourceColor, SourceInverseColor, SourceAlpha, SourceInvertedAlpha, DestAlpha, DestInvertedAlpha, DestColor, DestInverseColor, SourceAlphaSat)",
     "Example": "\"MembraneDestBlendMode\": \"Zero\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "MembraneDestBlendMode"
   },
   {
@@ -332,14 +332,14 @@
     "Aliases": "",
     "Description": "Possible values (Zero, One, SourceColor, SourceInverseColor, SourceAlpha, SourceInvertedAlpha, DestAlpha, DestInvertedAlpha, DestColor, DestInverseColor, SourceAlphaSat)",
     "Example": "\"MembraneSourceBlendMode\": \"Zero\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "MembraneSourceBlendMode"
   },
   {
     "Aliases": "",
     "Description": "Possible values (EqualTo, GreaterThan, GreaterThanOrEqualTo)",
     "Example": "\"MembraneZTest\": \"EqualTo\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "MembraneZTest"
   },
   {

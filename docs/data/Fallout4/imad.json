@@ -8,58 +8,58 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"BlurRadius\": []",
+    "Flags": 80,
     "Name": "BlurRadius"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"CinematicBrightnessAdd\": []",
+    "Flags": 80,
     "Name": "CinematicBrightnessAdd"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"CinematicBrightnessMult\": []",
+    "Flags": 80,
     "Name": "CinematicBrightnessMult"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"CinematicContrastAdd\": []",
+    "Flags": 80,
     "Name": "CinematicContrastAdd"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"CinematicContrastMult\": []",
+    "Flags": 80,
     "Name": "CinematicContrastMult"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"CinematicSaturationAdd\": []",
+    "Flags": 80,
     "Name": "CinematicSaturationAdd"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"CinematicSaturationMult\": []",
+    "Flags": 80,
     "Name": "CinematicSaturationMult"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"DepthOfFieldDistance\": []",
+    "Flags": 80,
     "Name": "DepthOfFieldDistance"
   },
   {
@@ -71,30 +71,30 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"DepthOfFieldRange\": []",
+    "Flags": 80,
     "Name": "DepthOfFieldRange"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"DepthOfFieldStrength\": []",
+    "Flags": 80,
     "Name": "DepthOfFieldStrength"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"DepthOfFieldVignetteRadius\": []",
+    "Flags": 80,
     "Name": "DepthOfFieldVignetteRadius"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"DepthOfFieldVignetteStrength\": []",
+    "Flags": 80,
     "Name": "DepthOfFieldVignetteStrength"
   },
   {
@@ -106,9 +106,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"DoubleVisionStrength\": []",
+    "Flags": 80,
     "Name": "DoubleVisionStrength"
   },
   {
@@ -127,9 +127,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"FadeColor\": []",
+    "Flags": 80,
     "Name": "FadeColor"
   },
   {
@@ -148,114 +148,114 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"HdrBloomBlurRadiusAdd\": []",
+    "Flags": 80,
     "Name": "HdrBloomBlurRadiusAdd"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"HdrBloomBlurRadiusMult\": []",
+    "Flags": 80,
     "Name": "HdrBloomBlurRadiusMult"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"HdrBloomScaleAdd\": []",
+    "Flags": 80,
     "Name": "HdrBloomScaleAdd"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"HdrBloomScaleMult\": []",
+    "Flags": 80,
     "Name": "HdrBloomScaleMult"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"HdrBloomThresholdAdd\": []",
+    "Flags": 80,
     "Name": "HdrBloomThresholdAdd"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"HdrBloomThresholdMult\": []",
+    "Flags": 80,
     "Name": "HdrBloomThresholdMult"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"HdrEyeAdaptSpeedAdd\": []",
+    "Flags": 80,
     "Name": "HdrEyeAdaptSpeedAdd"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"HdrEyeAdaptSpeedMult\": []",
+    "Flags": 80,
     "Name": "HdrEyeAdaptSpeedMult"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"HdrSkyScaleAdd\": []",
+    "Flags": 80,
     "Name": "HdrSkyScaleAdd"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"HdrSkyScaleMult\": []",
+    "Flags": 80,
     "Name": "HdrSkyScaleMult"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"HdrSunlightScaleAdd\": []",
+    "Flags": 80,
     "Name": "HdrSunlightScaleAdd"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"HdrSunlightScaleMult\": []",
+    "Flags": 80,
     "Name": "HdrSunlightScaleMult"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"HdrTargetLumMaxAdd\": []",
+    "Flags": 80,
     "Name": "HdrTargetLumMaxAdd"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"HdrTargetLumMaxMult\": []",
+    "Flags": 80,
     "Name": "HdrTargetLumMaxMult"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"HdrTargetLumMinAdd\": []",
+    "Flags": 80,
     "Name": "HdrTargetLumMinAdd"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"HdrTargetLumMinMult\": []",
+    "Flags": 80,
     "Name": "HdrTargetLumMinMult"
   },
   {
@@ -281,9 +281,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"MotionBlurStrength\": []",
+    "Flags": 80,
     "Name": "MotionBlurStrength"
   },
   {
@@ -309,37 +309,37 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"RadialBlurDownStart\": []",
+    "Flags": 80,
     "Name": "RadialBlurDownStart"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"RadialBlurRampDown\": []",
+    "Flags": 80,
     "Name": "RadialBlurRampDown"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"RadialBlurRampUp\": []",
+    "Flags": 80,
     "Name": "RadialBlurRampUp"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"RadialBlurStart\": []",
+    "Flags": 80,
     "Name": "RadialBlurStart"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"RadialBlurStrength\": []",
+    "Flags": 80,
     "Name": "RadialBlurStrength"
   },
   {
@@ -351,9 +351,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"TintColor\": []",
+    "Flags": 80,
     "Name": "TintColor"
   },
   {
@@ -365,142 +365,142 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Unknown08\": []",
+    "Flags": 80,
     "Name": "Unknown08"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Unknown09\": []",
+    "Flags": 80,
     "Name": "Unknown09"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Unknown0A\": []",
+    "Flags": 80,
     "Name": "Unknown0A"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Unknown0B\": []",
+    "Flags": 80,
     "Name": "Unknown0B"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Unknown0C\": []",
+    "Flags": 80,
     "Name": "Unknown0C"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Unknown0D\": []",
+    "Flags": 80,
     "Name": "Unknown0D"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Unknown0E\": []",
+    "Flags": 80,
     "Name": "Unknown0E"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Unknown0F\": []",
+    "Flags": 80,
     "Name": "Unknown0F"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Unknown10\": []",
+    "Flags": 80,
     "Name": "Unknown10"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Unknown14\": []",
+    "Flags": 80,
     "Name": "Unknown14"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Unknown48\": []",
+    "Flags": 80,
     "Name": "Unknown48"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Unknown49\": []",
+    "Flags": 80,
     "Name": "Unknown49"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Unknown4A\": []",
+    "Flags": 80,
     "Name": "Unknown4A"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Unknown4B\": []",
+    "Flags": 80,
     "Name": "Unknown4B"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Unknown4C\": []",
+    "Flags": 80,
     "Name": "Unknown4C"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Unknown4D\": []",
+    "Flags": 80,
     "Name": "Unknown4D"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Unknown4E\": []",
+    "Flags": 80,
     "Name": "Unknown4E"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Unknown4F\": []",
+    "Flags": 80,
     "Name": "Unknown4F"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Unknown50\": []",
+    "Flags": 80,
     "Name": "Unknown50"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Unknown54\": []",
+    "Flags": 80,
     "Name": "Unknown54"
   },
   {

@@ -1,16 +1,16 @@
 [
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Actions\": []",
+    "Flags": 80,
     "Name": "Actions"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Actors\": []",
+    "Flags": 80,
     "Name": "Actors"
   },
   {
@@ -22,9 +22,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Conditions\": []",
+    "Flags": 80,
     "Name": "Conditions"
   },
   {
@@ -120,9 +120,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Phases\": []",
+    "Flags": 80,
     "Name": "Phases"
   },
   {
@@ -323,9 +323,16 @@
   },
   {
     "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"VirtualMachineAdapter.ScriptFragments.PhaseFragments\": []",
+    "Flags": 81,
+    "Name": "VirtualMachineAdapter.ScriptFragments.PhaseFragments"
+  },
+  {
+    "Aliases": "",
     "Description": "Possible values (Local, Inherited, Removed, InheritedAndRemoved)",
     "Example": "\"VirtualMachineAdapter.ScriptFragments.Script.Flags\": \"Local\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "VirtualMachineAdapter.ScriptFragments.Script.Flags"
   },
   {
@@ -334,6 +341,20 @@
     "Example": "\"VirtualMachineAdapter.ScriptFragments.Script.Name\": \"Hello\"",
     "Flags": 29,
     "Name": "VirtualMachineAdapter.ScriptFragments.Script.Name"
+  },
+  {
+    "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"VirtualMachineAdapter.ScriptFragments.Script.Properties\": []",
+    "Flags": 81,
+    "Name": "VirtualMachineAdapter.ScriptFragments.Script.Properties"
+  },
+  {
+    "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"VirtualMachineAdapter.Scripts\": []",
+    "Flags": 81,
+    "Name": "VirtualMachineAdapter.Scripts"
   },
   {
     "Aliases": "",

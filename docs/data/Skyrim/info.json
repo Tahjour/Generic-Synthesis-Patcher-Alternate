@@ -8,9 +8,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Conditions\": []",
+    "Flags": 80,
     "Name": "Conditions"
   },
   {
@@ -31,7 +31,7 @@
     "Aliases": "",
     "Description": "Possible values (None, Small, Medium, Large)",
     "Example": "\"FavorLevel\": \"None\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "FavorLevel"
   },
   {
@@ -120,9 +120,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Responses\": []",
+    "Flags": 80,
     "Name": "Responses"
   },
   {
@@ -148,9 +148,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"UnknownData\": []",
+    "Flags": 80,
     "Name": "UnknownData"
   },
   {
@@ -236,6 +236,13 @@
     "Example": "\"VirtualMachineAdapter.ScriptFragments.OnEnd.ScriptName\": \"Hello\"",
     "Flags": 29,
     "Name": "VirtualMachineAdapter.ScriptFragments.OnEnd.ScriptName"
+  },
+  {
+    "Aliases": "VMAD.Scripts",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"VirtualMachineAdapter.Scripts\": []",
+    "Flags": 81,
+    "Name": "VirtualMachineAdapter.Scripts"
   },
   {
     "Aliases": "VMAD.Version",

@@ -100,6 +100,24 @@ namespace GenericSynthesisPatcher.Helpers
         }
 
         /// <summary>
+        ///     Type-neutral HPU implementation used by forwarding. Values are normalized by the
+        ///     property-path engine, so nullable form links compare as FormKeys and ordered lists
+        ///     compare by contents rather than object identity.
+        /// </summary>
+        public static IModContext<IMajorRecordGetter>? FindHPUIndex (ProcessingKeys proKeys, IEnumerable<IModContext<IMajorRecordGetter>> allRecordMods, IEnumerable<ModKey>? endNodes, int callerClassCode, [CallerLineNumber] int line = 0)
+        {
+            try
+            {
+                return PropertyPathEngine.FindHPU(proKeys, allRecordMods, endNodes);
+            }
+            catch (Exception ex)
+            {
+                Global.Logger.WriteLog(LogLevel.Error, LogType.RecordUpdateFailure, $"Unable to evaluate HPU for {proKeys.Property.PropertyName}: {ex.Message}", callerClassCode, line: line);
+                throw;
+            }
+        }
+
+        /// <summary>
         ///     Finds the master record context of the current record context.
         /// </summary>
         /// <param name="context"></param>

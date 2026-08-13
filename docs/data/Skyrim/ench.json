@@ -10,7 +10,7 @@
     "Aliases": "",
     "Description": "Possible values (ConstantEffect, FireAndForget, Concentration)",
     "Example": "\"CastType\": \"ConstantEffect\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "CastType"
   },
   {
@@ -52,7 +52,7 @@
     "Aliases": "",
     "Description": "Possible values (Enchantment, StaffEnchantment)",
     "Example": "\"EnchantType\": \"Enchantment\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "EnchantType"
   },
   {
@@ -178,7 +178,7 @@
     "Aliases": "",
     "Description": "Possible values (Self, Touch, Aimed, TargetActor, TargetLocation)",
     "Example": "\"TargetType\": \"Self\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "TargetType"
   },
   {

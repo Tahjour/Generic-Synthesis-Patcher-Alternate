@@ -3,7 +3,7 @@
     "Aliases": "",
     "Description": "Possible values (Topic, Conversation, Combat, Persuasion, Detection, Service, Miscellaneous)",
     "Example": "\"DialogType\": \"Topic\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "DialogType"
   },
   {
@@ -29,9 +29,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Items\": []",
+    "Flags": 80,
     "Name": "Items"
   },
   {

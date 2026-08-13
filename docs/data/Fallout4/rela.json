@@ -73,7 +73,7 @@
     "Aliases": "",
     "Description": "Possible values (Lover, Ally, Confidant, Friend, Acquaintance, Rival, Foe, Enemy, Archnemesis)",
     "Example": "\"Rank\": \"Lover\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "Rank"
   },
   {

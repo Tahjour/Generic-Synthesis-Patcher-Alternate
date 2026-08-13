@@ -39,6 +39,10 @@ namespace GenericSynthesisPatcher.Rules
         [JsonIgnore]
         public int ConfigRule { get; internal set; }
 
+        /// <summary>Full path of the configuration file that declared this rule.</summary>
+        [JsonIgnore]
+        public string? SourceFile { get; internal set; }
+
         /// <summary>
         ///     Set to true to enable Debug/Trace logging for this rule
         /// </summary>
@@ -64,11 +68,33 @@ namespace GenericSynthesisPatcher.Rules
         public int Priority { get; set; }
 
         /// <summary>
-        ///     List of record types this rule should match
+        ///     List of record types this rule should match. Both Types and RecordTypes append to
+        ///     this set during deserialization so configurations can use either name (or both).
         /// </summary>
+        [JsonIgnore]
+        public HashSet<ILoquiRegistration> Types { get; internal set; } = [];
+
         [JsonProperty(PropertyName = "Types")]
         [JsonConverter(typeof(ListConverter<ILoquiRegistration>))]
-        public HashSet<ILoquiRegistration> Types { get; internal set; } = [];
+        private HashSet<ILoquiRegistration>? ConfigTypes
+        {
+            set
+            {
+                if (value is not null)
+                    Types.UnionWith(value);
+            }
+        }
+
+        [JsonProperty(PropertyName = "RecordTypes")]
+        [JsonConverter(typeof(ListConverter<ILoquiRegistration>))]
+        private HashSet<ILoquiRegistration>? ConfigRecordTypes
+        {
+            set
+            {
+                if (value is not null)
+                    Types.UnionWith(value);
+            }
+        }
 
         protected bool FoundViaIndex => _foundViaIndex;
 

@@ -24,7 +24,7 @@
     "Aliases": "",
     "Description": "Possible values (Stone, Cloth, Dirt, Glass, Grass, Metal, Organic, Skin, Water, Wood, HeavyStone, HeavyMetal, HeavyWood, Chain, Snow, StoneStairs, ClothStairs, DirtStairs, GlassStairs, GrassStairs, MetalStairs, OrganicStairs, SkinStairs, WaterStairs, WoodStairs, HeavyStoneStairs, HeavyMetalStairs, HeavyWoodStairs, ChainStairs, SnowStairs, Elevator)",
     "Example": "\"Havok.Material\": \"Stone\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "Havok.Material"
   },
   {

@@ -80,7 +80,7 @@
     "Aliases": "",
     "Description": "Possible values (None, ComponentTechLevel, AttachPoint, ComponentProperty, InstantiationFilter, ModAssociation, Sound, AnimArchetype, FunctionCall, RecipeFilter, AttractionType, DialogueSubtype, QuestTarget, AnimFlavor, AnimGender, AnimFace, QuestGroup, AnimInjured, DispelEffect)",
     "Example": "\"Type\": \"None\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "Type"
   },
   {

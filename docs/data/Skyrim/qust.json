@@ -1,9 +1,9 @@
 [
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Aliases\": []",
+    "Flags": 80,
     "Name": "Aliases"
   },
   {
@@ -15,9 +15,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"DialogConditions\": []",
+    "Flags": 80,
     "Name": "DialogConditions"
   },
   {
@@ -36,9 +36,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"EventConditions\": []",
+    "Flags": 80,
     "Name": "EventConditions"
   },
   {
@@ -99,9 +99,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Objectives\": []",
+    "Flags": 80,
     "Name": "Objectives"
   },
   {
@@ -127,9 +127,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Stages\": []",
+    "Flags": 80,
     "Name": "Stages"
   },
   {
@@ -143,7 +143,7 @@
     "Aliases": "",
     "Description": "Possible values (None, MainQuest, MageGuild, ThievesGuild, DarkBrotherhood, CompanionQuests, Misc, Daedric, SideQuest, CivilWar, Vampire, Dragonborn)",
     "Example": "\"Type\": \"None\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "Type"
   },
   {
@@ -175,6 +175,13 @@
     "Name": "VirtualMachineAdapter"
   },
   {
+    "Aliases": "VMAD.Aliases",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"VirtualMachineAdapter.Aliases\": []",
+    "Flags": 81,
+    "Name": "VirtualMachineAdapter.Aliases"
+  },
+  {
     "Aliases": "VMAD.ExtraBindDataVersion",
     "Description": "Numeric value",
     "Example": "\"VirtualMachineAdapter.ExtraBindDataVersion\": 7",
@@ -189,11 +196,25 @@
     "Name": "VirtualMachineAdapter.FileName"
   },
   {
+    "Aliases": "VMAD.Fragments",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"VirtualMachineAdapter.Fragments\": []",
+    "Flags": 81,
+    "Name": "VirtualMachineAdapter.Fragments"
+  },
+  {
     "Aliases": "VMAD.ObjectFormat",
     "Description": "Numeric value",
     "Example": "\"VirtualMachineAdapter.ObjectFormat\": 7",
     "Flags": 29,
     "Name": "VirtualMachineAdapter.ObjectFormat"
+  },
+  {
+    "Aliases": "VMAD.Scripts",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"VirtualMachineAdapter.Scripts\": []",
+    "Flags": 81,
+    "Name": "VirtualMachineAdapter.Scripts"
   },
   {
     "Aliases": "VMAD.Version",

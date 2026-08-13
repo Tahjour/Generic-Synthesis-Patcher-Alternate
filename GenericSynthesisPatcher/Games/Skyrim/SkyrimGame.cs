@@ -53,6 +53,7 @@ namespace GenericSynthesisPatcher.Games.Skyrim
             addExactMatch(typeof(Model), ModelAction.Instance);
 
             addAliases(this);
+            addRecordTypeAliases(this);
         }
 
         public override GameCategory GameCategory => GameCategory.Skyrim;
@@ -176,6 +177,7 @@ namespace GenericSynthesisPatcher.Games.Skyrim
             game.AddAlias(IAcousticSpaceGetter.StaticRegistration         , "BNAM"       , nameof(IAcousticSpaceGetter.EnvironmentType));
             game.AddAlias(IAcousticSpaceGetter.StaticRegistration         , "RDAT"       , nameof(IAcousticSpaceGetter.UseSoundFromRegion));
             game.AddAlias(IAcousticSpaceGetter.StaticRegistration         , "SNAM"       , nameof(IAcousticSpaceGetter.AmbientSound));
+            game.AddAlias(IContainerGetter.StaticRegistration             , "Entries"    , nameof(IContainerGetter.Items));
 
             game.AddAlias(IActionRecordGetter.StaticRegistration          , "CNAM"       , nameof(IActionRecordGetter.Color));
 
@@ -198,6 +200,12 @@ namespace GenericSynthesisPatcher.Games.Skyrim
             game.AddAlias(IAmmunitionGetter.StaticRegistration            , "DMG"        , nameof(IAmmunitionGetter.Damage));
 
             game.AddAlias(IAnimatedObjectGetter.StaticRegistration        , "BNAM"       , nameof(IAnimatedObjectGetter.UnloadEvent));
+            game.AddAlias(IAnimatedObjectGetter.StaticRegistration        , "MODL"       , nameof(IAnimatedObjectGetter.Model));
+
+            // Nested Quest aliases. These are scoped to the owning subrecord type so signatures
+            // that mean different things elsewhere remain unambiguous.
+            game.AddNestedAlias(typeof(QuestAlias)                         , "CTDA"       , nameof(IQuestAliasGetter.Conditions));
+            game.AddNestedAlias(typeof(QuestAlias)                         , "ALID"       , nameof(IQuestAliasGetter.ID));
 
             game.AddAlias(IArmorAddonGetter.StaticRegistration            , "BODT"       , nameof(IArmorAddonGetter.BodyTemplate));
             game.AddAlias(IArmorAddonGetter.StaticRegistration            , "MODL"       , nameof(IArmorAddonGetter.AdditionalRaces));
@@ -673,6 +681,25 @@ namespace GenericSynthesisPatcher.Games.Skyrim
             game.AddAlias(IWorldspaceGetter.StaticRegistration            , "XWEM"       , nameof(IWorldspaceGetter.WaterEnvironmentMap));
             game.AddAlias(IWorldspaceGetter.StaticRegistration            , "ZNAM"       , nameof(IWorldspaceGetter.Music));
 #pragma warning restore format
+        }
+
+        /// <summary>
+        ///     UESP display names that intentionally differ from Mutagen's CLR record names.
+        ///     Signatures, Mutagen names, spaced names, casing, and separators are registered by
+        ///     the base engine automatically; only semantic spelling differences belong here.
+        /// </summary>
+        private static void addRecordTypeAliases (SkyrimGame game)
+        {
+            game.AddRecordTypeAlias("Action", IActionRecordGetter.StaticRegistration);
+            game.AddRecordTypeAlias("Ammo", IAmmunitionGetter.StaticRegistration);
+            game.AddRecordTypeAlias("AnimationObject", IAnimatedObjectGetter.StaticRegistration);
+            game.AddRecordTypeAlias("Color", IColorRecordGetter.StaticRegistration);
+            game.AddRecordTypeAlias("DialogResponse", IDialogResponsesGetter.StaticRegistration);
+            game.AddRecordTypeAlias("Enchantment", IObjectEffectGetter.StaticRegistration);
+            game.AddRecordTypeAlias("ImageSpaceModifier", IImageSpaceAdapterGetter.StaticRegistration);
+            game.AddRecordTypeAlias("MovableStatic", IMoveableStaticGetter.StaticRegistration);
+            game.AddRecordTypeAlias("NonPlayerCharacter", INpcGetter.StaticRegistration);
+            game.AddRecordTypeAlias("ObjectReference", IPlacedObjectGetter.StaticRegistration);
         }
     }
 }

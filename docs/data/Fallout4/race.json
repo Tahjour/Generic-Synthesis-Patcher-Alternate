@@ -64,9 +64,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Attacks\": []",
+    "Flags": 80,
     "Name": "Attacks"
   },
   {
@@ -101,14 +101,14 @@
     "Aliases": "",
     "Description": "Possible values (HairTop, HairLong, FaceGenHead, Body, LeftHand, RightHand, TorsoUnderArmor, LeftArmUnderArmor, RightArmUnderArmor, LeftLegUnderArmor, RightLegUnderArmor, TorsoArmor, LeftArmArmor, RightArmArmor, LeftLegArmor, RightLegArmor, Headband, Eyes, Beard, Mouth, Neck, Ring, Scalp, Decapitation, Unnamed54, Unnamed55, Unnamed56, Unnamed57, Unnamed58, Shield, Pipboy, FX, None)",
     "Example": "\"BeardBipedObject\": \"HairTop\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "BeardBipedObject"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"BehaviorGraph\": []",
+    "Flags": 80,
     "Name": "BehaviorGraph"
   },
   {
@@ -129,14 +129,14 @@
     "Aliases": "",
     "Description": "Possible values (HairTop, HairLong, FaceGenHead, Body, LeftHand, RightHand, TorsoUnderArmor, LeftArmUnderArmor, RightArmUnderArmor, LeftLegUnderArmor, RightLegUnderArmor, TorsoArmor, LeftArmArmor, RightArmArmor, LeftLegArmor, RightLegArmor, Headband, Eyes, Beard, Mouth, Neck, Ring, Scalp, Decapitation, Unnamed54, Unnamed55, Unnamed56, Unnamed57, Unnamed58, Shield, Pipboy, FX, None)",
     "Example": "\"BodyBipedObject\": \"HairTop\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "BodyBipedObject"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"BodyData\": []",
+    "Flags": 80,
     "Name": "BodyData"
   },
   {
@@ -148,9 +148,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"BoneData\": []",
+    "Flags": 80,
     "Name": "BoneData"
   },
   {
@@ -169,16 +169,16 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"DefaultHairColors\": []",
+    "Flags": 80,
     "Name": "DefaultHairColors"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"DefaultWeight\": []",
+    "Flags": 80,
     "Name": "DefaultWeight"
   },
   {
@@ -218,9 +218,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"EquipmentSlots\": []",
+    "Flags": 80,
     "Name": "EquipmentSlots"
   },
   {
@@ -4915,6 +4915,13 @@
   },
   {
     "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"FaceFxPhonemes.Unknowns\": []",
+    "Flags": 81,
+    "Name": "FaceFxPhonemes.Unknowns"
+  },
+  {
+    "Aliases": "",
     "Description": "Decimal value",
     "Example": "\"FaceFxPhonemes.W.AA\": 3.14",
     "Flags": 29,
@@ -5279,16 +5286,16 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"HeadData\": []",
+    "Flags": 80,
     "Name": "HeadData"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Height\": []",
+    "Flags": 80,
     "Name": "Height"
   },
   {
@@ -5370,9 +5377,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"MorphValues\": []",
+    "Flags": 80,
     "Name": "MorphValues"
   },
   {
@@ -5384,16 +5391,16 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"MovementDataOverrides\": []",
+    "Flags": 80,
     "Name": "MovementDataOverrides"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"MovementTypeNames\": []",
+    "Flags": 80,
     "Name": "MovementTypeNames"
   },
   {
@@ -5470,14 +5477,14 @@
     "Aliases": "",
     "Description": "Possible values (HairTop, HairLong, FaceGenHead, Body, LeftHand, RightHand, TorsoUnderArmor, LeftArmUnderArmor, RightArmUnderArmor, LeftLegUnderArmor, RightLegUnderArmor, TorsoArmor, LeftArmArmor, RightArmArmor, LeftLegArmor, RightLegArmor, Headband, Eyes, Beard, Mouth, Neck, Ring, Scalp, Decapitation, Unnamed54, Unnamed55, Unnamed56, Unnamed57, Unnamed58, Shield, Pipboy, FX, None)",
     "Example": "\"PipboyBipedObject\": \"HairTop\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "PipboyBipedObject"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Properties\": []",
+    "Flags": 80,
     "Name": "Properties"
   },
   {
@@ -5526,21 +5533,21 @@
     "Aliases": "",
     "Description": "Possible values (HairTop, HairLong, FaceGenHead, Body, LeftHand, RightHand, TorsoUnderArmor, LeftArmUnderArmor, RightArmUnderArmor, LeftLegUnderArmor, RightLegUnderArmor, TorsoArmor, LeftArmArmor, RightArmArmor, LeftLegArmor, RightLegArmor, Headband, Eyes, Beard, Mouth, Neck, Ring, Scalp, Decapitation, Unnamed54, Unnamed55, Unnamed56, Unnamed57, Unnamed58, Shield, Pipboy, FX, None)",
     "Example": "\"ShieldBipedObject\": \"HairTop\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "ShieldBipedObject"
   },
   {
     "Aliases": "",
     "Description": "Possible values (Small, Medium, Large, ExtraLarge)",
     "Example": "\"Size\": \"Small\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "Size"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"SkeletalModel\": []",
+    "Flags": 80,
     "Name": "SkeletalModel"
   },
   {
@@ -5573,9 +5580,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Subgraphs\": []",
+    "Flags": 80,
     "Name": "Subgraphs"
   },
   {
@@ -5622,9 +5629,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Voices\": []",
+    "Flags": 80,
     "Name": "Voices"
   },
   {

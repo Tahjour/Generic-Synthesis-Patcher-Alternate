@@ -1,23 +1,23 @@
 [
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Actions\": []",
+    "Flags": 80,
     "Name": "Actions"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Actors\": []",
+    "Flags": 80,
     "Name": "Actors"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Conditions\": []",
+    "Flags": 80,
     "Name": "Conditions"
   },
   {
@@ -29,7 +29,7 @@
   },
   {
     "Aliases": "FNAM",
-    "Description": "Flags (BeginOnQuestStart, StopQuestOnEnd, RepeatConditionsWhileTrue, Interruptable)",
+    "Description": "Flags (BeginOnQuestStart, StopQuestOnEnd, ShowAllText, RepeatConditionsWhileTrue, Interruptable)",
     "Example": "\"Flags\": [ \"BeginOnQuestStart\", \"-Interruptable\" ]",
     "Flags": 92,
     "Name": "Flags"
@@ -71,9 +71,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Phases\": []",
+    "Flags": 80,
     "Name": "Phases"
   },
   {
@@ -257,6 +257,20 @@
     "Example": "\"VirtualMachineAdapter.ScriptFragments.OnEnd.ScriptName\": \"Hello\"",
     "Flags": 29,
     "Name": "VirtualMachineAdapter.ScriptFragments.OnEnd.ScriptName"
+  },
+  {
+    "Aliases": "VMAD.ScriptFragments.PhaseFragments",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"VirtualMachineAdapter.ScriptFragments.PhaseFragments\": []",
+    "Flags": 81,
+    "Name": "VirtualMachineAdapter.ScriptFragments.PhaseFragments"
+  },
+  {
+    "Aliases": "VMAD.Scripts",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"VirtualMachineAdapter.Scripts\": []",
+    "Flags": 81,
+    "Name": "VirtualMachineAdapter.Scripts"
   },
   {
     "Aliases": "VMAD.Version",

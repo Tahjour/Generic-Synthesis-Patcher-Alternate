@@ -90,8 +90,7 @@ namespace GenericSynthesisPatcher.Rules
 
         public override bool Validate ()
         {
-            if (!base.Validate())
-                return false;
+            bool valid = base.Validate();
 
             HashSet<ILoquiRegistration> AllTypes = [];
 
@@ -100,9 +99,10 @@ namespace GenericSynthesisPatcher.Rules
             {
                 rule.ConfigFile = ConfigFile;
                 rule.ConfigRule = ruleCount++;
+                rule.SourceFile = SourceFile;
 
                 if (!rule.ClaimAndValidate(this))
-                    return false;
+                    valid = false;
 
                 // Claiming rule will also Rule type if current None to either match Group Types or
                 // All if group types is None So AllTypes will be All if a single rule and group
@@ -117,7 +117,7 @@ namespace GenericSynthesisPatcher.Rules
 
             Types = [.. AllTypes];
 
-            return true;
+            return valid;
         }
     }
 }

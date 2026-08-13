@@ -155,6 +155,20 @@
   },
   {
     "Aliases": "",
+    "Description": "Numeric value",
+    "Example": "\"FixedDimensionsCenterCell.X\": 7",
+    "Flags": 29,
+    "Name": "FixedDimensionsCenterCell.X"
+  },
+  {
+    "Aliases": "",
+    "Description": "Numeric value",
+    "Example": "\"FixedDimensionsCenterCell.Y\": 7",
+    "Flags": 29,
+    "Name": "FixedDimensionsCenterCell.Y"
+  },
+  {
+    "Aliases": "",
     "Description": "Flags (SmallWorld, CannotFastTravel, NoLodWater, NoLandscape, NoSky, FixedDimensions, NoGrass)",
     "Example": "\"Flags\": [ \"SmallWorld\", \"-NoGrass\" ]",
     "Flags": 92,
@@ -225,9 +239,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"LargeReferences\": []",
+    "Flags": 80,
     "Name": "LargeReferences"
   },
   {
@@ -435,9 +449,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"SubCells\": []",
+    "Flags": 80,
     "Name": "SubCells"
   },
   {

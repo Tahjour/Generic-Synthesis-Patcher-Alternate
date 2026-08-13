@@ -8,16 +8,16 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"DNAMs\": []",
+    "Flags": 80,
     "Name": "DNAMs"
   },
   {
     "Aliases": "",
-    "Description": "Memory slice in form of array of bytes",
-    "Example": "\"DNAMs.Item\": [0x1A,0x00,0x3F]",
-    "Flags": 25,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"DNAMs.Item\": []",
+    "Flags": 81,
     "Name": "DNAMs.Item"
   },
   {
@@ -96,6 +96,13 @@
     "Example": "[{ \"types\": [\"Book\"], \"Forward\": { \"SomeMod.esp\": [\"Model\"] } }]",
     "Flags": 16,
     "Name": "Model"
+  },
+  {
+    "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Model.AlternateTextures\": []",
+    "Flags": 81,
+    "Name": "Model.AlternateTextures"
   },
   {
     "Aliases": "",

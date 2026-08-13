@@ -57,6 +57,13 @@
   },
   {
     "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Aurora.AlternateTextures\": []",
+    "Flags": 81,
+    "Name": "Aurora.AlternateTextures"
+  },
+  {
+    "Aliases": "",
     "Description": "Memory slice in form of array of bytes",
     "Example": "\"Aurora.Data\": [0x1A,0x00,0x3F]",
     "Flags": 25,
@@ -155,16 +162,16 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Clouds\": []",
+    "Flags": 80,
     "Name": "Clouds"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"CloudTextures\": []",
+    "Flags": 80,
     "Name": "CloudTextures"
   },
   {
@@ -1051,9 +1058,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Sounds\": []",
+    "Flags": 80,
     "Name": "Sounds"
   },
   {

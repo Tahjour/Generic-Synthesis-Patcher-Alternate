@@ -34,7 +34,7 @@ namespace GenericSynthesisPatcher.Games.Universal.Action
         public bool CanFill () => true;
 
         // <inheritdoc />
-        public bool CanForward () => false;
+        public bool CanForward () => true;
 
         // <inheritdoc />
         public bool CanForwardSelfOnly () => false;
@@ -78,7 +78,23 @@ namespace GenericSynthesisPatcher.Games.Universal.Action
         public IModContext<IMajorRecordGetter>? FindHPUIndex (ProcessingKeys proKeys, IEnumerable<IModContext<IMajorRecordGetter>> AllRecordMods, IEnumerable<ModKey>? endNodes) => Mod.FindHPUIndex<Enum>(proKeys, AllRecordMods, endNodes, ClassLogCode);
 
         // <inheritdoc />
-        public int Forward (ProcessingKeys proKeys, IModContext<IMajorRecordGetter> forwardContext) => throw new NotImplementedException();
+        public int Forward (ProcessingKeys proKeys, IModContext<IMajorRecordGetter> forwardContext)
+        {
+            if (!Mod.TryGetProperty<Enum>(proKeys.Record, proKeys.Property.PropertyName, out var curValue, ClassLogCode)
+                || !Mod.TryGetProperty<Enum>(forwardContext.Record, proKeys.Property.PropertyName, out var newValue, ClassLogCode))
+            {
+                return -1;
+            }
+
+            if (Equals(curValue, newValue))
+                return 0;
+
+            if (!Mod.TrySetProperty(proKeys.GetPatchRecord(), proKeys.Property.PropertyName, newValue, ClassLogCode))
+                return -1;
+
+            Global.Logger.WriteLog(LogLevel.Debug, LogType.RecordUpdated, LogWriter.RecordUpdated, ClassLogCode);
+            return 1;
+        }
 
         // <inheritdoc />
         public int ForwardSelfOnly (ProcessingKeys proKeys, IModContext<IMajorRecordGetter> forwardContext) => throw new NotImplementedException();

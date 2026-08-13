@@ -8,9 +8,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Conditions\": []",
+    "Flags": 80,
     "Name": "Conditions"
   },
   {
@@ -66,22 +66,22 @@
     "Aliases": "",
     "Description": "Possible values (Random, RunInSequence, RandomDoOnce, RunInSequenceDoOnce)",
     "Example": "\"IdleAnimations.Type\": \"Random\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "IdleAnimations.Type"
+  },
+  {
+    "Aliases": "",
+    "Description": "Flags (HellosToPlayer, RandomConversations, ObserveCombatBehavior, GreetCorpseBehavior, ReactionToPlayerActions, FriendlyFireComments, AggroRadiusBehavior, AllowIdleChatter, WorldInteractions)",
+    "Example": "\"InterruptFlags\": [ \"HellosToPlayer\", \"-WorldInteractions\" ]",
+    "Flags": 92,
+    "Name": "InterruptFlags"
   },
   {
     "Aliases": "",
     "Description": "Possible values (None, Spectator, ObserveDead, GuardWarn, Combat)",
     "Example": "\"InterruptOverride\": \"None\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "InterruptOverride"
-  },
-  {
-    "Aliases": "",
-    "Description": "Flags (HellosToPlayer, RandomConversations, ObserveCombatBehavior, GreetCorpseBehavior, ReactionToPlayerActions, FriendlyFireComments, AggroRadiusBehavior, AllowIdleChatter, WorldInteractions)",
-    "Example": "\"InteruptFlags\": [ \"HellosToPlayer\", \"-WorldInteractions\" ]",
-    "Flags": 92,
-    "Name": "InteruptFlags"
   },
   {
     "Aliases": "",
@@ -155,6 +155,13 @@
   },
   {
     "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"OnBegin.Topics\": []",
+    "Flags": 81,
+    "Name": "OnBegin.Topics"
+  },
+  {
+    "Aliases": "",
     "Description": "",
     "Example": "",
     "Flags": 144,
@@ -201,6 +208,13 @@
     "Example": "\"OnChange.TNAM\": [0x1A,0x00,0x3F]",
     "Flags": 25,
     "Name": "OnChange.TNAM"
+  },
+  {
+    "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"OnChange.Topics\": []",
+    "Flags": 81,
+    "Name": "OnChange.Topics"
   },
   {
     "Aliases": "",
@@ -252,6 +266,13 @@
     "Name": "OnEnd.TNAM"
   },
   {
+    "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"OnEnd.Topics\": []",
+    "Flags": 81,
+    "Name": "OnEnd.Topics"
+  },
+  {
     "Aliases": "QNAM",
     "Description": "Form Key or Editor ID",
     "Example": "\"OwnerQuest\": \"123:Skyrim.esm\" or \"OwnerQuest\": \"MyEditorID\"",
@@ -269,14 +290,14 @@
     "Aliases": "",
     "Description": "Possible values (Walk, Jog, Run, FastWalk)",
     "Example": "\"PreferredSpeed\": \"Walk\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "PreferredSpeed"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"ProcedureTree\": []",
+    "Flags": 80,
     "Name": "ProcedureTree"
   },
   {
@@ -290,7 +311,7 @@
     "Aliases": "",
     "Description": "Possible values (Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Weekdays, Weekends, MondayWednesdayFriday, TuesdayThursday, Any)",
     "Example": "\"ScheduleDayOfWeek\": \"Sunday\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "ScheduleDayOfWeek"
   },
   {
@@ -332,7 +353,7 @@
     "Aliases": "",
     "Description": "Possible values (Package, PackageTemplate)",
     "Example": "\"Type\": \"Package\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "Type"
   },
   {
@@ -467,6 +488,13 @@
     "Example": "\"VirtualMachineAdapter.ScriptFragments.OnEnd.ScriptName\": \"Hello\"",
     "Flags": 29,
     "Name": "VirtualMachineAdapter.ScriptFragments.OnEnd.ScriptName"
+  },
+  {
+    "Aliases": "VMAD.Scripts",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"VirtualMachineAdapter.Scripts\": []",
+    "Flags": 81,
+    "Name": "VirtualMachineAdapter.Scripts"
   },
   {
     "Aliases": "VMAD.Version",

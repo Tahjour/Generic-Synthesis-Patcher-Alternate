@@ -10,7 +10,7 @@
     "Aliases": "",
     "Description": "Possible values (NoMoon, Masser, Secunda, MasserSecunda)",
     "Example": "\"Data.Phase\": \"NoMoon\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "Data.Phase"
   },
   {
@@ -113,9 +113,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Weathers\": []",
+    "Flags": 80,
     "Name": "Weathers"
   }
 ]

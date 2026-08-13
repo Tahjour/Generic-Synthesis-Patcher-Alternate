@@ -5,6 +5,7 @@ using GenericSynthesisPatcher.Helpers;
 using Microsoft.Extensions.Logging;
 
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace GenericSynthesisPatcher.Rules.Loaders
 {
@@ -32,6 +33,7 @@ namespace GenericSynthesisPatcher.Rules.Loaders
         {
             Rules = [];
             bool allPassed = true;
+            var preflightErrors = new List<string>();
 
             int countFile = fileCount - 1;
             foreach (string? f in files)
@@ -41,7 +43,12 @@ namespace GenericSynthesisPatcher.Rules.Loaders
                 using (var jsonFile = File.OpenText(f))
                 {
                     using var jsonReader = new JsonTextReader(jsonFile);
-                    fileRules = JsonSerializer.Create(Global.Game.SerializerSettings).Deserialize<List<GSPBase>>(jsonReader);
+                    while (jsonReader.Read() && jsonReader.TokenType == JsonToken.Comment)
+                    { }
+
+                    JToken document = JToken.ReadFrom(jsonReader);
+                    preflightErrors.AddRange(RulePreflightValidator.FindUnknownRecordTypes(document, f));
+                    fileRules = document.ToObject<List<GSPBase>>(JsonSerializer.Create(Global.Game.SerializerSettings));
                 }
 
                 int countRule = 1;
@@ -49,6 +56,7 @@ namespace GenericSynthesisPatcher.Rules.Loaders
                 {
                     rule.ConfigFile = countFile;
                     rule.ConfigRule = countRule++;
+                    rule.SourceFile = Path.GetFullPath(f);
 
                     allPassed = rule.Validate() && allPassed;
 
@@ -56,7 +64,7 @@ namespace GenericSynthesisPatcher.Rules.Loaders
                 }
             }
 
-            return allPassed;
+            return RulePreflightValidator.Validate(Rules, preflightErrors) && allPassed;
         }
 
         /// <param name="gspConfigsPath">Directory to load JSON files from.</param>

@@ -52,7 +52,7 @@
     "Aliases": "",
     "Description": "Possible values (HandToHandMelee, OneHandSword, OneHandDagger, OneHandAxe, OneHandMace, TwoHandSword, TwoHandAxe, Bow, Staff, Gun, Grenade, Mine)",
     "Example": "\"AnimationType\": \"HandToHandMelee\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "AnimationType"
   },
   {
@@ -148,9 +148,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"DamageTypes\": []",
+    "Flags": 80,
     "Name": "DamageTypes"
   },
   {
@@ -241,7 +241,7 @@
     "Aliases": "",
     "Description": "Possible values (Constant, Square, Triangle, Sawtooth)",
     "Example": "\"ExtraData.Pattern\": \"Constant\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "ExtraData.Pattern"
   },
   {
@@ -458,7 +458,7 @@
     "Aliases": "",
     "Description": "Possible values (VerySlow, Slow, Medium, Fast, VeryFast)",
     "Example": "\"MeleeSpeed\": \"VerySlow\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "MeleeSpeed"
   },
   {
@@ -610,9 +610,16 @@
   },
   {
     "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"ObjectTemplates\": []",
+    "Flags": 80,
+    "Name": "ObjectTemplates"
+  },
+  {
+    "Aliases": "",
     "Description": "Possible values (Normal, DismemberOnly, ExplodeOnly, NoDismemberOrExplode)",
     "Example": "\"OnHit\": \"Normal\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "OnHit"
   },
   {
@@ -675,7 +682,7 @@
     "Aliases": "",
     "Description": "Possible values (Loud, Normal, Silent, VeryLoud, Quiet)",
     "Example": "\"SoundLevel\": \"Loud\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "SoundLevel"
   },
   {
@@ -689,7 +696,7 @@
     "Aliases": "",
     "Description": "Possible values (None, Small, Medium, Large, ExtraLarge)",
     "Example": "\"Stagger\": \"None\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "Stagger"
   },
   {
@@ -761,6 +768,13 @@
     "Example": "\"VirtualMachineAdapter.ObjectFormat\": 7",
     "Flags": 29,
     "Name": "VirtualMachineAdapter.ObjectFormat"
+  },
+  {
+    "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"VirtualMachineAdapter.Scripts\": []",
+    "Flags": 81,
+    "Name": "VirtualMachineAdapter.Scripts"
   },
   {
     "Aliases": "",

@@ -17,7 +17,7 @@
     "Aliases": "",
     "Description": "Possible values (MortarAndPestle, Alembic, Calcinator, Retort)",
     "Example": "\"Data.Type\": \"MortarAndPestle\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "Data.Type"
   },
   {

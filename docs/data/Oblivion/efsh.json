@@ -213,28 +213,28 @@
     "Aliases": "",
     "Description": "Possible values (Add, Subtract, ReverseSubtract, Minimum, Maximum)",
     "Example": "\"Data.MembraneShaderBlendOperation\": \"Add\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "Data.MembraneShaderBlendOperation"
   },
   {
     "Aliases": "",
     "Description": "Possible values (Zero, One, SourceColor, SourceInverseColor, SourceAlpha, SourceInvertedAlpha, DestAlpha, DestInvertedAlpha, DestColor, DestInverseColor, SourceAlphaSAT)",
     "Example": "\"Data.MembraneShaderDestBlendMode\": \"Zero\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "Data.MembraneShaderDestBlendMode"
   },
   {
     "Aliases": "",
     "Description": "Possible values (Zero, One, SourceColor, SourceInverseColor, SourceAlpha, SourceInvertedAlpha, DestAlpha, DestInvertedAlpha, DestColor, DestInverseColor, SourceAlphaSAT)",
     "Example": "\"Data.MembraneShaderSourceBlendMode\": \"Zero\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "Data.MembraneShaderSourceBlendMode"
   },
   {
     "Aliases": "",
     "Description": "Possible values (EqualTo, Normal, GreaterThan, GreaterThanOrEqualTo)",
     "Example": "\"Data.MembraneShaderZTestFunction\": \"EqualTo\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "Data.MembraneShaderZTestFunction"
   },
   {
@@ -269,14 +269,14 @@
     "Aliases": "",
     "Description": "Possible values (Add, Subtract, ReverseSubtract, Minimum, Maximum)",
     "Example": "\"Data.ParticleShaderBlendOperation\": \"Add\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "Data.ParticleShaderBlendOperation"
   },
   {
     "Aliases": "",
     "Description": "Possible values (Zero, One, SourceColor, SourceInverseColor, SourceAlpha, SourceInvertedAlpha, DestAlpha, DestInvertedAlpha, DestColor, DestInverseColor, SourceAlphaSAT)",
     "Example": "\"Data.ParticleShaderDestBlendMode\": \"Zero\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "Data.ParticleShaderDestBlendMode"
   },
   {
@@ -388,14 +388,14 @@
     "Aliases": "",
     "Description": "Possible values (Zero, One, SourceColor, SourceInverseColor, SourceAlpha, SourceInvertedAlpha, DestAlpha, DestInvertedAlpha, DestColor, DestInverseColor, SourceAlphaSAT)",
     "Example": "\"Data.ParticleShaderSourceBlendMode\": \"Zero\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "Data.ParticleShaderSourceBlendMode"
   },
   {
     "Aliases": "",
     "Description": "Possible values (EqualTo, Normal, GreaterThan, GreaterThanOrEqualTo)",
     "Example": "\"Data.ParticleShaderZTestFunction\": \"EqualTo\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "Data.ParticleShaderZTestFunction"
   },
   {

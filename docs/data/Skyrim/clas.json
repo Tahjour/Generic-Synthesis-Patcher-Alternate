@@ -80,7 +80,7 @@
     "Aliases": "",
     "Description": "Possible values (OneHanded, TwoHanded, Archery, Block, Smithing, HeavyArmor, LightArmor, Pickpocket, Lockpicking, Sneak, Alchemy, Speech, Alteration, Conjuration, Destruction, Illusion, Restoration, Enchanting)",
     "Example": "\"Teaches\": \"OneHanded\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "Teaches"
   },
   {

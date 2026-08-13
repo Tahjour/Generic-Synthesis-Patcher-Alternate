@@ -22,9 +22,23 @@
   },
   {
     "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Data.PrimaryAttributes\": []",
+    "Flags": 81,
+    "Name": "Data.PrimaryAttributes"
+  },
+  {
+    "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Data.SecondaryAttributes\": []",
+    "Flags": 81,
+    "Name": "Data.SecondaryAttributes"
+  },
+  {
+    "Aliases": "",
     "Description": "Possible values (Combat, Magic, Stealth)",
     "Example": "\"Data.Specialization\": \"Combat\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "Data.Specialization"
   },
   {
@@ -38,7 +52,7 @@
     "Aliases": "",
     "Description": "Possible values (Armorer, Athletics, Blade, Block, Blunt, HandToHand, HeavyArmor, Alchemy, Alteration, Conjuration, Destruction, Illusion, Mysticism, Restoration, Acrobatics, LightArmor, Marksman, Mercantile, Security, Sneak, Speechraft)",
     "Example": "\"Data.Training.TrainedSkill\": \"Armorer\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "Data.Training.TrainedSkill"
   },
   {

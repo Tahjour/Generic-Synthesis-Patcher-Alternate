@@ -38,21 +38,21 @@
     "Aliases": "",
     "Description": "Possible values (Loud, Normal, Silent, VeryLoud, Quiet)",
     "Example": "\"CastingSoundLevel\": \"Loud\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "CastingSoundLevel"
   },
   {
     "Aliases": "",
     "Description": "Possible values (ConstantEffect, FireAndForget, Concentration, Scroll)",
     "Example": "\"CastType\": \"ConstantEffect\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "CastType"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Conditions\": []",
+    "Flags": 80,
     "Name": "Conditions"
   },
   {
@@ -302,9 +302,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Sounds\": []",
+    "Flags": 80,
     "Name": "Sounds"
   },
   {
@@ -346,7 +346,7 @@
     "Aliases": "",
     "Description": "Possible values (Self, Touch, Aimed, TargetActor, TargetLocation)",
     "Example": "\"TargetType\": \"Self\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "TargetType"
   },
   {
@@ -383,6 +383,13 @@
     "Example": "\"VirtualMachineAdapter.ObjectFormat\": 7",
     "Flags": 29,
     "Name": "VirtualMachineAdapter.ObjectFormat"
+  },
+  {
+    "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"VirtualMachineAdapter.Scripts\": []",
+    "Flags": 81,
+    "Name": "VirtualMachineAdapter.Scripts"
   },
   {
     "Aliases": "",

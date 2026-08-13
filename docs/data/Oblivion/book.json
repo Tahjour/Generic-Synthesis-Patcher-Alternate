@@ -17,7 +17,7 @@
     "Aliases": "",
     "Description": "Possible values (Armorer, Athletics, Blade, Block, Blunt, HandToHand, HeavyArmor, Alchemy, Alteration, Conjuration, Destruction, Illusion, Mysticism, Restoration, Acrobatics, LightArmor, Marksman, Mercantile, Security, Sneak, Speechraft)",
     "Example": "\"Data.Teaches\": \"Armorer\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "Data.Teaches"
   },
   {

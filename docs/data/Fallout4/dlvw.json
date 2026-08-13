@@ -71,16 +71,16 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"TNAMs\": []",
+    "Flags": 80,
     "Name": "TNAMs"
   },
   {
     "Aliases": "",
-    "Description": "Memory slice in form of array of bytes",
-    "Example": "\"TNAMs.Item\": [0x1A,0x00,0x3F]",
-    "Flags": 25,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"TNAMs.Item\": []",
+    "Flags": 81,
     "Name": "TNAMs.Item"
   },
   {

@@ -43,9 +43,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"MapInfos\": []",
+    "Flags": 80,
     "Name": "MapInfos"
   },
   {
@@ -68,6 +68,20 @@
     "Example": "",
     "Flags": 144,
     "Name": "PreferredPathing"
+  },
+  {
+    "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"PreferredPathing.NavmeshSets\": []",
+    "Flags": 81,
+    "Name": "PreferredPathing.NavmeshSets"
+  },
+  {
+    "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"PreferredPathing.NavmeshTree\": []",
+    "Flags": 81,
+    "Name": "PreferredPathing.NavmeshTree"
   },
   {
     "Aliases": "",

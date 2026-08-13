@@ -15,6 +15,13 @@
   },
   {
     "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"ActivateParents.Parents\": []",
+    "Flags": 81,
+    "Name": "ActivateParents.Parents"
+  },
+  {
+    "Aliases": "",
     "Description": "Form Key or Editor ID",
     "Example": "\"Base\": \"123:Skyrim.esm\" or \"Base\": \"MyEditorID\"",
     "Flags": 28,
@@ -157,7 +164,7 @@
     "Aliases": "",
     "Description": "Possible values (Easy, Medium, Hard, VeryHard)",
     "Example": "\"LevelModifier\": \"Easy\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "LevelModifier"
   },
   {
@@ -183,9 +190,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"LinkedReferences\": []",
+    "Flags": 80,
     "Name": "LinkedReferences"
   },
   {
@@ -271,6 +278,13 @@
     "Example": "\"Patrol.SCTX\": [0x1A,0x00,0x3F]",
     "Flags": 25,
     "Name": "Patrol.SCTX"
+  },
+  {
+    "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Patrol.Topics\": []",
+    "Flags": 81,
+    "Name": "Patrol.Topics"
   },
   {
     "Aliases": "",
@@ -404,6 +418,13 @@
     "Example": "\"VirtualMachineAdapter.ObjectFormat\": 7",
     "Flags": 29,
     "Name": "VirtualMachineAdapter.ObjectFormat"
+  },
+  {
+    "Aliases": "VMAD.Scripts",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"VirtualMachineAdapter.Scripts\": []",
+    "Flags": 81,
+    "Name": "VirtualMachineAdapter.Scripts"
   },
   {
     "Aliases": "VMAD.Version",

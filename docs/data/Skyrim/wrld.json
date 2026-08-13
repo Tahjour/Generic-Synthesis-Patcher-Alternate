@@ -22,6 +22,13 @@
   },
   {
     "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"CloudModel.AlternateTextures\": []",
+    "Flags": 81,
+    "Name": "CloudModel.AlternateTextures"
+  },
+  {
+    "Aliases": "",
     "Description": "Memory slice in form of array of bytes",
     "Example": "\"CloudModel.Data\": [0x1A,0x00,0x3F]",
     "Flags": 25,
@@ -54,6 +61,20 @@
     "Example": "\"FixedDimensionsCenterCell\": [1, 2]",
     "Flags": 24,
     "Name": "FixedDimensionsCenterCell"
+  },
+  {
+    "Aliases": "WCTR.X",
+    "Description": "Numeric value",
+    "Example": "\"FixedDimensionsCenterCell.X\": 7",
+    "Flags": 29,
+    "Name": "FixedDimensionsCenterCell.X"
+  },
+  {
+    "Aliases": "WCTR.Y",
+    "Description": "Numeric value",
+    "Example": "\"FixedDimensionsCenterCell.Y\": 7",
+    "Flags": 29,
+    "Name": "FixedDimensionsCenterCell.Y"
   },
   {
     "Aliases": "DATA",
@@ -127,9 +148,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"LargeReferences\": []",
+    "Flags": 80,
     "Name": "LargeReferences"
   },
   {
@@ -372,9 +393,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"SubCells\": []",
+    "Flags": 80,
     "Name": "SubCells"
   },
   {

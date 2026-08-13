@@ -43,6 +43,20 @@
   },
   {
     "Aliases": "",
+    "Description": "Numeric value",
+    "Example": "\"Grid.X\": 7",
+    "Flags": 29,
+    "Name": "Grid.X"
+  },
+  {
+    "Aliases": "",
+    "Description": "Numeric value",
+    "Example": "\"Grid.Y\": 7",
+    "Flags": 29,
+    "Name": "Grid.Y"
+  },
+  {
+    "Aliases": "",
     "Description": "True / False",
     "Example": "\"IsCompressed\": true",
     "Flags": 30,
@@ -89,6 +103,13 @@
     "Example": "\"Landscape.IsDeleted\": true",
     "Flags": 31,
     "Name": "Landscape.IsDeleted"
+  },
+  {
+    "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Landscape.Layers\": []",
+    "Flags": 81,
+    "Name": "Landscape.Layers"
   },
   {
     "Aliases": "",
@@ -220,7 +241,7 @@
     "Aliases": "",
     "Description": "Possible values (Default, Public, Dungeon)",
     "Example": "\"MusicType\": \"Default\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "MusicType"
   },
   {
@@ -260,6 +281,13 @@
   },
   {
     "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"PathGrid.InterCellConnections\": []",
+    "Flags": 81,
+    "Name": "PathGrid.InterCellConnections"
+  },
+  {
+    "Aliases": "",
     "Description": "True / False",
     "Example": "\"PathGrid.IsCompressed\": true",
     "Flags": 31,
@@ -295,6 +323,20 @@
   },
   {
     "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"PathGrid.PointToPointConnections\": []",
+    "Flags": 81,
+    "Name": "PathGrid.PointToPointConnections"
+  },
+  {
+    "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"PathGrid.PointToReferenceMappings\": []",
+    "Flags": 81,
+    "Name": "PathGrid.PointToReferenceMappings"
+  },
+  {
+    "Aliases": "",
     "Description": "Numeric value",
     "Example": "\"PathGrid.VersionControl\": 7",
     "Flags": 31,
@@ -302,9 +344,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Persistent\": []",
+    "Flags": 80,
     "Name": "Persistent"
   },
   {
@@ -323,9 +365,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Temporary\": []",
+    "Flags": 80,
     "Name": "Temporary"
   },
   {
@@ -351,9 +393,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"VisibleWhenDistant\": []",
+    "Flags": 80,
     "Name": "VisibleWhenDistant"
   },
   {

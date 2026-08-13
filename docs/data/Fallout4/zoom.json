@@ -87,7 +87,7 @@
     "Aliases": "",
     "Description": "Possible values (Default, Fine, Duplex, German, Dot, MilDot, Circle, OldRangefind, ModernRangefind, SVD, HandPainted, Binoculars, Cross, DoubleZero, Rangefinder1, Rangefinder2, Rectangle)",
     "Example": "\"Overlay\": \"Default\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "Overlay"
   },
   {

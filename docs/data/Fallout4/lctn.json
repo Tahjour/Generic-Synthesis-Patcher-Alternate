@@ -22,16 +22,16 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"EnableParentReferencesAdded\": []",
+    "Flags": 80,
     "Name": "EnableParentReferencesAdded"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"EnableParentReferencesStatic\": []",
+    "Flags": 80,
     "Name": "EnableParentReferencesStatic"
   },
   {
@@ -85,9 +85,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"LocationRefTypeReferencesAdded\": []",
+    "Flags": 80,
     "Name": "LocationRefTypeReferencesAdded"
   },
   {
@@ -99,9 +99,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"LocationRefTypeReferencesStatic\": []",
+    "Flags": 80,
     "Name": "LocationRefTypeReferencesStatic"
   },
   {
@@ -141,9 +141,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"PersistentActorReferencesAdded\": []",
+    "Flags": 80,
     "Name": "PersistentActorReferencesAdded"
   },
   {
@@ -155,16 +155,16 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"PersistentActorReferencesStatic\": []",
+    "Flags": 80,
     "Name": "PersistentActorReferencesStatic"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"UniqueActorReferencesAdded\": []",
+    "Flags": 80,
     "Name": "UniqueActorReferencesAdded"
   },
   {
@@ -176,9 +176,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"UniqueActorReferencesStatic\": []",
+    "Flags": 80,
     "Name": "UniqueActorReferencesStatic"
   },
   {
@@ -218,23 +218,23 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"WorldspaceCellsAdded\": []",
+    "Flags": 80,
     "Name": "WorldspaceCellsAdded"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"WorldspaceCellsRemoved\": []",
+    "Flags": 80,
     "Name": "WorldspaceCellsRemoved"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"WorldspaceCellsStatic\": []",
+    "Flags": 80,
     "Name": "WorldspaceCellsStatic"
   }
 ]

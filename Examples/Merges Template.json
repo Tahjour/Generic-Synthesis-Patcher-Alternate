@@ -16,7 +16,7 @@
     ]
   },
   {
-    "types": [ "ammunition", "armor", "container", "ingestible", "ingredient" ],
+    "types": [ "ammunition", "armor", "ingestible", "ingredient" ],
     "singleMatch": true,
     "rules": [
       // Add sections here to exclude from merge

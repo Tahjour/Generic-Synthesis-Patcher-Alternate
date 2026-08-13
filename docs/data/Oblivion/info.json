@@ -8,9 +8,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Conditions\": []",
+    "Flags": 80,
     "Name": "Conditions"
   },
   {
@@ -24,7 +24,7 @@
     "Aliases": "",
     "Description": "Possible values (Topic, Conversation, Combat, Persuasion, Detection, Service, Miscellaneous)",
     "Example": "\"Data.DialogType\": \"Topic\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "Data.DialogType"
   },
   {
@@ -99,9 +99,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Responses\": []",
+    "Flags": 80,
     "Name": "Responses"
   },
   {

@@ -24,7 +24,7 @@
     "Aliases": "",
     "Description": "Possible values (None, Petty, Lesser, Common, Greater, Grand)",
     "Example": "\"ContainedSoul\": \"None\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "ContainedSoul"
   },
   {
@@ -264,6 +264,13 @@
     "Example": "\"MapMarker.Name\": \"Hello\"",
     "Flags": 29,
     "Name": "MapMarker.Name"
+  },
+  {
+    "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"MapMarker.Types\": []",
+    "Flags": 81,
+    "Name": "MapMarker.Types"
   },
   {
     "Aliases": "",

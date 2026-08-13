@@ -45,7 +45,7 @@
     "Aliases": "",
     "Description": "Possible values (BladeOneHand, BladeTwoHand, BluntOneHand, BluntTwoHand, Staff, Bow)",
     "Example": "\"Data.Type\": \"BladeOneHand\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "Data.Type"
   },
   {

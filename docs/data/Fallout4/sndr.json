@@ -15,9 +15,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Conditions\": []",
+    "Flags": 80,
     "Name": "Conditions"
   },
   {
@@ -80,7 +80,7 @@
     "Aliases": "",
     "Description": "Possible values (None, Loop, EnvelopeFast, EnvelopeSlow)",
     "Example": "\"LoopAndRumble.Loop\": \"None\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "LoopAndRumble.Loop"
   },
   {
@@ -127,16 +127,16 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"RatesOfFire\": []",
+    "Flags": 80,
     "Name": "RatesOfFire"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"SoundFiles\": []",
+    "Flags": 80,
     "Name": "SoundFiles"
   },
   {

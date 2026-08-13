@@ -10,7 +10,7 @@
     "Aliases": "",
     "Description": "Possible values (MasterParticleSystem, AlwaysLoaded)",
     "Example": "\"Flags\": \"MasterParticleSystem\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "Flags"
   },
   {
@@ -54,6 +54,13 @@
     "Example": "[{ \"types\": [\"Book\"], \"Forward\": { \"SomeMod.esp\": [\"Model\"] } }]",
     "Flags": 16,
     "Name": "Model"
+  },
+  {
+    "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Model.AlternateTextures\": []",
+    "Flags": 81,
+    "Name": "Model.AlternateTextures"
   },
   {
     "Aliases": "",

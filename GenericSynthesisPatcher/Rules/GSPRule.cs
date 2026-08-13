@@ -12,6 +12,8 @@ using GenericSynthesisPatcher.Helpers;
 using GenericSynthesisPatcher.Helpers.Graph;
 using GenericSynthesisPatcher.Rules.Operations;
 
+using Loqui;
+
 using Microsoft.Extensions.Logging;
 
 using Mutagen.Bethesda.Plugins;
@@ -228,7 +230,7 @@ namespace GenericSynthesisPatcher.Rules
         #region GetValues
 
         private readonly Dictionary<FilterOperation, object?> fillCache = [];
-        private readonly Dictionary<FilterOperation, (IEnumerable<ModKey>, string[])?> forwardCache = [];
+        private readonly Dictionary<(ILoquiRegistration Type, FilterOperation Key), (IEnumerable<ModKey>, string[])?> forwardCache = [];
         private readonly Dictionary<FilterOperation, object?> matchCache = [];
 
         /// <summary>
@@ -290,7 +292,8 @@ namespace GenericSynthesisPatcher.Rules
         /// </returns>
         private bool tryGetForward (ProcessingKeys proKeys, FilterOperation key, [NotNullWhen(true)] out IEnumerable<ModKey>? mods, [NotNullWhen(true)] out string[]? fields)
         {
-            if (forwardCache.TryGetValue(key, out var value))
+            var cacheKey = (proKeys.Type, key);
+            if (forwardCache.TryGetValue(cacheKey, out var value))
             {
                 if (value is null || !value.HasValue)
                 {
@@ -350,7 +353,7 @@ namespace GenericSynthesisPatcher.Rules
                     buildMods.Add(mod);
 
                 if (tryGetValueAs(Forward, [], key, out _, out List<string>? values))
-                    buildFields = values ?? buildFields;
+                    buildFields.AddRange(ExpandDefaultForwardFields(proKeys.Type, values));
             }
 
             if (buildMods.Count != 0 && buildFields.Count != 0)
@@ -363,18 +366,23 @@ namespace GenericSynthesisPatcher.Rules
 
                 fields = [.. buildFields];
 
-                forwardCache.Add(key, (mods, fields));
+                forwardCache.Add(cacheKey, (mods, fields));
 
                 return true;
             }
 
-            forwardCache.Add(key, null);
+            forwardCache.Add(cacheKey, null);
             mods = null;
             fields = null;
             return false;
         }
 
         #endregion GetValues
+
+        internal static IReadOnlyList<string> ExpandDefaultForwardFields (ILoquiRegistration recordType, IReadOnlyList<string>? configuredFields)
+            => configuredFields.SafeAny()
+                ? configuredFields
+                : Global.Game.GetForwardableProperties(recordType);
 
         /// <inheritdoc />
         public override int GetHashCode ()
@@ -805,6 +813,7 @@ namespace GenericSynthesisPatcher.Rules
                 bool nonDefault = HasForwardOption(ForwardOptions._nonDefaultMod);
                 bool nonNull = HasForwardOption(ForwardOptions._nonNullMod);
                 bool selfMasterOnly = HasForwardOption(ForwardOptions.SelfMasterOnly);
+                bool mergeSelected = HasForwardOption(ForwardOptions._merge);
 
                 int changed = 0;
                 foreach (string field in fields)
@@ -818,6 +827,17 @@ namespace GenericSynthesisPatcher.Rules
                         continue;
                     }
 
+                    if (mergeSelected)
+                    {
+                        if (proKeys.CheckOnlyIfDefault())
+                            continue;
+
+                        int merged = PropertyPathEngine.MergeSelected(proKeys, AllRecordMods);
+                        if (merged > 0)
+                            changed += merged;
+                        continue;
+                    }
+
                     if (HasForwardOption(ForwardOptions._hpu))
                     {
                         var graph = ForwardRecordGraph.Create(proKeys);
@@ -827,16 +847,23 @@ namespace GenericSynthesisPatcher.Rules
 
                         Global.Logger.WriteLog(LogLevel.Trace, LogType.RecordProcessing, $"End nodes: {string.Join(',', endNodes)}", ClassLogCode);
 
-                        var mc = proKeys.Property.Action.FindHPUIndex(proKeys, AllRecordMods, endNodes);
-                        if (mc is not null)
+                        if (proKeys.Property.Descriptor?.HasCollectionBoundary == true)
                         {
-                            Global.Logger.WriteLog(LogLevel.Trace, LogType.RecordProcessing, $"Forwarding Type: {nameof(ForwardOptions.HPU)}. From Mod: {mc.ModKey.FileName}.", ClassLogCode);
-                            Global.Logger.LogAction($"{proKeys.Property.Action.GetType().GetClassName()}.{nameof(IRecordAction.Forward)}", ClassLogCode);
-                            changed += proKeys.Property.Action.Forward(proKeys, mc);
+                            changed += PropertyPathEngine.ForwardHPU(proKeys, AllRecordMods, endNodes);
                         }
                         else
                         {
-                            Global.Logger.WriteLog(LogLevel.Trace, LogType.RecordProcessSkipped, $"Forwarding Type: {nameof(ForwardOptions.HPU)}. Skipping as no valid mod found.", ClassLogCode);
+                            var mc = Mod.FindHPUIndex(proKeys, AllRecordMods, endNodes, ClassLogCode);
+                            if (mc is not null)
+                            {
+                                Global.Logger.WriteLog(LogLevel.Trace, LogType.RecordProcessing, $"Forwarding Type: {nameof(ForwardOptions.HPU)}. From Mod: {mc.ModKey.FileName}.", ClassLogCode);
+                                Global.Logger.LogAction($"{proKeys.Property.Action.GetType().GetClassName()}.{nameof(IRecordAction.Forward)}", ClassLogCode);
+                                changed += proKeys.Property.Action.Forward(proKeys, mc);
+                            }
+                            else
+                            {
+                                Global.Logger.WriteLog(LogLevel.Trace, LogType.RecordProcessSkipped, $"Forwarding Type: {nameof(ForwardOptions.HPU)}. Skipping as no valid mod found.", ClassLogCode);
+                            }
                         }
                     }
                     else if (selfMasterOnly)

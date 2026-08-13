@@ -38,6 +38,7 @@ namespace GenericSynthesisPatcher.Rules
         _nonNullMod = 1 << 6,
         _sortMods = 1 << 7,
         _hpu = 1 << 8,
+        _merge = 1 << 9,
 
         /// <summary>
         ///     Makes it so when multiple mods listed, filters out any that have the same value as
@@ -117,5 +118,11 @@ namespace GenericSynthesisPatcher.Rules
         ///     </para>
         /// </summary>
         HPU = Default | IndexedByField | _hpu,
+
+        /// <summary>
+        ///     Merges the winning list value with values from the sources selected for the field.
+        ///     An empty source array selects all enabled overrides.
+        /// </summary>
+        Merge = IndexedByField | _merge,
     }
 }

@@ -255,7 +255,7 @@
     "Aliases": "",
     "Description": "Possible values (Loud, Normal, Silent, VeryLoud, Quiet)",
     "Example": "\"SoundLevel\": \"Loud\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "SoundLevel"
   },
   {
@@ -311,7 +311,7 @@
     "Aliases": "",
     "Description": "Possible values (None, Small, Medium, Large, ExtraLarge)",
     "Example": "\"Stagger\": \"None\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "Stagger"
   },
   {

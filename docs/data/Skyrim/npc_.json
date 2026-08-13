@@ -17,7 +17,7 @@
     "Aliases": "AIDT.Aggression",
     "Description": "Possible values (Unaggressive, Aggressive, VeryAggressive, Frenzied)",
     "Example": "\"AIData.Aggression\": \"Unaggressive\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "AIData.Aggression"
   },
   {
@@ -31,7 +31,7 @@
     "Aliases": "AIDT.Assistance",
     "Description": "Possible values (HelpsNobody, HelpsAllies, HelpsFriendsAndAllies)",
     "Example": "\"AIData.Assistance\": \"HelpsNobody\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "AIData.Assistance"
   },
   {
@@ -45,7 +45,7 @@
     "Aliases": "AIDT.Confidence",
     "Description": "Possible values (Cowardly, Cautious, Average, Brave, Foolhardy)",
     "Example": "\"AIData.Confidence\": \"Cowardly\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "AIData.Confidence"
   },
   {
@@ -59,14 +59,14 @@
     "Aliases": "AIDT.Mood",
     "Description": "Possible values (Neutral, Angry, Fear, Happy, Sad, Surprised, Puzzled, Disgusted)",
     "Example": "\"AIData.Mood\": \"Neutral\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "AIData.Mood"
   },
   {
     "Aliases": "AIDT.Responsibility",
     "Description": "Possible values (AnyCrime, ViolenceAgainstEnemies, PropertyCrimeOnly, NoCrime)",
     "Example": "\"AIData.Responsibility\": \"AnyCrime\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "AIData.Responsibility"
   },
   {
@@ -99,9 +99,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Attacks\": []",
+    "Flags": 80,
     "Name": "Attacks"
   },
   {
@@ -617,9 +617,9 @@
   },
   {
     "Aliases": "PRKR",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Perks\": []",
+    "Flags": 80,
     "Name": "Perks"
   },
   {
@@ -717,7 +717,7 @@
     "Aliases": "NAM8",
     "Description": "Possible values (Loud, Normal, Silent, VeryLoud)",
     "Example": "\"SoundLevel\": \"Loud\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "SoundLevel"
   },
   {
@@ -743,9 +743,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"TintLayers\": []",
+    "Flags": 80,
     "Name": "TintLayers"
   },
   {
@@ -775,6 +775,13 @@
     "Example": "\"VirtualMachineAdapter.ObjectFormat\": 7",
     "Flags": 29,
     "Name": "VirtualMachineAdapter.ObjectFormat"
+  },
+  {
+    "Aliases": "VMAD.Scripts",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"VirtualMachineAdapter.Scripts\": []",
+    "Flags": 81,
+    "Name": "VirtualMachineAdapter.Scripts"
   },
   {
     "Aliases": "VMAD.Version",

@@ -52,7 +52,7 @@
     "Aliases": "",
     "Description": "Possible values (Armorer, Athletics, Blade, Block, Blunt, HandToHand, HeavyArmor, Alchemy, Alteration, Conjuration, Destruction, Illusion, Mysticism, Restoration, Acrobatics, LightArmor, Marksman, Mercantile, Security, Sneak, Speechraft)",
     "Example": "\"AIData.Teaches\": \"Armorer\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "AIData.Teaches"
   },
   {
@@ -71,9 +71,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Animations\": []",
+    "Flags": 80,
     "Name": "Animations"
   },
   {
@@ -190,9 +190,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Factions\": []",
+    "Flags": 80,
     "Name": "Factions"
   },
   {
@@ -239,9 +239,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Items\": []",
+    "Flags": 80,
     "Name": "Items"
   },
   {

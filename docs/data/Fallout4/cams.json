@@ -3,14 +3,14 @@
     "Aliases": "",
     "Description": "Possible values (Shoot, Fly, Hit, Zoom)",
     "Example": "\"Action\": \"Shoot\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "Action"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Conditions\": []",
+    "Flags": 80,
     "Name": "Conditions"
   },
   {
@@ -73,7 +73,7 @@
     "Aliases": "",
     "Description": "Possible values (Attacker, Projectile, Target, LeadActor)",
     "Example": "\"Location\": \"Attacker\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "Location"
   },
   {
@@ -185,7 +185,7 @@
     "Aliases": "",
     "Description": "Possible values (Attacker, Projectile, Target, LeadActor)",
     "Example": "\"Target\": \"Attacker\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "Target"
   },
   {

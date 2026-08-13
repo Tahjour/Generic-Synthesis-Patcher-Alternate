@@ -17,7 +17,7 @@
     "Aliases": "",
     "Description": "Possible values (NoMasterParticleSystem, MasterParticleSystem, AlwaysLoaded, MasterParticleSystemAndAlwaysLoaded)",
     "Example": "\"Flags\": \"NoMasterParticleSystem\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "Flags"
   },
   {

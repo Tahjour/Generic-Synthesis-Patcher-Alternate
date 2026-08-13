@@ -35,6 +35,8 @@ namespace GenericSynthesisPatcher.Games.Universal
     public abstract class BaseGame (LoadOrder<IModListingGetter> loadOrder)
     {
         private readonly HashSet<PropertyAliasMapping> propertyAliases = [];
+        private readonly Dictionary<string, ILoquiRegistration> recordTypeAliases = new(StringComparer.Ordinal);
+        private readonly Dictionary<ILoquiRegistration, IReadOnlyList<string>> forwardableProperties = [];
         private ReadOnlyDictionary<string, ILoquiRegistration>? _recordTypes;
 
         /// <summary>
@@ -111,10 +113,13 @@ namespace GenericSynthesisPatcher.Games.Universal
                             continue;
                         }
 
-                        _ = recordTypes.TryAdd(type.Type, recordType);
-                        _ = recordTypes.TryAdd(recordType.Name, recordType);
-                        _ = recordTypes.TryAdd(recordType.Name.SeparateWords(), recordType);
+                        AddRecordTypeKey(recordTypes, type.Type, recordType);
+                        AddRecordTypeKey(recordTypes, recordType.Name, recordType);
+                        AddRecordTypeKey(recordTypes, recordType.Name.SeparateWords(), recordType);
                     }
+
+                    foreach (var alias in recordTypeAliases)
+                        _ = recordTypes.TryAdd(alias.Key, alias.Value);
 
                     _recordTypes = recordTypes.AsReadOnly();
                 }
@@ -209,10 +214,24 @@ namespace GenericSynthesisPatcher.Games.Universal
                 return value.Value;
 
             IRecordAction? action = null;
+            PropertyPathDescriptor? descriptor = null;
+            string suppliedName = propertyName;
             if (TryGetProperties(recordType, propertyName, out var properties, out propertyName, StringComparison.OrdinalIgnoreCase))
             {
+                descriptor = new PropertyPathDescriptor(
+                    recordType,
+                    suppliedName,
+                    propertyName,
+                    properties.Select((property, index) => new PropertyPathSegment(index == 0 ? recordType.ClassType : GetTraversalType(properties[index - 1].PropertyType), property)).ToArray());
+
                 var property = properties[^1];
-                action = discoverAction(property.PropertyType);
+                action = descriptor.HasCollectionBoundary ? DeepPropertyAction.Instance : discoverAction(property.PropertyType);
+
+                // Mutagen exposes many writable collection shapes without a bespoke GSP action.
+                // The structural adapter can still replace, merge, and compare those values from
+                // the cached descriptor.
+                if (action is null && descriptor.LeafIsCollection)
+                    action = DeepPropertyAction.Instance;
 
                 if (action is null && properties.Length == 1)
                 {
@@ -221,7 +240,7 @@ namespace GenericSynthesisPatcher.Games.Universal
                 }
             }
 
-            var pa = new PropertyAction(recordType, properties, propertyName, action);
+            var pa = new PropertyAction(recordType, properties, propertyName, action, descriptor);
             PropertyMappings[key] = pa;
             return pa;
         }
@@ -235,14 +254,37 @@ namespace GenericSynthesisPatcher.Games.Universal
         /// <param name="name">Property name that was provided to check if it is a valid alias.</param>
         /// <returns>Proper property name or null</returns>
         public string? GetRealPropertyName (ILoquiRegistration recordType, string name)
-            => propertyAliases.TryGetValue(new PropertyAliasMapping(recordType.ClassType, name, null), out var alias)
-            || propertyAliases.TryGetValue(new PropertyAliasMapping(null, name, null), out alias)
-            ? alias.RealPropertyName
-            : null;
+            => GetRealPropertyName(recordType.ClassType, recordType, name);
 
         public abstract IEnumerable<IModContext<IMajorRecordGetter>> GetRecords (ILoquiRegistration recordType);
 
-        public ILoquiRegistration? GetRecordType (string name) => RecordTypes.TryGetValue(name, out var recordType) ? recordType : null;
+        public ILoquiRegistration? GetRecordType (string name)
+            => RecordTypes.TryGetValue(name, out var recordType)
+            || RecordTypes.TryGetValue(PropertyAliasMapping.Normalize(name), out recordType)
+            ? recordType
+            : null;
+
+        /// <summary>
+        ///     Enumerates the same safe, top-level fields accepted by explicit default forwarding.
+        /// </summary>
+        public IReadOnlyList<string> GetForwardableProperties (ILoquiRegistration recordType)
+        {
+            if (forwardableProperties.TryGetValue(recordType, out var cached))
+                return cached;
+
+            var fields = recordType.ClassType
+                .GetProperties(BindingFlags.Public | BindingFlags.Instance)
+                .Where(IsEligibleTopLevelProperty)
+                .Select(x => GetAction(recordType, x.Name))
+                .Where(x => x.IsValid && x.Action.CanForward())
+                .Select(x => x.PropertyName)
+                .Distinct(StringComparer.Ordinal)
+                .OrderBy(x => x, StringComparer.Ordinal)
+                .ToArray();
+
+            forwardableProperties[recordType] = fields;
+            return fields;
+        }
 
         public bool ShouldCheckForSupProperties (Type type)
         {
@@ -270,6 +312,9 @@ namespace GenericSynthesisPatcher.Games.Universal
         /// </param>
         /// <returns>Record action class if found else null.</returns>
         public bool TryGetProperties (ILoquiRegistration recordType, string propertyName, out PropertyInfo[] properties, out string correctedPropertyName, StringComparison stringComparison = StringComparison.Ordinal)
+            => tryGetProperties(recordType, propertyName, out properties, out correctedPropertyName, stringComparison, new HashSet<string>(StringComparer.OrdinalIgnoreCase) { propertyName });
+
+        private bool tryGetProperties (ILoquiRegistration recordType, string propertyName, out PropertyInfo[] properties, out string correctedPropertyName, StringComparison stringComparison, HashSet<string> attemptedPaths)
         {
             var parent = recordType.ClassType;
             string[] propertyNames = propertyName.Split('.');
@@ -290,17 +335,16 @@ namespace GenericSynthesisPatcher.Games.Universal
 
                 if (!tryGetProperty(parent, propertyNames[i], out var property, stringComparison))
                 {
-                    if (i == 0)
+                    string? rpn = GetRealPropertyName(parent, recordType, propertyNames[i]);
+                    if (rpn is not null)
                     {
-                        string? rpn = GetRealPropertyName(recordType, propertyNames[i]);
-                        if (rpn is not null)
-                        {
-                            propertyNames[0] = rpn;
+                        propertyNames[i] = rpn;
+                        string expandedPath = string.Join('.', propertyNames);
 
-                            // We recall this method as is possible real property name contains a
-                            // sub-property which means total depth changes
-                            return TryGetProperties(recordType, string.Join('.', propertyNames), out properties, out correctedPropertyName, stringComparison);
-                        }
+                        // An alias can expand to a dotted path, so rebuild and resolve it as a
+                        // complete descriptor rather than attempting a partial reflection walk.
+                        if (attemptedPaths.Add(expandedPath))
+                            return tryGetProperties(recordType, expandedPath, out properties, out correctedPropertyName, stringComparison, attemptedPaths);
                     }
 
                     valid = false;
@@ -308,12 +352,13 @@ namespace GenericSynthesisPatcher.Games.Universal
                     continue;
                 }
 
-                if ((i < last) && !ShouldCheckForSupProperties(property.PropertyType))
+                Type traversalType = GetTraversalType(property.PropertyType);
+                if ((i < last) && traversalType == property.PropertyType && !ShouldCheckForSupProperties(property.PropertyType))
                     valid = false;
 
                 properties[i] = property;
                 name[i] = property.Name;
-                parent = property.PropertyType;
+                parent = traversalType;
             }
 
             correctedPropertyName = string.Join('.', name);
@@ -336,6 +381,18 @@ namespace GenericSynthesisPatcher.Games.Universal
             }
 
             _ = propertyAliases.Add(new PropertyAliasMapping(recordType?.ClassType, propertyName, realPropertyName));
+        }
+
+        /// <summary>Add a property alias scoped to a nested/subrecord CLR type.</summary>
+        protected void AddNestedAlias (Type ownerType, string propertyName, string realPropertyName)
+            => _ = propertyAliases.Add(new PropertyAliasMapping(ownerType, propertyName, realPropertyName));
+
+        /// <summary>Add an alternate record selector such as a UESP display name.</summary>
+        protected void AddRecordTypeAlias (string alias, ILoquiRegistration recordType)
+        {
+            recordTypeAliases[alias] = recordType;
+            recordTypeAliases[PropertyAliasMapping.Normalize(alias)] = recordType;
+            _recordTypes = null;
         }
 
         /// <summary>
@@ -450,6 +507,54 @@ namespace GenericSynthesisPatcher.Games.Universal
 
             property = null;
             return false;
+        }
+
+        private string? GetRealPropertyName (Type ownerType, ILoquiRegistration recordType, string name)
+        {
+            if (propertyAliases.TryGetValue(new PropertyAliasMapping(ownerType, name, null), out var alias)
+                || (ownerType != recordType.ClassType && propertyAliases.TryGetValue(new PropertyAliasMapping(recordType.ClassType, name, null), out alias))
+                || propertyAliases.TryGetValue(new PropertyAliasMapping(null, name, null), out alias))
+            {
+                return alias.RealPropertyName;
+            }
+
+            foreach (var candidate in propertyAliases)
+            {
+                if (candidate.Type is not null
+                    && (candidate.Type.IsAssignableFrom(ownerType) || ownerType.IsAssignableFrom(candidate.Type))
+                    && PropertyAliasMapping.Normalize(candidate.PropertyName) == PropertyAliasMapping.Normalize(name))
+                {
+                    return candidate.RealPropertyName;
+                }
+            }
+
+            return null;
+        }
+
+        private bool IsEligibleTopLevelProperty (PropertyInfo property)
+        {
+            if (!property.CanRead || property.GetIndexParameters().Length != 0)
+                return false;
+
+            if (HiddenProperties.Contains(property.Name)
+                || property.Name.StartsWith("Unknown", StringComparison.OrdinalIgnoreCase)
+                || property.Name.StartsWith("Unused", StringComparison.OrdinalIgnoreCase)
+                || property.Name is "FormKey" or "EditorID" or "Registration" or "StaticRegistration" or "CommonInstance" or "GameRelease" or "TitleString"
+                || property.Name.Contains("MajorRecordFlags", StringComparison.Ordinal))
+            {
+                return false;
+            }
+
+            return property.CanWrite || PropertyPathSegment.TryGetCollectionElementType(property.PropertyType) is not null;
+        }
+
+        private static Type GetTraversalType (Type propertyType)
+            => PropertyPathSegment.TryGetCollectionElementType(propertyType) ?? propertyType.RemoveNullable();
+
+        private static void AddRecordTypeKey (Dictionary<string, ILoquiRegistration> recordTypes, string key, ILoquiRegistration recordType)
+        {
+            _ = recordTypes.TryAdd(key, recordType);
+            _ = recordTypes.TryAdd(PropertyAliasMapping.Normalize(key), recordType);
         }
 
         /// <summary>

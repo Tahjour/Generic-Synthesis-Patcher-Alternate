@@ -76,14 +76,11 @@ namespace GSPTestProject
             string gameFileName = $"gsp-config-{gameData.GameName.ToLower()}.schema.json";
             string gameFilePath = Path.Join(SchemaPath, gameFileName);
 
-            List<string> allTypes = [];
-            foreach (var rt in gameData.BaseGame.AllRecordTypes())
-            {
-                if (rt.TryGetRecordType(out var _))
-                    allTypes.Add(char.ToLowerInvariant(rt.Name[0]) + rt.Name[1..]);
-            }
-
-            allTypes.Sort((a, b) => string.Compare(a, b, StringComparison.OrdinalIgnoreCase));
+            List<string> allTypes = gameData.BaseGame.RecordTypes.Keys
+                .Distinct(StringComparer.Ordinal)
+                .OrderBy(x => x, StringComparer.OrdinalIgnoreCase)
+                .ThenBy(x => x, StringComparer.Ordinal)
+                .ToList();
 
             using var writer = new StringWriter();
             using var jsonWriter = new JsonTextWriter(writer);
@@ -105,9 +102,12 @@ namespace GSPTestProject
             var recordType = def["recordType"] as JObject;
             Assert.NotNull(recordType);
 
-            // Create json array of types and add to recordTypes definition
+            // Preserve known selectors for editor suggestions while accepting any string here.
+            // Runtime preflight is authoritative because selectors are case- and separator-insensitive.
             var jsonTypes = JArray.FromObject(allTypes);
-            recordType.Add("enum", jsonTypes);
+            recordType.Add("anyOf", new JArray(
+                new JObject { ["enum"] = jsonTypes },
+                new JObject { ["type"] = "string" }));
 
             // Update $id to game specific URL
             string? id = (schema["$id"] as JValue)?.Value as string;

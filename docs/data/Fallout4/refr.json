@@ -10,7 +10,7 @@
     "Aliases": "",
     "Description": "Possible values (UseDefault, Activate, Open, OpenByDefault)",
     "Example": "\"Action\": \"UseDefault\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "Action"
   },
   {
@@ -26,6 +26,13 @@
     "Example": "\"ActivateParents.Flags\": \"ParentActivateOnly\"",
     "Flags": 93,
     "Name": "ActivateParents.Flags"
+  },
+  {
+    "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"ActivateParents.Parents\": []",
+    "Flags": 81,
+    "Name": "ActivateParents.Parents"
   },
   {
     "Aliases": "",
@@ -78,6 +85,27 @@
   },
   {
     "Aliases": "",
+    "Description": "Decimal value",
+    "Example": "\"BoundHalfExtents.X\": 3.14",
+    "Flags": 29,
+    "Name": "BoundHalfExtents.X"
+  },
+  {
+    "Aliases": "",
+    "Description": "Decimal value",
+    "Example": "\"BoundHalfExtents.Y\": 3.14",
+    "Flags": 29,
+    "Name": "BoundHalfExtents.Y"
+  },
+  {
+    "Aliases": "",
+    "Description": "Decimal value",
+    "Example": "\"BoundHalfExtents.Z\": 3.14",
+    "Flags": 29,
+    "Name": "BoundHalfExtents.Z"
+  },
+  {
+    "Aliases": "",
     "Description": "Numeric value",
     "Example": "\"CollisionLayer\": 7",
     "Flags": 28,
@@ -106,9 +134,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"DistantLodData\": []",
+    "Flags": 80,
     "Name": "DistantLodData"
   },
   {
@@ -283,7 +311,7 @@
     "Aliases": "",
     "Description": "Possible values (Easy, Medium, Hard, VeryHard)",
     "Example": "\"LevelModifier\": \"Easy\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "LevelModifier"
   },
   {
@@ -351,9 +379,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"LinkedReferences\": []",
+    "Flags": 80,
     "Name": "LinkedReferences"
   },
   {
@@ -416,7 +444,7 @@
     "Aliases": "",
     "Description": "Possible values (None, Novice1, Novice25, Advanced, Expert, Master, Barred, Chained, RequiresTerminal, Inaccessible, RequiresKey)",
     "Example": "\"Lock.Level\": \"None\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "Lock.Level"
   },
   {
@@ -458,7 +486,7 @@
     "Aliases": "",
     "Description": "Possible values (Cave, City, DiamondCity, Encampment, FactoryOrIndustrialSite, GovtBuildingOrMonument, MetroStation, MilitaryBase, NaturalLandmark, OfficeOrCivicBuilding, RuinsTown, RuinsUrban, Sanctuary, Settlement, SewerOrUtilityTunnels, Vault, Airfield, BunkerHill, Camper, Car, Church, CountryClub, CustomHouse, DriveIn, ElevatedHighway, FaneuilHall, Farm, FillingStation, Forested, Goodneighbor, Graveyard, Hospital, IndustrialDome, IndustrialStacks, Institute, IrishPride, Junkyard, Observatory, Pier, PondOrLake, Quarry, RadioactiveArea, RadioTower, Salem, School, Shipwreck, Submarine, SwanPond, SynthHead, Town, BrotherhoodofSteel, BrownstoneTownhouse, Bunker, Castle, Skyscraper, Libertalia, LowRiseBuilding, Minutemen, PoliceStation, Prydwen, RailroadFaction, Railroad, Satellite, Sentinel, USSConstitution, MechanistLairRaidersettlementVassalsettlementPotentialVassalsettlement)",
     "Example": "\"MapMarker.Type\": \"Cave\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "MapMarker.Type"
   },
   {
@@ -652,6 +680,13 @@
   },
   {
     "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Patrol.Topics\": []",
+    "Flags": 81,
+    "Name": "Patrol.Topics"
+  },
+  {
+    "Aliases": "",
     "Description": "Form Key or Editor ID",
     "Example": "\"PersistentLocation\": \"123:Skyrim.esm\" or \"PersistentLocation\": \"MyEditorID\"",
     "Flags": 28,
@@ -659,9 +694,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Portals\": []",
+    "Flags": 80,
     "Name": "Portals"
   },
   {
@@ -694,9 +729,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"PowerGridConnections\": []",
+    "Flags": 80,
     "Name": "PowerGridConnections"
   },
   {
@@ -745,7 +780,7 @@
     "Aliases": "",
     "Description": "Possible values (None, Box, Sphere, Plane, Line, Ellipsoid)",
     "Example": "\"Primitive.Type\": \"None\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "Primitive.Type"
   },
   {
@@ -827,9 +862,30 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "Decimal value",
+    "Example": "\"RagdollBipedRotation.X\": 3.14",
+    "Flags": 29,
+    "Name": "RagdollBipedRotation.X"
+  },
+  {
+    "Aliases": "",
+    "Description": "Decimal value",
+    "Example": "\"RagdollBipedRotation.Y\": 3.14",
+    "Flags": 29,
+    "Name": "RagdollBipedRotation.Y"
+  },
+  {
+    "Aliases": "",
+    "Description": "Decimal value",
+    "Example": "\"RagdollBipedRotation.Z\": 3.14",
+    "Flags": 29,
+    "Name": "RagdollBipedRotation.Z"
+  },
+  {
+    "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"RagdollData\": []",
+    "Flags": 80,
     "Name": "RagdollData"
   },
   {
@@ -1030,9 +1086,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"SplineConnections\": []",
+    "Flags": 80,
     "Name": "SplineConnections"
   },
   {
@@ -1160,6 +1216,13 @@
     "Example": "\"VirtualMachineAdapter.ObjectFormat\": 7",
     "Flags": 29,
     "Name": "VirtualMachineAdapter.ObjectFormat"
+  },
+  {
+    "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"VirtualMachineAdapter.Scripts\": []",
+    "Flags": 81,
+    "Name": "VirtualMachineAdapter.Scripts"
   },
   {
     "Aliases": "",

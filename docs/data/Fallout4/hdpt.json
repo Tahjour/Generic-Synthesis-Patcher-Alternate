@@ -8,9 +8,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Conditions\": []",
+    "Flags": 80,
     "Name": "Conditions"
   },
   {
@@ -127,9 +127,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Parts\": []",
+    "Flags": 80,
     "Name": "Parts"
   },
   {
@@ -143,7 +143,7 @@
     "Aliases": "",
     "Description": "Possible values (Misc, Face, Eyes, Hair, FacialHair, Scars, Eyebrows, Meatcaps, Teeth, HeadRear)",
     "Example": "\"Type\": \"Misc\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "Type"
   },
   {

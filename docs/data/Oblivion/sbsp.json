@@ -43,6 +43,27 @@
   },
   {
     "Aliases": "",
+    "Description": "Decimal value",
+    "Example": "\"Point.X\": 3.14",
+    "Flags": 29,
+    "Name": "Point.X"
+  },
+  {
+    "Aliases": "",
+    "Description": "Decimal value",
+    "Example": "\"Point.Y\": 3.14",
+    "Flags": 29,
+    "Name": "Point.Y"
+  },
+  {
+    "Aliases": "",
+    "Description": "Decimal value",
+    "Example": "\"Point.Z\": 3.14",
+    "Flags": 29,
+    "Name": "Point.Z"
+  },
+  {
+    "Aliases": "",
     "Description": "Numeric value",
     "Example": "\"VersionControl\": 7",
     "Flags": 30,

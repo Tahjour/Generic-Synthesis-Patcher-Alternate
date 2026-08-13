@@ -15,6 +15,20 @@
   },
   {
     "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Data.DoorTriangles\": []",
+    "Flags": 81,
+    "Name": "Data.DoorTriangles"
+  },
+  {
+    "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Data.EdgeLinks\": []",
+    "Flags": 81,
+    "Name": "Data.EdgeLinks"
+  },
+  {
+    "Aliases": "",
     "Description": "Array of 3 Single values",
     "Example": "\"Data.Max\": [1, 2, 3]",
     "Flags": 25,
@@ -103,6 +117,20 @@
     "Example": "\"Data.NavmeshVersion\": 7",
     "Flags": 29,
     "Name": "Data.NavmeshVersion"
+  },
+  {
+    "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Data.Triangles\": []",
+    "Flags": 81,
+    "Name": "Data.Triangles"
+  },
+  {
+    "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Data.Vertices\": []",
+    "Flags": 81,
+    "Name": "Data.Vertices"
   },
   {
     "Aliases": "EDID",

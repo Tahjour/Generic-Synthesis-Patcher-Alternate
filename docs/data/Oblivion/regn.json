@@ -1,9 +1,9 @@
 [
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Areas\": []",
+    "Flags": 80,
     "Name": "Areas"
   },
   {
@@ -120,6 +120,13 @@
   },
   {
     "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Objects.Objects\": []",
+    "Flags": 81,
+    "Name": "Objects.Objects"
+  },
+  {
+    "Aliases": "",
     "Description": "Numeric value",
     "Example": "\"Objects.Priority\": 7",
     "Flags": 29,
@@ -150,7 +157,7 @@
     "Aliases": "",
     "Description": "Possible values (Default, Public, Dungeon)",
     "Example": "\"Sounds.MusicType\": \"Default\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "Sounds.MusicType"
   },
   {
@@ -159,6 +166,13 @@
     "Example": "\"Sounds.Priority\": 7",
     "Flags": 29,
     "Name": "Sounds.Priority"
+  },
+  {
+    "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Sounds.Sounds\": []",
+    "Flags": 81,
+    "Name": "Sounds.Sounds"
   },
   {
     "Aliases": "",
@@ -187,6 +201,13 @@
     "Example": "\"Weather.Priority\": 7",
     "Flags": 29,
     "Name": "Weather.Priority"
+  },
+  {
+    "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Weather.Weathers\": []",
+    "Flags": 81,
+    "Name": "Weather.Weathers"
   },
   {
     "Aliases": "",

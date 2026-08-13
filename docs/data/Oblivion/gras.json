@@ -80,7 +80,7 @@
     "Aliases": "",
     "Description": "Possible values (AboveAtLeast, AboveAtMost, BelowAtLeast, BelowAtMost, EitherAtLeast, EitherAtMost, EitherAtMostAbove, EitherAtMostBelow)",
     "Example": "\"Data.UnitFromWaterMode\": \"AboveAtLeast\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "Data.UnitFromWaterMode"
   },
   {

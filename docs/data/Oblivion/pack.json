@@ -1,9 +1,9 @@
 [
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Conditions\": []",
+    "Flags": 80,
     "Name": "Conditions"
   },
   {
@@ -24,7 +24,7 @@
     "Aliases": "",
     "Description": "Possible values (Find, Follow, Escort, Eat, Sleep, Wander, Travel, Accompany, UseItemAt, Ambush, FleeNotCombat, CastMagic)",
     "Example": "\"Data.Type\": \"Find\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "Data.Type"
   },
   {
@@ -73,7 +73,7 @@
     "Aliases": "",
     "Description": "Possible values (NearReference, InCell, NearCurrentLocation, NearEditorLocation, ObjectID, ObjectType)",
     "Example": "\"Location.Type\": \"NearReference\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "Location.Type"
   },
   {
@@ -108,7 +108,7 @@
     "Aliases": "",
     "Description": "Possible values (Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Weekday, Weekend, MondayWednesdayFriday, TuesdayThursday, Any)",
     "Example": "\"Schedule.DayOfWeek\": \"Sunday\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "Schedule.DayOfWeek"
   },
   {
@@ -122,7 +122,7 @@
     "Aliases": "",
     "Description": "Possible values (January, February, March, April, May, June, July, August, September, October, November, December, Any)",
     "Example": "\"Schedule.Month\": \"January\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "Schedule.Month"
   },
   {
@@ -157,7 +157,7 @@
     "Aliases": "",
     "Description": "Possible values (SpecificReference, ObjectID, ObjectType)",
     "Example": "\"Target.ObjectType\": \"SpecificReference\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "Target.ObjectType"
   },
   {

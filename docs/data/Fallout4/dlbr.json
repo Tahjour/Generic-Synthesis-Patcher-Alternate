@@ -3,7 +3,7 @@
     "Aliases": "",
     "Description": "Possible values (Player, Command)",
     "Example": "\"Category\": \"Player\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "Category"
   },
   {

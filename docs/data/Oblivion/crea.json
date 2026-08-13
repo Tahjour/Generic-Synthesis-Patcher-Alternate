@@ -52,7 +52,7 @@
     "Aliases": "",
     "Description": "Possible values (Armorer, Athletics, Blade, Block, Blunt, HandToHand, HeavyArmor, Alchemy, Alteration, Conjuration, Destruction, Illusion, Mysticism, Restoration, Acrobatics, LightArmor, Marksman, Mercantile, Security, Sneak, Speechraft)",
     "Example": "\"AIData.Teaches\": \"Armorer\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "AIData.Teaches"
   },
   {
@@ -64,9 +64,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Animations\": []",
+    "Flags": 80,
     "Name": "Animations"
   },
   {
@@ -234,7 +234,7 @@
     "Aliases": "",
     "Description": "Possible values (None, Petty, Lesser, Common, Greater, Grand)",
     "Example": "\"Data.SoulLevel\": \"None\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "Data.SoulLevel"
   },
   {
@@ -262,7 +262,7 @@
     "Aliases": "",
     "Description": "Possible values (Creature, Daedra, Undead, Humanoid, Horse, Giant)",
     "Example": "\"Data.Type\": \"Creature\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "Data.Type"
   },
   {
@@ -288,9 +288,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Factions\": []",
+    "Flags": 80,
     "Name": "Factions"
   },
   {
@@ -323,9 +323,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Items\": []",
+    "Flags": 80,
     "Name": "Items"
   },
   {
@@ -365,9 +365,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Models\": []",
+    "Flags": 80,
     "Name": "Models"
   },
   {
@@ -400,9 +400,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Sounds\": []",
+    "Flags": 80,
     "Name": "Sounds"
   },
   {

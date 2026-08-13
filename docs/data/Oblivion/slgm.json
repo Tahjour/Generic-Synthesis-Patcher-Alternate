@@ -3,7 +3,7 @@
     "Aliases": "",
     "Description": "Possible values (None, Petty, Lesser, Common, Greater, Grand)",
     "Example": "\"ContainedSoul\": \"None\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "ContainedSoul"
   },
   {
@@ -66,7 +66,7 @@
     "Aliases": "",
     "Description": "Possible values (None, Petty, Lesser, Common, Greater, Grand)",
     "Example": "\"MaximumCapacity\": \"None\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "MaximumCapacity"
   },
   {

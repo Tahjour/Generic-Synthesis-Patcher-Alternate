@@ -346,7 +346,7 @@
     "Aliases": "",
     "Description": "Possible values (Missile, Lobber, Beam, Flame, Cone, Barrier, Arrow)",
     "Example": "\"Type\": \"Missile\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "Type"
   },
   {

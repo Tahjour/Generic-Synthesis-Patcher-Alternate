@@ -17,21 +17,21 @@
     "Aliases": "",
     "Description": "Possible values (Strength, Intelligence, Willpower, Agility, Speed, Endurance, Personality, Luck, Health, Magicka, Fatigue, Encumbrance, Armorer, Athletics, Blade, Block, Blunt, HandToHand, HeavyArmor, Alchemy, Alteration, Conjuration, Destruction, Illusion, Mysticism, Restoration, Acrobatics, LightArmor, Marksman, Mercantile, Security, Sneak, Speechraft, None)",
     "Example": "\"Data.Action\": \"Strength\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "Data.Action"
   },
   {
     "Aliases": "",
     "Description": "Possible values (Strength, Intelligence, Willpower, Agility, Speed, Endurance, Personality, Luck, Health, Magicka, Fatigue, Encumbrance, Armorer, Athletics, Blade, Block, Blunt, HandToHand, HeavyArmor, Alchemy, Alteration, Conjuration, Destruction, Illusion, Mysticism, Restoration, Acrobatics, LightArmor, Marksman, Mercantile, Security, Sneak, Speechraft, None)",
     "Example": "\"Data.Attribute\": \"Strength\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "Data.Attribute"
   },
   {
     "Aliases": "",
     "Description": "Possible values (Combat, Magic, Stealth)",
     "Example": "\"Data.Specialization\": \"Combat\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "Data.Specialization"
   },
   {
@@ -122,7 +122,7 @@
     "Aliases": "",
     "Description": "Possible values (Strength, Intelligence, Willpower, Agility, Speed, Endurance, Personality, Luck, Health, Magicka, Fatigue, Encumbrance, Armorer, Athletics, Blade, Block, Blunt, HandToHand, HeavyArmor, Alchemy, Alteration, Conjuration, Destruction, Illusion, Mysticism, Restoration, Acrobatics, LightArmor, Marksman, Mercantile, Security, Sneak, Speechraft, None)",
     "Example": "\"Skill\": \"Strength\"",
-    "Flags": 12,
+    "Flags": 28,
     "Name": "Skill"
   },
   {

@@ -1,9 +1,9 @@
 [
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"BodyData\": []",
+    "Flags": 80,
     "Name": "BodyData"
   },
   {
@@ -22,6 +22,13 @@
   },
   {
     "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Data.Height\": []",
+    "Flags": 81,
+    "Name": "Data.Height"
+  },
+  {
+    "Aliases": "",
     "Description": "Numeric value",
     "Example": "\"Data.SkillBoost0.Boost\": 7",
     "Flags": 29,
@@ -31,7 +38,7 @@
     "Aliases": "",
     "Description": "Possible values (Strength, Intelligence, Willpower, Agility, Speed, Endurance, Personality, Luck, Health, Magicka, Fatigue, Encumbrance, Armorer, Athletics, Blade, Block, Blunt, HandToHand, HeavyArmor, Alchemy, Alteration, Conjuration, Destruction, Illusion, Mysticism, Restoration, Acrobatics, LightArmor, Marksman, Mercantile, Security, Sneak, Speechraft, None)",
     "Example": "\"Data.SkillBoost0.Skill\": \"Strength\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "Data.SkillBoost0.Skill"
   },
   {
@@ -45,7 +52,7 @@
     "Aliases": "",
     "Description": "Possible values (Strength, Intelligence, Willpower, Agility, Speed, Endurance, Personality, Luck, Health, Magicka, Fatigue, Encumbrance, Armorer, Athletics, Blade, Block, Blunt, HandToHand, HeavyArmor, Alchemy, Alteration, Conjuration, Destruction, Illusion, Mysticism, Restoration, Acrobatics, LightArmor, Marksman, Mercantile, Security, Sneak, Speechraft, None)",
     "Example": "\"Data.SkillBoost1.Skill\": \"Strength\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "Data.SkillBoost1.Skill"
   },
   {
@@ -59,7 +66,7 @@
     "Aliases": "",
     "Description": "Possible values (Strength, Intelligence, Willpower, Agility, Speed, Endurance, Personality, Luck, Health, Magicka, Fatigue, Encumbrance, Armorer, Athletics, Blade, Block, Blunt, HandToHand, HeavyArmor, Alchemy, Alteration, Conjuration, Destruction, Illusion, Mysticism, Restoration, Acrobatics, LightArmor, Marksman, Mercantile, Security, Sneak, Speechraft, None)",
     "Example": "\"Data.SkillBoost2.Skill\": \"Strength\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "Data.SkillBoost2.Skill"
   },
   {
@@ -73,7 +80,7 @@
     "Aliases": "",
     "Description": "Possible values (Strength, Intelligence, Willpower, Agility, Speed, Endurance, Personality, Luck, Health, Magicka, Fatigue, Encumbrance, Armorer, Athletics, Blade, Block, Blunt, HandToHand, HeavyArmor, Alchemy, Alteration, Conjuration, Destruction, Illusion, Mysticism, Restoration, Acrobatics, LightArmor, Marksman, Mercantile, Security, Sneak, Speechraft, None)",
     "Example": "\"Data.SkillBoost3.Skill\": \"Strength\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "Data.SkillBoost3.Skill"
   },
   {
@@ -87,7 +94,7 @@
     "Aliases": "",
     "Description": "Possible values (Strength, Intelligence, Willpower, Agility, Speed, Endurance, Personality, Luck, Health, Magicka, Fatigue, Encumbrance, Armorer, Athletics, Blade, Block, Blunt, HandToHand, HeavyArmor, Alchemy, Alteration, Conjuration, Destruction, Illusion, Mysticism, Restoration, Acrobatics, LightArmor, Marksman, Mercantile, Security, Sneak, Speechraft, None)",
     "Example": "\"Data.SkillBoost4.Skill\": \"Strength\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "Data.SkillBoost4.Skill"
   },
   {
@@ -101,7 +108,7 @@
     "Aliases": "",
     "Description": "Possible values (Strength, Intelligence, Willpower, Agility, Speed, Endurance, Personality, Luck, Health, Magicka, Fatigue, Encumbrance, Armorer, Athletics, Blade, Block, Blunt, HandToHand, HeavyArmor, Alchemy, Alteration, Conjuration, Destruction, Illusion, Mysticism, Restoration, Acrobatics, LightArmor, Marksman, Mercantile, Security, Sneak, Speechraft, None)",
     "Example": "\"Data.SkillBoost5.Skill\": \"Strength\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "Data.SkillBoost5.Skill"
   },
   {
@@ -115,7 +122,7 @@
     "Aliases": "",
     "Description": "Possible values (Strength, Intelligence, Willpower, Agility, Speed, Endurance, Personality, Luck, Health, Magicka, Fatigue, Encumbrance, Armorer, Athletics, Blade, Block, Blunt, HandToHand, HeavyArmor, Alchemy, Alteration, Conjuration, Destruction, Illusion, Mysticism, Restoration, Acrobatics, LightArmor, Marksman, Mercantile, Security, Sneak, Speechraft, None)",
     "Example": "\"Data.SkillBoost6.Skill\": \"Strength\"",
-    "Flags": 13,
+    "Flags": 29,
     "Name": "Data.SkillBoost6.Skill"
   },
   {
@@ -127,9 +134,16 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Data.Weight\": []",
+    "Flags": 81,
+    "Name": "Data.Weight"
+  },
+  {
+    "Aliases": "",
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"DefaultHair\": []",
+    "Flags": 80,
     "Name": "DefaultHair"
   },
   {
@@ -162,9 +176,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"FaceData\": []",
+    "Flags": 80,
     "Name": "FaceData"
   },
   {
@@ -253,16 +267,16 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"RaceStats\": []",
+    "Flags": 80,
     "Name": "RaceStats"
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Relations\": []",
+    "Flags": 80,
     "Name": "Relations"
   },
   {
@@ -288,9 +302,9 @@
   },
   {
     "Aliases": "",
-    "Description": "",
-    "Example": "",
-    "Flags": 144,
+    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
+    "Example": "\"Voices\": []",
+    "Flags": 80,
     "Name": "Voices"
   }
 ]
