@@ -72,6 +72,8 @@ namespace GenericSynthesisPatcher
         /// </summary>
         public PropertyAction Property { get; private set; }
 
+        internal void ClearProperty () => Property = default;
+
         /// <summary>
         ///     Gets current record but if a patch record already exists it will return the patched
         ///     record, so any checks are done against updated values.

@@ -206,7 +206,7 @@ namespace GenericSynthesisPatcher
                         }
                         catch (GSPActionException ex)
                         {
-                            Global.Logger.WriteLog(LogLevel.Critical, LogType.RecordUpdateFailure, ex.Message, ClassLogCode);
+                            Global.Logger.WriteLog(LogLevel.Critical, LogType.RecordUpdateFailure, ex.ToString(), ClassLogCode);
 
                             if (Global.Settings.Logging.ContinueOnError)
                                 continue;

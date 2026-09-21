@@ -29,6 +29,7 @@ namespace GenericSynthesisPatcher.Rules
 {
     public class GSPRule : GSPBase
     {
+        internal List<string> WholeRecordInputErrors { get; } = [];
         private const int ClassLogCode = 0x1C;
         private HashSet<ListOperation>? editorIDs;
         private HashSet<FormKeyListOperation>? formIDs;
@@ -565,7 +566,9 @@ namespace GenericSynthesisPatcher.Rules
 
             foreach (var x in Forward)
             {
-                int changed = processForwardAction(proKeys, x.Key);
+                int changed = WholeRecordForward.IsTarget(x.Key.Value)
+                    ? WholeRecordForward.Run(proKeys, x.Value)
+                    : processForwardAction(proKeys, x.Key);
 
                 if (changed >= 0)
                     changes = (changes == -1) ? changed : changes + changed;

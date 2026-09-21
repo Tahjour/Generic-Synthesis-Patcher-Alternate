@@ -1,0 +1,7 @@
+[
+  {
+    "$comment": "Copy winning Grass records as complete overrides for subsequent xEdit/CK work. Sort is implicit for All only.",
+    "recordTypes": "Grass",
+    "forward": { "All": [] }
+  }
+]

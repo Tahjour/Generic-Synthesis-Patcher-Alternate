@@ -191,8 +191,15 @@
           "type": "object"
         },
         "forward": {
-          "description": "On matched records forward listed property from a non-winning version. In default mod-indexed form, an empty field array forwards every eligible field. In field-indexed form, an empty source array selects every enabled source plugin.",
-          "type": "object"
+          "description": "Forward record data. Plugin.esp: [] forwards all eligible fields. Field: [] in field-indexed mode selects all enabled sources. All: [] copies the complete winning record as an override, including master-only records, with implicit load-order sorting. All must be the only Forward key; only Default, Sort and IndexedByField options are accepted, and OnlyIfDefault must be false. Explicit All source arrays accept plugin inclusions or !Plugin.esp exclusions, not both.",
+          "type": "object",
+          "patternProperties": {
+            "^[Aa][Ll][Ll]$": { "type": "array", "items": { "type": "string" } }
+          },
+          "allOf": [{
+            "if": { "not": { "propertyNames": { "not": { "pattern": "^[Aa][Ll][Ll]$" } } } },
+            "then": { "maxProperties": 1 }
+          }]
         },
         "forwardOptions": {
           "description": "Changes the way forward works.",

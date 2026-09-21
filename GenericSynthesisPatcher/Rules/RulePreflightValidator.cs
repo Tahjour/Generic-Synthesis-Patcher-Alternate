@@ -85,6 +85,9 @@ namespace GenericSynthesisPatcher.Rules
         private static void ValidateRule (GSPRule rule, List<string> failures)
         {
             string prefix = $"Config: {rule.SourceFile ?? $"#{rule.ConfigFile}"}; group/rule: {rule.GetLogRuleID()}";
+            bool wholeRecord = rule.Forward.Keys.Any(x => WholeRecordForward.IsTarget(x.Value));
+            foreach (string error in WholeRecordForward.Validate(rule))
+                failures.Add($"{prefix}; Forward All: {error}");
             if (rule.Types.Count == 0)
             {
                 failures.Add($"{prefix}; reason: no valid record types remain after group inheritance.");
@@ -116,7 +119,12 @@ namespace GenericSynthesisPatcher.Rules
                 foreach (var key in rule.Merge.Keys)
                     ValidatePath(rule, recordType, key.Value, "Merge", x => x.CanMerge(), false, failures);
 
-                if (rule.ForwardOptions.HasFlag(ForwardOptions.IndexedByField))
+                if (wholeRecord)
+                {
+                    if (WholeRecordForward.GetMask(recordType) is null)
+                        failures.Add($"{prefix}; record type: {recordType.Name}; Forward All: no complete record copy adapter exists.");
+                }
+                else if (rule.ForwardOptions.HasFlag(ForwardOptions.IndexedByField))
                 {
                     foreach (var key in rule.Forward.Keys)
                         ValidatePath(rule, recordType, key.Value, rule.HasForwardOption(ForwardOptions._merge) ? "Forward/Merge" : "Forward", x => x.CanForward(), rule.HasForwardOption(ForwardOptions._merge), failures);

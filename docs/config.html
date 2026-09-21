@@ -203,11 +203,18 @@
                         This will forward fields from a parent that the current winning record.<br />
                         By default this is just a straight replace including if it is a list field like Items. It doesn't do any merging.<br />
                         A dotted path can traverse collections. For example, <code>Aliases</code> replaces the whole Quest alias list, while <code>Aliases.Conditions</code> correlates aliases by alias ID and changes only each alias's Conditions. Missing parents are deep-cloned from the selected source.<br />
-                        <strong>Empty arrays have two intentionally different meanings:</strong>
+                        <strong>Empty arrays have three intentionally different meanings:</strong>
                         <ul>
                             <li>Default/mod-indexed: <code>"Forward": { "Plugin.esp": [] }</code> forwards every eligible writable field for the selected record type.</li>
                             <li>Field-indexed: <code>"Forward": { "Field": [] }</code> selects every enabled source plugin for that field.</li>
+                            <li>Whole-record: <code>"Forward": { "All": [] }</code> copies each matching winning record as a complete override, even if it has never been overridden.</li>
                         </ul>
+                        <p><code>All</code> is case-insensitive and implies source selection in highest-to-lowest load-order priority. No ForwardOptions are necessary; this does not change ordinary forwarding defaults or physical record ordering in the output. Explicit plugin arrays restrict sources; arrays of <code>!Plugin.esp</code> entries exclude sources. Do not mix inclusions and exclusions. Disabled/missing plugins and the output patch are never sources.</p>
+                        <p><code>All</code> must be the only Forward key in its rule. Only Default, Sort and IndexedByField options are accepted; OnlyIfDefault is not supported. Ordinary filters still apply. Whole-record forwarding replaces earlier edits, and later rules (or Fill in the same rule) can modify the result. Each successful copy counts as one whole-record update, even if identical.</p>
+                        <p>The copy includes EditorID, flags, nulls and nested record data understood by Mutagen, but not unknown binary data or separate child/referenced records. Deleted winners remain excluded. Use this for xEdit/CK staging; no bounds recalculation or precaching is performed by the copy itself.</p>
+<pre>
+{ "RecordTypes": "Grass", "Forward": { "All": [] } }
+</pre>
                     </div>
                 </div>
 
