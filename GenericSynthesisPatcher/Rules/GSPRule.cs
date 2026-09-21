@@ -840,6 +840,8 @@ namespace GenericSynthesisPatcher.Rules
 
                     if (HasForwardOption(ForwardOptions._hpu))
                     {
+                        if (proKeys.CheckOnlyIfDefault())
+                            continue;
                         var graph = ForwardRecordGraph.Create(proKeys);
                         var endNodes = graph?.GetEndNodes(mods);
                         if (endNodes is null)

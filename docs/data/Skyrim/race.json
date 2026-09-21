@@ -113,9 +113,9 @@
   },
   {
     "Aliases": "",
-    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
-    "Example": "\"BehaviorGraph\": []",
-    "Flags": 80,
+    "Description": "Forward the complete Male/Female structure. Select Male or Female explicitly for one side; Merge requires a nested list leaf.",
+    "Example": "\"Forward\": { \"Source.esp\": [\"BehaviorGraph\"] }",
+    "Flags": 144,
     "Name": "BehaviorGraph"
   },
   {
@@ -127,9 +127,9 @@
   },
   {
     "Aliases": "",
-    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
-    "Example": "\"BodyData\": []",
-    "Flags": 80,
+    "Description": "Forward the complete Male/Female structure. Select Male or Female explicitly for one side; Merge requires a nested list leaf.",
+    "Example": "\"Forward\": { \"Source.esp\": [\"BodyData\"] }",
+    "Flags": 144,
     "Name": "BodyData"
   },
   {
@@ -190,9 +190,9 @@
   },
   {
     "Aliases": "DNAM",
-    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
-    "Example": "\"DecapitateArmors\": []",
-    "Flags": 80,
+    "Description": "Forward the complete Male/Female structure. Select Male or Female explicitly for one side; Merge requires a nested list leaf.",
+    "Example": "\"Forward\": { \"Source.esp\": [\"DecapitateArmors\"] }",
+    "Flags": 144,
     "Name": "DecapitateArmors"
   },
   {
@@ -211,9 +211,9 @@
   },
   {
     "Aliases": "HCLF",
-    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
-    "Example": "\"DefaultHairColors\": []",
-    "Flags": 80,
+    "Description": "Forward the complete Male/Female structure. Select Male or Female explicitly for one side; Merge requires a nested list leaf.",
+    "Example": "\"Forward\": { \"Source.esp\": [\"DefaultHairColors\"] }",
+    "Flags": 144,
     "Name": "DefaultHairColors"
   },
   {
@@ -264,6 +264,13 @@
     "Example": "",
     "Flags": 144,
     "Name": "FaceFxPhonemes"
+  },
+  {
+    "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "FaceFxPhonemes.Aah_LipBigAah"
   },
   {
     "Aliases": "",
@@ -575,6 +582,13 @@
   },
   {
     "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "FaceFxPhonemes.BigAah_LipDST"
+  },
+  {
+    "Aliases": "",
     "Description": "Decimal value",
     "Example": "\"FaceFxPhonemes.BigAah_LipDST.AA\": 3.14",
     "Flags": 29,
@@ -880,6 +894,13 @@
     "Example": "\"FaceFxPhonemes.BigAah_LipDST.ZH\": 3.14",
     "Flags": 29,
     "Name": "FaceFxPhonemes.BigAah_LipDST.ZH"
+  },
+  {
+    "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "FaceFxPhonemes.BMP_LipEee"
   },
   {
     "Aliases": "",
@@ -1191,6 +1212,13 @@
   },
   {
     "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "FaceFxPhonemes.ChJSh_LipFV"
+  },
+  {
+    "Aliases": "",
     "Description": "Decimal value",
     "Example": "\"FaceFxPhonemes.ChJSh_LipFV.AA\": 3.14",
     "Flags": 29,
@@ -1496,6 +1524,13 @@
     "Example": "\"FaceFxPhonemes.ChJSh_LipFV.ZH\": 3.14",
     "Flags": 29,
     "Name": "FaceFxPhonemes.ChJSh_LipFV.ZH"
+  },
+  {
+    "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "FaceFxPhonemes.DST_LipK"
   },
   {
     "Aliases": "",
@@ -1807,6 +1842,13 @@
   },
   {
     "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "FaceFxPhonemes.Eee_LipL"
+  },
+  {
+    "Aliases": "",
     "Description": "Decimal value",
     "Example": "\"FaceFxPhonemes.Eee_LipL.AA\": 3.14",
     "Flags": 29,
@@ -2112,6 +2154,13 @@
     "Example": "\"FaceFxPhonemes.Eee_LipL.ZH\": 3.14",
     "Flags": 29,
     "Name": "FaceFxPhonemes.Eee_LipL.ZH"
+  },
+  {
+    "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "FaceFxPhonemes.Eh_LipR"
   },
   {
     "Aliases": "",
@@ -2430,6 +2479,13 @@
   },
   {
     "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "FaceFxPhonemes.FV_LipTh"
+  },
+  {
+    "Aliases": "",
     "Description": "Decimal value",
     "Example": "\"FaceFxPhonemes.FV_LipTh.AA\": 3.14",
     "Flags": 29,
@@ -2735,6 +2791,13 @@
     "Example": "\"FaceFxPhonemes.FV_LipTh.ZH\": 3.14",
     "Flags": 29,
     "Name": "FaceFxPhonemes.FV_LipTh.ZH"
+  },
+  {
+    "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "FaceFxPhonemes.I"
   },
   {
     "Aliases": "",
@@ -3046,6 +3109,13 @@
   },
   {
     "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "FaceFxPhonemes.K"
+  },
+  {
+    "Aliases": "",
     "Description": "Decimal value",
     "Example": "\"FaceFxPhonemes.K.AA\": 3.14",
     "Flags": 29,
@@ -3351,6 +3421,13 @@
     "Example": "\"FaceFxPhonemes.K.ZH\": 3.14",
     "Flags": 29,
     "Name": "FaceFxPhonemes.K.ZH"
+  },
+  {
+    "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "FaceFxPhonemes.N"
   },
   {
     "Aliases": "",
@@ -3662,6 +3739,13 @@
   },
   {
     "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "FaceFxPhonemes.Oh"
+  },
+  {
+    "Aliases": "",
     "Description": "Decimal value",
     "Example": "\"FaceFxPhonemes.Oh.AA\": 3.14",
     "Flags": 29,
@@ -3967,6 +4051,13 @@
     "Example": "\"FaceFxPhonemes.Oh.ZH\": 3.14",
     "Flags": 29,
     "Name": "FaceFxPhonemes.Oh.ZH"
+  },
+  {
+    "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "FaceFxPhonemes.OohQ"
   },
   {
     "Aliases": "",
@@ -4278,6 +4369,13 @@
   },
   {
     "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "FaceFxPhonemes.R"
+  },
+  {
+    "Aliases": "",
     "Description": "Decimal value",
     "Example": "\"FaceFxPhonemes.R.AA\": 3.14",
     "Flags": 29,
@@ -4586,6 +4684,13 @@
   },
   {
     "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "FaceFxPhonemes.Th"
+  },
+  {
+    "Aliases": "",
     "Description": "Decimal value",
     "Example": "\"FaceFxPhonemes.Th.AA\": 3.14",
     "Flags": 29,
@@ -4891,6 +4996,13 @@
     "Example": "\"FaceFxPhonemes.Th.ZH\": 3.14",
     "Flags": 29,
     "Name": "FaceFxPhonemes.Th.ZH"
+  },
+  {
+    "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "FaceFxPhonemes.W"
   },
   {
     "Aliases": "",
@@ -5258,16 +5370,16 @@
   },
   {
     "Aliases": "",
-    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
-    "Example": "\"HeadData\": []",
-    "Flags": 80,
+    "Description": "Forward the complete Male/Female structure. Select Male or Female explicitly for one side; Merge requires a nested list leaf.",
+    "Example": "\"Forward\": { \"Source.esp\": [\"HeadData\"] }",
+    "Flags": 144,
     "Name": "HeadData"
   },
   {
     "Aliases": "",
-    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
-    "Example": "\"Height\": []",
-    "Flags": 80,
+    "Description": "Forward the complete Male/Female structure. Select Male or Female explicitly for one side; Merge requires a nested list leaf.",
+    "Example": "\"Forward\": { \"Source.esp\": [\"Height\"] }",
+    "Flags": 144,
     "Name": "Height"
   },
   {
@@ -5475,9 +5587,9 @@
   },
   {
     "Aliases": "ANAM",
-    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
-    "Example": "\"SkeletalModel\": []",
-    "Flags": 80,
+    "Description": "Forward the complete Male/Female structure. Select Male or Female explicitly for one side; Merge requires a nested list leaf.",
+    "Example": "\"Forward\": { \"Source.esp\": [\"SkeletalModel\"] }",
+    "Flags": 144,
     "Name": "SkeletalModel"
   },
   {
@@ -5685,16 +5797,16 @@
   },
   {
     "Aliases": "VTCK",
-    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
-    "Example": "\"Voices\": []",
-    "Flags": 80,
+    "Description": "Forward the complete Male/Female structure. Select Male or Female explicitly for one side; Merge requires a nested list leaf.",
+    "Example": "\"Forward\": { \"Source.esp\": [\"Voices\"] }",
+    "Flags": 144,
     "Name": "Voices"
   },
   {
     "Aliases": "",
-    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
-    "Example": "\"Weight\": []",
-    "Flags": 80,
+    "Description": "Forward the complete Male/Female structure. Select Male or Female explicitly for one side; Merge requires a nested list leaf.",
+    "Example": "\"Forward\": { \"Source.esp\": [\"Weight\"] }",
+    "Flags": 144,
     "Name": "Weight"
   }
 ]

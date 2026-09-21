@@ -71,6 +71,13 @@
   },
   {
     "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "Data.SubData"
+  },
+  {
+    "Aliases": "",
     "Description": "Form Key or Editor ID",
     "Example": "\"Data.SubData.AreaSound\": \"123:Skyrim.esm\" or \"Data.SubData.AreaSound\": \"MyEditorID\"",
     "Flags": 29,

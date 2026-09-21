@@ -78,9 +78,9 @@
   },
   {
     "Aliases": "",
-    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
-    "Example": "\"VertexColors\": []",
-    "Flags": 80,
+    "Description": "",
+    "Example": "",
+    "Flags": 144,
     "Name": "VertexColors"
   },
   {
@@ -92,9 +92,9 @@
   },
   {
     "Aliases": "",
-    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
-    "Example": "\"VertexHeightMap.HeightMap\": []",
-    "Flags": 81,
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
     "Name": "VertexHeightMap.HeightMap"
   },
   {
@@ -134,9 +134,9 @@
   },
   {
     "Aliases": "",
-    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
-    "Example": "\"VertexNormals\": []",
-    "Flags": 80,
+    "Description": "",
+    "Example": "",
+    "Flags": 144,
     "Name": "VertexNormals"
   }
 ]

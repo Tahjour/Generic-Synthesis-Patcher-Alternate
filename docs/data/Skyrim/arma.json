@@ -64,9 +64,9 @@
   },
   {
     "Aliases": "",
-    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
-    "Example": "\"FirstPersonModel\": []",
-    "Flags": 80,
+    "Description": "Forward the complete Male/Female structure. Select Male or Female explicitly for one side; Merge requires a nested list leaf.",
+    "Example": "\"Forward\": { \"Source.esp\": [\"FirstPersonModel\"] }",
+    "Flags": 144,
     "Name": "FirstPersonModel"
   },
   {
@@ -106,9 +106,9 @@
   },
   {
     "Aliases": "",
-    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
-    "Example": "\"Priority\": []",
-    "Flags": 80,
+    "Description": "Forward the complete Male/Female structure. Select Male or Female explicitly for one side; Merge requires a nested list leaf.",
+    "Example": "\"Forward\": { \"Source.esp\": [\"Priority\"] }",
+    "Flags": 144,
     "Name": "Priority"
   },
   {
@@ -120,9 +120,9 @@
   },
   {
     "Aliases": "",
-    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
-    "Example": "\"SkinTexture\": []",
-    "Flags": 80,
+    "Description": "Forward the complete Male/Female structure. Select Male or Female explicitly for one side; Merge requires a nested list leaf.",
+    "Example": "\"Forward\": { \"Source.esp\": [\"SkinTexture\"] }",
+    "Flags": 144,
     "Name": "SkinTexture"
   },
   {
@@ -134,9 +134,9 @@
   },
   {
     "Aliases": "",
-    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
-    "Example": "\"TextureSwapList\": []",
-    "Flags": 80,
+    "Description": "Forward the complete Male/Female structure. Select Male or Female explicitly for one side; Merge requires a nested list leaf.",
+    "Example": "\"Forward\": { \"Source.esp\": [\"TextureSwapList\"] }",
+    "Flags": 144,
     "Name": "TextureSwapList"
   },
   {
@@ -176,16 +176,16 @@
   },
   {
     "Aliases": "",
-    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
-    "Example": "\"WeightSliderEnabled\": []",
-    "Flags": 80,
+    "Description": "Forward the complete Male/Female structure. Select Male or Female explicitly for one side; Merge requires a nested list leaf.",
+    "Example": "\"Forward\": { \"Source.esp\": [\"WeightSliderEnabled\"] }",
+    "Flags": 144,
     "Name": "WeightSliderEnabled"
   },
   {
     "Aliases": "",
-    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
-    "Example": "\"WorldModel\": []",
-    "Flags": 80,
+    "Description": "Forward the complete Male/Female structure. Select Male or Female explicitly for one side; Merge requires a nested list leaf.",
+    "Example": "\"Forward\": { \"Source.esp\": [\"WorldModel\"] }",
+    "Flags": 144,
     "Name": "WorldModel"
   }
 ]

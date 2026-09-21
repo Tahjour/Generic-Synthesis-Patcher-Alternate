@@ -78,12 +78,16 @@ namespace GenericSynthesisPatcher.Rules
             }
             catch (GSPActionException ex)
             {
-                Global.Logger.WriteLog(LogLevel.Critical, LogType.RecordUpdateFailure, ex.Message, ClassLogCode);
-                return Global.Settings.Logging.ContinueOnError ? 0 : throw new GSPActionException(proKeys, "Group Processing", ex);
+                Global.Logger.WriteLog(LogLevel.Critical, LogType.RecordUpdateFailure, ex.ToString(), ClassLogCode);
+                if (Global.Settings.Logging.ContinueOnError)
+                    return 0;
+                throw;
             }
             catch (Exception ex)
             {
-                Global.Logger.WriteLog(LogLevel.Critical, LogType.RecordUpdateFailure, ex.Message, ClassLogCode);
+                Global.Logger.WriteLog(LogLevel.Critical, LogType.RecordUpdateFailure, ex.ToString(), ClassLogCode);
+                if (Global.Settings.Logging.ContinueOnError)
+                    return 0;
                 throw new GSPActionException(proKeys, "Group Processing", ex);
             }
         }

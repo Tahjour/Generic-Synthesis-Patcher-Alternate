@@ -18,6 +18,8 @@ namespace GenericSynthesisPatcher.Rules
     internal static class RulePreflightValidator
     {
         private const int ClassLogCode = 0x21;
+        private static readonly string[] GenderedChildListCandidates =
+            ["Male.Model.AlternateTextures", "Female.Model.AlternateTextures", "Male.AlternateTextures", "Female.AlternateTextures"];
 
         public static bool Validate (IEnumerable<GSPBase> roots, IEnumerable<string>? initialErrors = null)
         {
@@ -141,6 +143,21 @@ namespace GenericSynthesisPatcher.Rules
             if (!property.IsValid)
             {
                 failures.Add(BuildPathFailure(rule, recordType, suppliedPath, canonical, property, actionName, "field does not exist, is computed/read-only, or has no safe copy adapter"));
+                return;
+            }
+
+            if ((requiresListLeaf || actionName == "Merge")
+                && PropertyPathSegment.IsGendered(property.Properties[^1].PropertyType))
+            {
+                var childLists = GenderedChildListCandidates
+                    .Select(child => canonical + "." + child)
+                    .Where(child => Global.Game.GetAction(recordType, child).Descriptor?.LeafIsCollection == true)
+                    .ToArray();
+                string alternatives = childLists.Length == 0
+                    ? "Select an actual nested list leaf, if one exists."
+                    : "Applicable child-list paths: " + string.Join(", ", childLists) + ".";
+                failures.Add(BuildPathFailure(rule, recordType, suppliedPath, canonical, property, actionName,
+                    $"'{canonical}' is a Male/Female structure, not a list. Forward the whole value or either side. {alternatives}"));
                 return;
             }
 

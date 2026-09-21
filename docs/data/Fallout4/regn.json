@@ -43,6 +43,13 @@
   },
   {
     "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "Grasses.Icons"
+  },
+  {
+    "Aliases": "",
     "Description": "String value",
     "Example": "\"Grasses.Icons.InventoryImage\": \"Hello\"",
     "Flags": 29,
@@ -103,6 +110,13 @@
     "Example": "\"Land.Flags\": \"Override\"",
     "Flags": 93,
     "Name": "Land.Flags"
+  },
+  {
+    "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "Land.Icons"
   },
   {
     "Aliases": "",
@@ -169,6 +183,13 @@
   },
   {
     "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "Map.Icons"
+  },
+  {
+    "Aliases": "",
     "Description": "String value",
     "Example": "\"Map.Icons.InventoryImage\": \"Hello\"",
     "Flags": 29,
@@ -232,6 +253,13 @@
   },
   {
     "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "Objects.Icons"
+  },
+  {
+    "Aliases": "",
     "Description": "String value",
     "Example": "\"Objects.Icons.InventoryImage\": \"Hello\"",
     "Flags": 29,
@@ -292,6 +320,13 @@
     "Example": "\"Sounds.Flags\": \"Override\"",
     "Flags": 93,
     "Name": "Sounds.Flags"
+  },
+  {
+    "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "Sounds.Icons"
   },
   {
     "Aliases": "",
@@ -369,6 +404,13 @@
     "Example": "\"Weather.Flags\": \"Override\"",
     "Flags": 93,
     "Name": "Weather.Flags"
+  },
+  {
+    "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "Weather.Icons"
   },
   {
     "Aliases": "",

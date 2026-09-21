@@ -49,6 +49,20 @@
     "Name": "Icons"
   },
   {
+    "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "Icons.LargeIconFilename"
+  },
+  {
+    "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "Icons.SmallIconFilename"
+  },
+  {
     "Aliases": "INAM",
     "Description": "Form Key or Editor ID",
     "Example": "\"InventoryArt\": \"123:Skyrim.esm\" or \"InventoryArt\": \"MyEditorID\"",
@@ -103,6 +117,13 @@
     "Example": "\"Model.Data\": [0x1A,0x00,0x3F]",
     "Flags": 25,
     "Name": "Model.Data"
+  },
+  {
+    "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "Model.File"
   },
   {
     "Aliases": "FULL",

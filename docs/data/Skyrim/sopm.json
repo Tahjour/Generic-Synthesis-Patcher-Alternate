@@ -126,6 +126,13 @@
     "Name": "OutputChannels"
   },
   {
+    "Aliases": "ONAM.Channel0",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "OutputChannels.Channel0"
+  },
+  {
     "Aliases": "ONAM.Channel0.BL",
     "Description": "Numeric value",
     "Example": "\"OutputChannels.Channel0.BL\": 7",
@@ -182,6 +189,13 @@
     "Name": "OutputChannels.Channel0.RR"
   },
   {
+    "Aliases": "ONAM.Channel1",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "OutputChannels.Channel1"
+  },
+  {
     "Aliases": "ONAM.Channel1.BL",
     "Description": "Numeric value",
     "Example": "\"OutputChannels.Channel1.BL\": 7",
@@ -236,6 +250,13 @@
     "Example": "\"OutputChannels.Channel1.RR\": 7",
     "Flags": 29,
     "Name": "OutputChannels.Channel1.RR"
+  },
+  {
+    "Aliases": "ONAM.Channel2",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "OutputChannels.Channel2"
   },
   {
     "Aliases": "ONAM.Channel2.BL",

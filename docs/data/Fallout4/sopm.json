@@ -176,6 +176,13 @@
   },
   {
     "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "OutputChannels.Channel0"
+  },
+  {
+    "Aliases": "",
     "Description": "Numeric value",
     "Example": "\"OutputChannels.Channel0.BL\": 7",
     "Flags": 29,
@@ -232,6 +239,13 @@
   },
   {
     "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "OutputChannels.Channel1"
+  },
+  {
+    "Aliases": "",
     "Description": "Numeric value",
     "Example": "\"OutputChannels.Channel1.BL\": 7",
     "Flags": 29,
@@ -285,6 +299,13 @@
     "Example": "\"OutputChannels.Channel1.RR\": 7",
     "Flags": 29,
     "Name": "OutputChannels.Channel1.RR"
+  },
+  {
+    "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "OutputChannels.Channel2"
   },
   {
     "Aliases": "",

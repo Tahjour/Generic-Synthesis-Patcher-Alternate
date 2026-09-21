@@ -84,6 +84,13 @@
     "Name": "Model.Data"
   },
   {
+    "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "Model.File"
+  },
+  {
     "Aliases": "OBND",
     "Description": "Object bounds array of numbers. [x1, y1, z1, x2, y2, z2]",
     "Example": "\"ObjectBounds\": [6,6,6,9,9,9]",

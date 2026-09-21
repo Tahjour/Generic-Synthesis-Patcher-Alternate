@@ -78,6 +78,20 @@
   },
   {
     "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "Icons.LargeIconFilename"
+  },
+  {
+    "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "Icons.SmallIconFilename"
+  },
+  {
+    "Aliases": "",
     "Description": "True / False",
     "Example": "\"IsCompressed\": true",
     "Flags": 30,
@@ -131,6 +145,13 @@
     "Example": "\"Model.Data\": [0x1A,0x00,0x3F]",
     "Flags": 25,
     "Name": "Model.Data"
+  },
+  {
+    "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "Model.File"
   },
   {
     "Aliases": "FULL",

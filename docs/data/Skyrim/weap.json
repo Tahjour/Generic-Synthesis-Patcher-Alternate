@@ -302,6 +302,13 @@
   },
   {
     "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "Data.Unknown4"
+  },
+  {
+    "Aliases": "",
     "Description": "Numeric value",
     "Example": "\"Data.Unknown5\": 7",
     "Flags": 29,
@@ -392,6 +399,20 @@
     "Name": "Icons"
   },
   {
+    "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "Icons.LargeIconFilename"
+  },
+  {
+    "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "Icons.SmallIconFilename"
+  },
+  {
     "Aliases": "UNAM",
     "Description": "Form Key or Editor ID",
     "Example": "\"IdleSound\": \"123:Skyrim.esm\" or \"IdleSound\": \"MyEditorID\"",
@@ -460,6 +481,13 @@
     "Example": "\"Model.Data\": [0x1A,0x00,0x3F]",
     "Flags": 25,
     "Name": "Model.Data"
+  },
+  {
+    "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "Model.File"
   },
   {
     "Aliases": "FULL",
@@ -572,6 +600,13 @@
     "Example": "\"ScopeModel.Data\": [0x1A,0x00,0x3F]",
     "Flags": 25,
     "Name": "ScopeModel.Data"
+  },
+  {
+    "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "ScopeModel.File"
   },
   {
     "Aliases": "",

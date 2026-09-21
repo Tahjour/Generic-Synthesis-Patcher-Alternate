@@ -71,6 +71,13 @@
   },
   {
     "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "Aurora.File"
+  },
+  {
+    "Aliases": "",
     "Description": "Memory slice in form of array of bytes",
     "Example": "\"BNAM\": [0x1A,0x00,0x3F]",
     "Flags": 24,
@@ -187,6 +194,13 @@
     "Example": "",
     "Flags": 144,
     "Name": "DirectionalAmbientLightingColors"
+  },
+  {
+    "Aliases": "DALC.Day",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "DirectionalAmbientLightingColors.Day"
   },
   {
     "Aliases": "DALC.Day.DirectionalXMinus",
@@ -315,6 +329,13 @@
     "Name": "DirectionalAmbientLightingColors.Item.Versioning"
   },
   {
+    "Aliases": "DALC.Night",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "DirectionalAmbientLightingColors.Night"
+  },
+  {
     "Aliases": "DALC.Night.DirectionalXMinus",
     "Description": "Color value as number, array of 3 or 4 numbers, or a string in the format of either Hex value (\"#0A0A0A0A\") or named color \"Blue\". Array and Hex are ARGB. Alpha portion of ARGB may be ignored for some fields and can be omitted.",
     "Example": "\"DirectionalAmbientLightingColors.Night.DirectionalXMinus\": [40,50,60]",
@@ -378,6 +399,13 @@
     "Name": "DirectionalAmbientLightingColors.Night.Versioning"
   },
   {
+    "Aliases": "DALC.Sunrise",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "DirectionalAmbientLightingColors.Sunrise"
+  },
+  {
     "Aliases": "DALC.Sunrise.DirectionalXMinus",
     "Description": "Color value as number, array of 3 or 4 numbers, or a string in the format of either Hex value (\"#0A0A0A0A\") or named color \"Blue\". Array and Hex are ARGB. Alpha portion of ARGB may be ignored for some fields and can be omitted.",
     "Example": "\"DirectionalAmbientLightingColors.Sunrise.DirectionalXMinus\": [40,50,60]",
@@ -439,6 +467,13 @@
     "Example": "\"DirectionalAmbientLightingColors.Sunrise.Versioning\": \"Break0\"",
     "Flags": 95,
     "Name": "DirectionalAmbientLightingColors.Sunrise.Versioning"
+  },
+  {
+    "Aliases": "DALC.Sunset",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "DirectionalAmbientLightingColors.Sunset"
   },
   {
     "Aliases": "DALC.Sunset.DirectionalXMinus",

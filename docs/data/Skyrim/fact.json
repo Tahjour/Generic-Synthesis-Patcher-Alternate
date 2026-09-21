@@ -231,6 +231,13 @@
     "Name": "VendorLocation.Radius"
   },
   {
+    "Aliases": "PLVD.Target",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "VendorLocation.Target"
+  },
+  {
     "Aliases": "VENV",
     "Description": "",
     "Example": "",

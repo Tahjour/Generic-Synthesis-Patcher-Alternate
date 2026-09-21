@@ -281,6 +281,13 @@
   },
   {
     "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "DirectionalAmbientLightingColors.Day"
+  },
+  {
+    "Aliases": "",
     "Description": "Color value as number, array of 3 or 4 numbers, or a string in the format of either Hex value (\"#0A0A0A0A\") or named color \"Blue\". Array and Hex are ARGB. Alpha portion of ARGB may be ignored for some fields and can be omitted.",
     "Example": "\"DirectionalAmbientLightingColors.Day.DirectionalXMinus\": [40,50,60]",
     "Flags": 25,
@@ -337,6 +344,13 @@
   },
   {
     "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "DirectionalAmbientLightingColors.EarlySunrise"
+  },
+  {
+    "Aliases": "",
     "Description": "Color value as number, array of 3 or 4 numbers, or a string in the format of either Hex value (\"#0A0A0A0A\") or named color \"Blue\". Array and Hex are ARGB. Alpha portion of ARGB may be ignored for some fields and can be omitted.",
     "Example": "\"DirectionalAmbientLightingColors.EarlySunrise.DirectionalXMinus\": [40,50,60]",
     "Flags": 25,
@@ -390,6 +404,13 @@
     "Example": "\"DirectionalAmbientLightingColors.EarlySunrise.Specular\": [40,50,60]",
     "Flags": 25,
     "Name": "DirectionalAmbientLightingColors.EarlySunrise.Specular"
+  },
+  {
+    "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "DirectionalAmbientLightingColors.EarlySunset"
   },
   {
     "Aliases": "",
@@ -505,6 +526,13 @@
   },
   {
     "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "DirectionalAmbientLightingColors.LateSunrise"
+  },
+  {
+    "Aliases": "",
     "Description": "Color value as number, array of 3 or 4 numbers, or a string in the format of either Hex value (\"#0A0A0A0A\") or named color \"Blue\". Array and Hex are ARGB. Alpha portion of ARGB may be ignored for some fields and can be omitted.",
     "Example": "\"DirectionalAmbientLightingColors.LateSunrise.DirectionalXMinus\": [40,50,60]",
     "Flags": 25,
@@ -558,6 +586,13 @@
     "Example": "\"DirectionalAmbientLightingColors.LateSunrise.Specular\": [40,50,60]",
     "Flags": 25,
     "Name": "DirectionalAmbientLightingColors.LateSunrise.Specular"
+  },
+  {
+    "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "DirectionalAmbientLightingColors.LateSunset"
   },
   {
     "Aliases": "",
@@ -617,6 +652,13 @@
   },
   {
     "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "DirectionalAmbientLightingColors.Night"
+  },
+  {
+    "Aliases": "",
     "Description": "Color value as number, array of 3 or 4 numbers, or a string in the format of either Hex value (\"#0A0A0A0A\") or named color \"Blue\". Array and Hex are ARGB. Alpha portion of ARGB may be ignored for some fields and can be omitted.",
     "Example": "\"DirectionalAmbientLightingColors.Night.DirectionalXMinus\": [40,50,60]",
     "Flags": 25,
@@ -673,6 +715,13 @@
   },
   {
     "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "DirectionalAmbientLightingColors.Sunrise"
+  },
+  {
+    "Aliases": "",
     "Description": "Color value as number, array of 3 or 4 numbers, or a string in the format of either Hex value (\"#0A0A0A0A\") or named color \"Blue\". Array and Hex are ARGB. Alpha portion of ARGB may be ignored for some fields and can be omitted.",
     "Example": "\"DirectionalAmbientLightingColors.Sunrise.DirectionalXMinus\": [40,50,60]",
     "Flags": 25,
@@ -726,6 +775,13 @@
     "Example": "\"DirectionalAmbientLightingColors.Sunrise.Specular\": [40,50,60]",
     "Flags": 25,
     "Name": "DirectionalAmbientLightingColors.Sunrise.Specular"
+  },
+  {
+    "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "DirectionalAmbientLightingColors.Sunset"
   },
   {
     "Aliases": "",
@@ -1552,6 +1608,13 @@
     "Example": "\"Magic.OnWeatherActivateThreshold\": 3.14",
     "Flags": 29,
     "Name": "Magic.OnWeatherActivateThreshold"
+  },
+  {
+    "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "Magic.Unknown"
   },
   {
     "Aliases": "",

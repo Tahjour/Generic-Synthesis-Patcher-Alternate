@@ -35,6 +35,13 @@
     "Name": "CloudModel.Data"
   },
   {
+    "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "CloudModel.File"
+  },
+  {
     "Aliases": "NAMA",
     "Description": "Decimal value",
     "Example": "\"DistantLodMultiplier\": 3.14",

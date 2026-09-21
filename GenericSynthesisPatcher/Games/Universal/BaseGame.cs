@@ -233,10 +233,9 @@ namespace GenericSynthesisPatcher.Games.Universal
                 if (action is null && descriptor.LeafIsCollection)
                     action = DeepPropertyAction.Instance;
 
-                if (action is null && properties.Length == 1)
+                if (action is null && PropertyPathEngine.CanUseFieldMask(descriptor))
                 {
-                    if (TranslationMaskFactory.TryCreate(recordType, false, [propertyName], out _))
-                        action = DeepCopyInAction.Instance;
+                    action = DeepCopyInAction.Instance;
                 }
             }
 

@@ -22,6 +22,34 @@
   },
   {
     "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "Data.SunriseBegin"
+  },
+  {
+    "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "Data.SunriseEnd"
+  },
+  {
+    "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "Data.SunsetBegin"
+  },
+  {
+    "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "Data.SunsetEnd"
+  },
+  {
+    "Aliases": "",
     "Description": "Numeric value",
     "Example": "\"Data.Volatility\": 7",
     "Flags": 29,

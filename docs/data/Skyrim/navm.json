@@ -120,6 +120,13 @@
   },
   {
     "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "Data.Parent"
+  },
+  {
+    "Aliases": "",
     "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
     "Example": "\"Data.Triangles\": []",
     "Flags": 81,

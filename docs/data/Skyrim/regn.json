@@ -36,6 +36,27 @@
   },
   {
     "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "Grasses.Icons"
+  },
+  {
+    "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "Grasses.Icons.LargeIconFilename"
+  },
+  {
+    "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "Grasses.Icons.SmallIconFilename"
+  },
+  {
+    "Aliases": "",
     "Description": "Numeric value",
     "Example": "\"Grasses.Priority\": 7",
     "Flags": 29,
@@ -68,6 +89,27 @@
     "Example": "\"Land.Flags\": \"Override\"",
     "Flags": 93,
     "Name": "Land.Flags"
+  },
+  {
+    "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "Land.Icons"
+  },
+  {
+    "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "Land.Icons.LargeIconFilename"
+  },
+  {
+    "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "Land.Icons.SmallIconFilename"
   },
   {
     "Aliases": "",
@@ -106,6 +148,27 @@
   },
   {
     "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "Map.Icons"
+  },
+  {
+    "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "Map.Icons.LargeIconFilename"
+  },
+  {
+    "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "Map.Icons.SmallIconFilename"
+  },
+  {
+    "Aliases": "",
     "Description": "String value",
     "Example": "\"Map.Name\": \"Hello\"",
     "Flags": 29,
@@ -138,6 +201,27 @@
     "Example": "\"Objects.Flags\": \"Override\"",
     "Flags": 93,
     "Name": "Objects.Flags"
+  },
+  {
+    "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "Objects.Icons"
+  },
+  {
+    "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "Objects.Icons.LargeIconFilename"
+  },
+  {
+    "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "Objects.Icons.SmallIconFilename"
   },
   {
     "Aliases": "",
@@ -180,6 +264,27 @@
     "Example": "\"Sounds.Flags\": \"Override\"",
     "Flags": 93,
     "Name": "Sounds.Flags"
+  },
+  {
+    "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "Sounds.Icons"
+  },
+  {
+    "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "Sounds.Icons.LargeIconFilename"
+  },
+  {
+    "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "Sounds.Icons.SmallIconFilename"
   },
   {
     "Aliases": "",
@@ -229,6 +334,27 @@
     "Example": "\"Weather.Flags\": \"Override\"",
     "Flags": 93,
     "Name": "Weather.Flags"
+  },
+  {
+    "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "Weather.Icons"
+  },
+  {
+    "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "Weather.Icons.LargeIconFilename"
+  },
+  {
+    "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "Weather.Icons.SmallIconFilename"
   },
   {
     "Aliases": "",

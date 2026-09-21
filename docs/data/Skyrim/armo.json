@@ -316,9 +316,9 @@
   },
   {
     "Aliases": "",
-    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
-    "Example": "\"WorldModel\": []",
-    "Flags": 80,
+    "Description": "Forward the complete Male/Female structure. Select Male or Female explicitly for one side; Merge requires a nested list leaf.",
+    "Example": "\"Forward\": { \"Source.esp\": [\"WorldModel\"] }",
+    "Flags": 144,
     "Name": "WorldModel"
   }
 ]

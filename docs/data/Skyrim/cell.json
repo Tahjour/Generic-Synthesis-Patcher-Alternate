@@ -183,16 +183,23 @@
   },
   {
     "Aliases": "",
-    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
-    "Example": "\"Landscape.VertexColors\": []",
-    "Flags": 81,
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
     "Name": "Landscape.VertexColors"
   },
   {
     "Aliases": "",
-    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
-    "Example": "\"Landscape.VertexHeightMap.HeightMap\": []",
-    "Flags": 81,
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "Landscape.VertexHeightMap"
+  },
+  {
+    "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
     "Name": "Landscape.VertexHeightMap.HeightMap"
   },
   {
@@ -232,9 +239,9 @@
   },
   {
     "Aliases": "",
-    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
-    "Example": "\"Landscape.VertexNormals\": []",
-    "Flags": 81,
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
     "Name": "Landscape.VertexNormals"
   },
   {
@@ -250,6 +257,13 @@
     "Example": "\"Lighting.AmbientColor\": [40,50,60]",
     "Flags": 25,
     "Name": "Lighting.AmbientColor"
+  },
+  {
+    "Aliases": "XCLL.AmbientColors",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "Lighting.AmbientColors"
   },
   {
     "Aliases": "XCLL.AmbientColors.DirectionalXMinus",

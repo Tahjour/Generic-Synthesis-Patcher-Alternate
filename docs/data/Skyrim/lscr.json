@@ -42,6 +42,20 @@
     "Name": "Icons"
   },
   {
+    "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "Icons.LargeIconFilename"
+  },
+  {
+    "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "Icons.SmallIconFilename"
+  },
+  {
     "Aliases": "RNAM",
     "Description": "Array of 3 Int16 values",
     "Example": "\"InitialRotation\": [1, 2, 3]",

@@ -70,6 +70,13 @@
     "Name": "Model.Data"
   },
   {
+    "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "Model.File"
+  },
+  {
     "Aliases": "DATA",
     "Description": "Numeric value",
     "Example": "\"NodeIndex\": 7",

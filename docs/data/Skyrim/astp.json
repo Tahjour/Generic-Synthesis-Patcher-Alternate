@@ -43,9 +43,9 @@
   },
   {
     "Aliases": "",
-    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
-    "Example": "\"ParentTitle\": []",
-    "Flags": 80,
+    "Description": "Forward the complete Male/Female structure. Select Male or Female explicitly for one side; Merge requires a nested list leaf.",
+    "Example": "\"Forward\": { \"Source.esp\": [\"ParentTitle\"] }",
+    "Flags": 144,
     "Name": "ParentTitle"
   },
   {
@@ -57,9 +57,9 @@
   },
   {
     "Aliases": "",
-    "Description": "A writable value reached by correlating each parent collection entry by stable identity.",
-    "Example": "\"Title\": []",
-    "Flags": 80,
+    "Description": "Forward the complete Male/Female structure. Select Male or Female explicitly for one side; Merge requires a nested list leaf.",
+    "Example": "\"Forward\": { \"Source.esp\": [\"Title\"] }",
+    "Flags": 144,
     "Name": "Title"
   },
   {

@@ -50,6 +50,20 @@
   },
   {
     "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "Icons.LargeIconFilename"
+  },
+  {
+    "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "Icons.SmallIconFilename"
+  },
+  {
+    "Aliases": "",
     "Description": "True / False",
     "Example": "\"IsCompressed\": true",
     "Flags": 30,
@@ -152,6 +166,13 @@
     "Example": "\"VirtualMachineAdapter.ObjectFormat\": 7",
     "Flags": 29,
     "Name": "VirtualMachineAdapter.ObjectFormat"
+  },
+  {
+    "Aliases": "VMAD.ScriptFragments",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "VirtualMachineAdapter.ScriptFragments"
   },
   {
     "Aliases": "VMAD.ScriptFragments.ExtraBindDataVersion",

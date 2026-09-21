@@ -274,6 +274,13 @@
   },
   {
     "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "VirtualMachineAdapter.Script"
+  },
+  {
+    "Aliases": "",
     "Description": "Possible values (Local, Inherited, Removed, InheritedAndRemoved)",
     "Example": "\"VirtualMachineAdapter.Script.Flags\": \"Local\"",
     "Flags": 29,

@@ -15,6 +15,7 @@ using Loqui;
 using Mutagen.Bethesda.Plugins;
 using Mutagen.Bethesda.Plugins.Cache;
 using Mutagen.Bethesda.Plugins.Records;
+using Mutagen.Bethesda.Plugins.Assets;
 using Mutagen.Bethesda.Strings;
 
 namespace GenericSynthesisPatcher.Helpers
@@ -37,6 +38,9 @@ namespace GenericSynthesisPatcher.Helpers
         public static bool Equals (PropertyAction property, object left, object right)
         {
             var descriptor = RequireDescriptor(property);
+            if (!HasGenderedSegment(descriptor) && !descriptor.HasCollectionBoundary && left is IMajorRecordGetter lhsRecord
+                && right is IMajorRecordGetter rhsRecord && TryGetHpuMask(descriptor, out var mask))
+                return lhsRecord.Equals(rhsRecord, mask);
             var lhs = ReadLeaves(left, descriptor);
             var rhs = ReadLeaves(right, descriptor);
 
@@ -50,7 +54,24 @@ namespace GenericSynthesisPatcher.Helpers
         }
 
         internal static int Forward (PropertyAction property, object source, object target)
-            => ForwardRecursive(source, target, RequireDescriptor(property), 0, [], null, 0);
+        {
+            var descriptor = RequireDescriptor(property);
+            if (!HasGenderedSegment(descriptor) && !descriptor.HasCollectionBoundary && source is IMajorRecordGetter sourceRecord
+                && target is IMajorRecordInternal targetRecord && TryGetHpuMask(descriptor, out var mask))
+            {
+                if (((IMajorRecordGetter)targetRecord).Equals(sourceRecord, mask))
+                    return 0;
+                // Mutagen 0.54.4 copies some gendered fields even when their mask is off.
+                // Preserve those unselected fields around the generated copy operation.
+                var preserved = target.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance)
+                    .Where(p => p.CanRead && p.CanWrite && PropertyPathSegment.IsGendered(p.PropertyType))
+                    .Select(p => (Property: p, Value: p.GetValue(target))).ToArray();
+                try { targetRecord.DeepCopyIn(sourceRecord, mask); }
+                finally { foreach (var entry in preserved) entry.Property.SetValue(target, entry.Value); }
+                return 1;
+            }
+            return ForwardRecursive(source, target, descriptor, 0, [], null, 0);
+        }
 
         public static int ForwardHPU (ProcessingKeys proKeys, IEnumerable<IModContext<IMajorRecordGetter>> allRecordMods, IEnumerable<ModKey>? endNodes)
         {
@@ -139,7 +160,7 @@ namespace GenericSynthesisPatcher.Helpers
         public static IModContext<IMajorRecordGetter>? FindHPU (ProcessingKeys proKeys, IEnumerable<IModContext<IMajorRecordGetter>> allRecordMods, IEnumerable<ModKey>? endNodes)
         {
             var descriptor = RequireDescriptor(proKeys.Property);
-            if (!descriptor.HasCollectionBoundary && TryGetHpuMask(descriptor, out var mask))
+            if (!HasGenderedSegment(descriptor) && !descriptor.HasCollectionBoundary && TryGetHpuMask(descriptor, out var mask))
                 return FindHPUWithMask(proKeys, allRecordMods, endNodes, descriptor, mask);
 
             bool nonNull = proKeys.Rule.HasForwardOption(ForwardOptions._nonNullMod);
@@ -211,6 +232,7 @@ namespace GenericSynthesisPatcher.Helpers
         internal static bool EqualsByFieldMask (PropertyAction property, IMajorRecordGetter left, IMajorRecordGetter right)
         {
             var descriptor = RequireDescriptor(property);
+            if (HasGenderedSegment(descriptor)) return Equals(property, left, right);
             return !descriptor.HasCollectionBoundary
                 && TryGetHpuMask(descriptor, out var mask)
                 && left.Equals(right, mask);
@@ -235,6 +257,11 @@ namespace GenericSynthesisPatcher.Helpers
             }
 
             Type type = value.GetType();
+            if (value is IAssetLinkGetter asset)
+            {
+                builder.Append("Asset:").Append(asset.GivenPath.Length).Append(':').Append(asset.GivenPath);
+                return;
+            }
             if (value is string text)
             {
                 builder.Append("string:").Append(text.Length).Append(':').Append(text);
@@ -272,6 +299,18 @@ namespace GenericSynthesisPatcher.Helpers
 
             try
             {
+                if (PropertyPathSegment.IsGendered(type))
+                {
+                    builder.Append("Gendered{");
+                    foreach (string side in new[] { "Male", "Female" })
+                    {
+                        builder.Append(side).Append('=');
+                        AppendCanonical(builder, GetRuntimeProperty(type, side)!.GetValue(value), visited, path + "." + side, depth + 1);
+                        builder.Append(';');
+                    }
+                    builder.Append('}');
+                    return;
+                }
                 if (value is IEnumerable enumerable)
                 {
                     builder.Append('[');
@@ -289,8 +328,9 @@ namespace GenericSynthesisPatcher.Helpers
                     return;
                 }
 
-                builder.Append('{').Append(type.FullName).Append('|');
-                foreach (var property in CanonicalProperties.GetOrAdd(type, static runtimeType => runtimeType
+                Type dataType = value is ILoquiObject loqui ? loqui.Registration.ClassType : type;
+                builder.Append('{').Append(dataType.FullName).Append('|');
+                foreach (var property in CanonicalProperties.GetOrAdd(dataType, static runtimeType => runtimeType
                              .GetProperties(BindingFlags.Public | BindingFlags.Instance)
                              .Where(IsEligibleCanonicalProperty)
                              .OrderBy(x => x.Name, StringComparer.Ordinal)
@@ -300,7 +340,7 @@ namespace GenericSynthesisPatcher.Helpers
                     object? propertyValue;
                     try
                     {
-                        propertyValue = property.GetValue(value);
+                        propertyValue = GetRuntimeProperty(type, property.Name)!.GetValue(value);
                     }
                     catch (Exception ex)
                     {
@@ -385,6 +425,13 @@ namespace GenericSynthesisPatcher.Helpers
 
             if (targetValueNonCollection is null)
             {
+                if (PropertyPathSegment.IsGendered(targetProperty.PropertyType))
+                {
+                    Type pairType = typeof(GenderedItem<>).MakeGenericType(targetProperty.PropertyType.GetGenericArguments()[0]);
+                    var pair = Activator.CreateInstance(pairType, new object?[] { null, null });
+                    targetProperty.SetValue(target, pair);
+                    return ForwardRecursive(sourceValue, pair, descriptor, segmentIndex + 1, identityPath, desiredPath, identityDepth);
+                }
                 object? clone = CloneValue(sourceValue, targetProperty.PropertyType);
                 if (!targetProperty.CanWrite)
                     throw new InvalidOperationException($"Cannot create missing parent '{segment.Property.Name}' because {target.GetType().FullName}.{targetProperty.Name} is read-only.");
@@ -409,7 +456,19 @@ namespace GenericSynthesisPatcher.Helpers
             object? sourceValue = sourceProperty.GetValue(source);
             bool leaf = segmentIndex == descriptor.Segments.Count - 1;
             if (leaf)
+            {
+                if (targetProperty.PropertyType.IsArray)
+                {
+                    var items = Enumerate(targetProperty.GetValue(target)).ToList();
+                    var seen = items.Select(x => Canonicalize(x)).ToHashSet(StringComparer.Ordinal);
+                    foreach (var item in Enumerate(sourceValue))
+                        if (seen.Add(Canonicalize(item))) items.Add(item);
+                    return ReplaceList(items, target, targetProperty, segment.ElementType ?? typeof(object));
+                }
+                if (targetProperty.GetValue(target) is null)
+                    return ReplaceList(sourceValue, target, targetProperty, segment.ElementType ?? typeof(object));
                 return MergeList(sourceValue, targetProperty.GetValue(target), segment.ElementType ?? typeof(object));
+            }
 
             if (segment.IsCollection)
             {
@@ -440,6 +499,20 @@ namespace GenericSynthesisPatcher.Helpers
                 return changes;
             }
 
+            if (sourceValue is not null && targetProperty.GetValue(target) is null)
+            {
+                if (!targetProperty.CanWrite)
+                    throw new InvalidOperationException($"Cannot create missing parent '{segment.Property.Name}' in '{descriptor.CanonicalPath}'.");
+                if (PropertyPathSegment.IsGendered(targetProperty.PropertyType))
+                {
+                    Type pairType = typeof(GenderedItem<>).MakeGenericType(targetProperty.PropertyType.GetGenericArguments()[0]);
+                    var pair = Activator.CreateInstance(pairType, new object?[] { null, null });
+                    targetProperty.SetValue(target, pair);
+                    return MergeRecursive(sourceValue, pair, descriptor, segmentIndex + 1);
+                }
+                targetProperty.SetValue(target, CloneValue(sourceValue, targetProperty.PropertyType));
+                return 1;
+            }
             return MergeRecursive(sourceValue, targetProperty.GetValue(target), descriptor, segmentIndex + 1);
         }
 
@@ -534,6 +607,22 @@ namespace GenericSynthesisPatcher.Helpers
         private static int ReplaceList (object? sourceValue, object target, PropertyInfo targetProperty, Type elementType)
         {
             object? targetValue = targetProperty.GetValue(target);
+            if (targetProperty.PropertyType.IsArray)
+            {
+                var items = Enumerate(sourceValue).ToList();
+                if (Canonicalize(sourceValue) == Canonicalize(targetValue)) return 0;
+                if (!targetProperty.CanWrite)
+                    throw new InvalidOperationException($"Array '{targetProperty.Name}' requires a writable property for replacement.");
+                if (sourceValue is null)
+                    targetProperty.SetValue(target, null);
+                else
+                {
+                    var replacement = Array.CreateInstance(elementType, items.Count);
+                    for (int i = 0; i < items.Count; i++) replacement.SetValue(CloneValue(items[i], elementType), i);
+                    targetProperty.SetValue(target, replacement);
+                }
+                return Math.Max(1, items.Count);
+            }
             if (targetValue is null)
             {
                 if (!targetProperty.CanWrite)
@@ -621,6 +710,14 @@ namespace GenericSynthesisPatcher.Helpers
             Type unwrappedTarget = Nullable.GetUnderlyingType(targetType) ?? targetType;
             if (sourceType.IsValueType || source is string || source is FormKey || source is ModKey)
                 return source;
+            if (source is IAssetLinkGetter asset)
+                return Activator.CreateInstance(unwrappedTarget, asset.GivenPath);
+            if (source is IFormLinkGetter link && unwrappedTarget.IsGenericType)
+            {
+                Type definition = unwrappedTarget.Name.Contains("Nullable", StringComparison.Ordinal)
+                    ? typeof(FormLinkNullable<>) : typeof(FormLink<>);
+                return Activator.CreateInstance(definition.MakeGenericType(unwrappedTarget.GetGenericArguments()[0]), link.FormKey);
+            }
 
             MethodInfo? method = DeepCopyMethods.GetOrAdd((sourceType, unwrappedTarget), static pair => FindDeepCopyMethod(pair.Source, pair.Target));
             if (method is not null)
@@ -632,8 +729,14 @@ namespace GenericSynthesisPatcher.Helpers
                     return copy;
             }
 
-            if (targetType.IsInstanceOfType(source))
-                return source;
+            if (PropertyPathSegment.IsGendered(sourceType))
+            {
+                Type entryType = unwrappedTarget.GetGenericArguments()[0];
+                Type pairType = typeof(GenderedItem<>).MakeGenericType(entryType);
+                return Activator.CreateInstance(pairType,
+                    CloneValue(GetRuntimeProperty(sourceType, "Male")!.GetValue(source), entryType),
+                    CloneValue(GetRuntimeProperty(sourceType, "Female")!.GetValue(source), entryType));
+            }
 
             ConstructorInfo? constructor = unwrappedTarget.GetConstructors()
                 .FirstOrDefault(x => x.GetParameters() is [{ } parameter] && parameter.ParameterType.IsInstanceOfType(source));
@@ -718,27 +821,66 @@ namespace GenericSynthesisPatcher.Helpers
                 || rootMask is not MajorRecord.TranslationMask majorRecordMask)
                 return null;
 
-            ITranslationMask currentMask = rootMask;
-            for (int index = 0; index < descriptor.Segments.Count; index++)
+            return ConfigureMask(rootMask, descriptor, 0) ? majorRecordMask : null;
+        }
+
+        private static bool ConfigureMask (ITranslationMask currentMask, PropertyPathDescriptor descriptor, int index)
+        {
             {
                 string segmentName = descriptor.Segments[index].Property.Name;
                 bool leaf = index == descriptor.Segments.Count - 1;
                 if (leaf)
-                    return currentMask.TrySetValue(segmentName, true, StringComparison.OrdinalIgnoreCase) ? majorRecordMask : null;
+                    return currentMask.TrySetValue(segmentName, true, StringComparison.OrdinalIgnoreCase);
 
-                if (!currentMask.TryGetMaskField(segmentName, StringComparison.OrdinalIgnoreCase, out var maskField)
-                    || !maskField.FieldType.IsAssignableTo(typeof(ITranslationMask))
-                    || !TranslationMaskFactory.TryCreate(maskField.FieldType, false, out var childMask)
-                    || !currentMask.TrySetValue(segmentName, childMask, StringComparison.OrdinalIgnoreCase))
+                if (!currentMask.TryGetMaskField(segmentName, StringComparison.OrdinalIgnoreCase, out var field))
+                    return false;
+
+                if (PropertyPathSegment.IsGendered(field.FieldType))
                 {
-                    return null;
+                    string side = descriptor.Segments[index + 1].Property.Name;
+                    if (side is not ("Male" or "Female"))
+                        return false;
+                    Type entryType = field.FieldType.GetGenericArguments()[0];
+                    bool sideIsLeaf = index + 1 == descriptor.Segments.Count - 1;
+                    object selected;
+                    object unselected;
+                    if (entryType == typeof(bool))
+                    {
+                        if (!sideIsLeaf) return false;
+                        selected = true;
+                        unselected = false;
+                    }
+                    else
+                    {
+                        if (!TranslationMaskFactory.TryCreate(entryType, sideIsLeaf, true, out var selectedMask)
+                            || !TranslationMaskFactory.TryCreate(entryType, false, false, out var unselectedMask)
+                            || (!sideIsLeaf && !ConfigureMask(selectedMask, descriptor, index + 2)))
+                            return false;
+                        selected = selectedMask;
+                        unselected = unselectedMask;
+                    }
+                    Type pairType = typeof(GenderedItem<>).MakeGenericType(entryType);
+                    field.SetValue(currentMask, Activator.CreateInstance(pairType,
+                        side == "Male" ? new[] { selected, unselected } : new[] { unselected, selected }));
+                    return true;
                 }
 
-                currentMask = childMask;
-            }
+                if (!field.FieldType.IsAssignableTo(typeof(ITranslationMask))
+                    || !TranslationMaskFactory.TryCreate(field.FieldType, false, out var childMask)
+                    || !currentMask.TrySetValue(segmentName, childMask, StringComparison.OrdinalIgnoreCase))
+                {
+                    return false;
+                }
 
-            return null;
+                return ConfigureMask(childMask, descriptor, index + 1);
+            }
         }
+
+        internal static bool CanUseFieldMask (PropertyPathDescriptor descriptor)
+            => !descriptor.HasCollectionBoundary && TryGetHpuMask(descriptor, out _);
+
+        private static bool HasGenderedSegment (PropertyPathDescriptor descriptor)
+            => descriptor.Segments.Any(x => PropertyPathSegment.IsGendered(x.Property.PropertyType));
 
         private static PropertyPathDescriptor RequireDescriptor (PropertyAction property)
             => property.Descriptor ?? throw new InvalidOperationException($"No property-path descriptor was built for '{property.PropertyName}'.");

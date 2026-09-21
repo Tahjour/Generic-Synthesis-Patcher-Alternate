@@ -246,10 +246,24 @@
   },
   {
     "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "VirtualMachineAdapter.ScriptFragments"
+  },
+  {
+    "Aliases": "",
     "Description": "Numeric value",
     "Example": "\"VirtualMachineAdapter.ScriptFragments.ExtraBindDataVersion\": 7",
     "Flags": 29,
     "Name": "VirtualMachineAdapter.ScriptFragments.ExtraBindDataVersion"
+  },
+  {
+    "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "VirtualMachineAdapter.ScriptFragments.OnBegin"
   },
   {
     "Aliases": "",
@@ -274,6 +288,13 @@
   },
   {
     "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "VirtualMachineAdapter.ScriptFragments.OnEnd"
+  },
+  {
+    "Aliases": "",
     "Description": "Numeric value",
     "Example": "\"VirtualMachineAdapter.ScriptFragments.OnEnd.ExtraBindDataVersion\": 7",
     "Flags": 29,
@@ -292,6 +313,13 @@
     "Example": "\"VirtualMachineAdapter.ScriptFragments.OnEnd.ScriptName\": \"Hello\"",
     "Flags": 29,
     "Name": "VirtualMachineAdapter.ScriptFragments.OnEnd.ScriptName"
+  },
+  {
+    "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "VirtualMachineAdapter.ScriptFragments.Script"
   },
   {
     "Aliases": "",

@@ -176,6 +176,13 @@
   },
   {
     "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "Configuration.Level"
+  },
+  {
+    "Aliases": "",
     "Description": "Numeric value",
     "Example": "\"Configuration.MagickaOffset\": 7",
     "Flags": 29,

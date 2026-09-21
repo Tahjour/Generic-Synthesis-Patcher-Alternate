@@ -169,6 +169,13 @@
   },
   {
     "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "VirtualMachineAdapter.ScriptFragments"
+  },
+  {
+    "Aliases": "",
     "Description": "Numeric value",
     "Example": "\"VirtualMachineAdapter.ScriptFragments.ExtraBindDataVersion\": 7",
     "Flags": 29,
@@ -180,6 +187,13 @@
     "Example": "\"VirtualMachineAdapter.ScriptFragments.Fragments\": []",
     "Flags": 81,
     "Name": "VirtualMachineAdapter.ScriptFragments.Fragments"
+  },
+  {
+    "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "VirtualMachineAdapter.ScriptFragments.Script"
   },
   {
     "Aliases": "",

@@ -43,6 +43,13 @@
   },
   {
     "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "Data.Training"
+  },
+  {
+    "Aliases": "",
     "Description": "Numeric value",
     "Example": "\"Data.Training.MaximumTrainingLevel\": 7",
     "Flags": 29,

@@ -101,7 +101,7 @@ namespace GenericSynthesisPatcher
         /// <summary>
         ///     Rule which could be a group or standard rule
         /// </summary>
-        private GSPBase? RuleBase { get; set; }
+        internal GSPBase? RuleBase { get; private set; }
 
         /// <summary>
         ///     If rule is set to OnlyIfDefault, check if current record matches origin.

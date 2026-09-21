@@ -2,6 +2,8 @@ using System.Collections;
 using System.Reflection;
 
 using Loqui;
+using Common;
+using Mutagen.Bethesda.Plugins.Records;
 
 namespace GenericSynthesisPatcher.Games.Universal
 {
@@ -52,7 +54,8 @@ namespace GenericSynthesisPatcher.Games.Universal
 
         public static Type? TryGetCollectionElementType (Type type)
         {
-            if (type == typeof(string) || type == typeof(byte[]))
+            type = Nullable.GetUnderlyingType(type) ?? type;
+            if (type == typeof(string) || type == typeof(byte[]) || IsGendered(type))
                 return null;
 
             if (type.IsArray)
@@ -62,7 +65,19 @@ namespace GenericSynthesisPatcher.Games.Universal
                 ? type
                 : type.GetInterfaces().FirstOrDefault(x => x.IsGenericType && x.GetGenericTypeDefinition() == typeof(IEnumerable<>));
 
-            return enumerable?.GetGenericArguments()[0];
+            var element = enumerable?.GetGenericArguments()[0];
+            if (element is null)
+                return null;
+            // Descriptors use the mutable model: enumeration alone is not a mutation strategy.
+            return type.GetInterfaces().Append(type).Any(x => x.IsGenericType
+                && x.GetGenericTypeDefinition() == typeof(IList<>))
+                ? element : null;
         }
+
+        public static bool IsGendered (Type type)
+            => type.GetInterfaces().Append(type).Any(x => x.IsGenericType
+                && (x.GetGenericTypeDefinition() == typeof(GenderedItem<>)
+                    || x.GetGenericTypeDefinition() == typeof(IGenderedItem<>)
+                    || x.GetGenericTypeDefinition() == typeof(IGenderedItemGetter<>)));
     }
 }

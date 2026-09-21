@@ -183,6 +183,13 @@
   },
   {
     "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "Model.File"
+  },
+  {
+    "Aliases": "",
     "Description": "Form Key or Editor ID",
     "Example": "\"MuzzleFlash\": \"123:Skyrim.esm\" or \"MuzzleFlash\": \"MyEditorID\"",
     "Flags": 28,

@@ -239,6 +239,13 @@
   },
   {
     "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "VendorLocation.Target"
+  },
+  {
+    "Aliases": "",
     "Description": "Flags (Break0)",
     "Example": "\"VendorLocation.Versioning\": \"Break0\"",
     "Flags": 95,

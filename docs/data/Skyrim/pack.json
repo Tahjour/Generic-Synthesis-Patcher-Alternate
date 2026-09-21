@@ -413,6 +413,13 @@
     "Name": "VirtualMachineAdapter.ObjectFormat"
   },
   {
+    "Aliases": "VMAD.ScriptFragments",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "VirtualMachineAdapter.ScriptFragments"
+  },
+  {
     "Aliases": "VMAD.ScriptFragments.ExtraBindDataVersion",
     "Description": "Numeric value",
     "Example": "\"VirtualMachineAdapter.ScriptFragments.ExtraBindDataVersion\": 7",
@@ -425,6 +432,13 @@
     "Example": "\"VirtualMachineAdapter.ScriptFragments.FileName\": \"Hello\"",
     "Flags": 29,
     "Name": "VirtualMachineAdapter.ScriptFragments.FileName"
+  },
+  {
+    "Aliases": "VMAD.ScriptFragments.OnBegin",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "VirtualMachineAdapter.ScriptFragments.OnBegin"
   },
   {
     "Aliases": "VMAD.ScriptFragments.OnBegin.ExtraBindDataVersion",
@@ -448,6 +462,13 @@
     "Name": "VirtualMachineAdapter.ScriptFragments.OnBegin.ScriptName"
   },
   {
+    "Aliases": "VMAD.ScriptFragments.OnChange",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "VirtualMachineAdapter.ScriptFragments.OnChange"
+  },
+  {
     "Aliases": "VMAD.ScriptFragments.OnChange.ExtraBindDataVersion",
     "Description": "Numeric value",
     "Example": "\"VirtualMachineAdapter.ScriptFragments.OnChange.ExtraBindDataVersion\": 7",
@@ -467,6 +488,13 @@
     "Example": "\"VirtualMachineAdapter.ScriptFragments.OnChange.ScriptName\": \"Hello\"",
     "Flags": 29,
     "Name": "VirtualMachineAdapter.ScriptFragments.OnChange.ScriptName"
+  },
+  {
+    "Aliases": "VMAD.ScriptFragments.OnEnd",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "VirtualMachineAdapter.ScriptFragments.OnEnd"
   },
   {
     "Aliases": "VMAD.ScriptFragments.OnEnd.ExtraBindDataVersion",

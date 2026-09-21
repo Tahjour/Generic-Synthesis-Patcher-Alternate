@@ -106,6 +106,13 @@
   },
   {
     "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "Model.File"
+  },
+  {
+    "Aliases": "",
     "Description": "Decimal value",
     "Example": "\"NearTargetDistance\": 3.14",
     "Flags": 28,

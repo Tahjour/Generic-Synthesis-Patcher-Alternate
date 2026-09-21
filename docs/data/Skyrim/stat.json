@@ -49,6 +49,34 @@
     "Name": "Lod"
   },
   {
+    "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "Lod.Level0"
+  },
+  {
+    "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "Lod.Level1"
+  },
+  {
+    "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "Lod.Level2"
+  },
+  {
+    "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "Lod.Level3"
+  },
+  {
     "Aliases": "RecordFlags",
     "Description": "Flags (NeverFades, HasTreeLOD, AddOnLODObject, HiddenFromLocalMap, HasDistantLOD, UsesHdLodTexture, HasCurrents, IsMarker, Obstacle, NavMeshGenerationFilter, NavMeshGenerationBoundingBox, ShowInWorldMap, NavMeshGenerationGround)",
     "Example": "\"MajorFlags\": [ \"NeverFades\", \"-NavMeshGenerationGround\" ]",
@@ -96,6 +124,13 @@
     "Example": "\"Model.Data\": [0x1A,0x00,0x3F]",
     "Flags": 25,
     "Name": "Model.Data"
+  },
+  {
+    "Aliases": "",
+    "Description": "",
+    "Example": "",
+    "Flags": 145,
+    "Name": "Model.File"
   },
   {
     "Aliases": "OBND",
