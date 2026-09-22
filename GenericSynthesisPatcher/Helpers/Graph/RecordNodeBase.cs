@@ -54,33 +54,32 @@ namespace GenericSynthesisPatcher.Helpers.Graph
         ///     Create the graph
         /// </summary>
         /// <param name="root">Graph node pointing to parent record</param>
-        protected static void populate (RecordNodeBase root)
+        /// <param name="all">Materialized contexts in the link cache's original order.</param>
+        protected static void populate (RecordNodeBase root, IReadOnlyList<IModContext<IMajorRecordGetter>> all)
         {
-            var all = Global.Game.State.LinkCache.ResolveAllSimpleContexts(root.Record.FormKey, root.Record.Registration.GetterType);
-            int count = all.Count() - 2;
+            int count = all.Count - 2;
 
             for (int i = count; i >= 0; i--)
             {
-                var m = root.ModKeys?.FirstOrDefault(m => m.Value.Equals(all.ElementAt(i).ModKey));
+                var m = root.ModKeys?.FirstOrDefault(m => m.Value.Equals(all[i].ModKey));
                 if (m is not null && m.Operation == ListLogic.NOT)
                 {
-                    Global.Logger.WriteLog(LogLevel.Trace, LogType.RecordProcessing, $"Merge {root.ModKey.FileName}. Excluding {all.ElementAt(i).ModKey.FileName}", ClassLogCode);
+                    Global.Logger.WriteLog(LogLevel.Trace, LogType.RecordProcessing, $"Merge {root.ModKey.FileName}. Excluding {all[i].ModKey.FileName}", ClassLogCode);
                     continue;
                 }
 
-                var node = root.createChild(all.ElementAt(i), root.ModKeys);
-                int index = Global.Game.State.LinkCache.ListedOrder.IndexOf(node.ModKey, static (i, k) => i.ModKey == k);
+                var node = root.createChild(all[i], root.ModKeys);
 
                 Global.Logger.WriteLog(LogLevel.Trace, LogType.RecordProcessing, $"Creating graph node {node.ModKey} under {root.ModKey}", ClassLogCode);
 
-                var masters = Global.Settings.DynamicMods.Contains(all.ElementAt(i).ModKey)
-                    ? [all.ElementAt(i + 1).ModKey]
-                    : Global.Game.State.LinkCache.ListedOrder[index].MasterReferences.Select(m => m.Master);
+                IEnumerable<ModKey> masters = Global.Game.Sources.Dynamic.Contains(all[i].ModKey)
+                    ? [all[i + 1].ModKey]
+                    : Global.Game.Sources.Masters(node.ModKey);
 
                 // If last entry in load order but has no masters it must be an existing GSP patch
                 // record, so link it to previous winner.
                 if (i == 0 && !masters.Any())
-                    masters = [all.ElementAt(1).ModKey];
+                    masters = [all[1].ModKey];
 
                 foreach (var nodeMaster in masters)
                 {

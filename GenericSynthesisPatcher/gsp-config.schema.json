@@ -357,6 +357,7 @@
       ]
     },
     "forwardOptions": {
+      "description": "Merge implies IndexedByField. List leaves use selected-source merging. Non-collection-crossing [Flags] enum leaves add selected bits to the current patched winner by bitwise OR, never removing bits; ordinary Merge retains ancestry-aware semantics. Empty source arrays select all enabled overrides. Merge cannot combine with HPU, Random, SelfMasterOnly, or DefaultThenSelfMasterOnly.",
       "oneOf": [
         {
           "type": "array",

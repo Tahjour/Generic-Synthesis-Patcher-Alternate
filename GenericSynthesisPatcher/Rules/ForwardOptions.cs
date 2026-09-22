@@ -120,8 +120,10 @@ namespace GenericSynthesisPatcher.Rules
         HPU = Default | IndexedByField | _hpu,
 
         /// <summary>
-        ///     Merges the winning list value with values from the sources selected for the field.
-        ///     An empty source array selects all enabled overrides.
+        ///     Merges list leaves with selected sources, or adds selected [Flags] enum bits to
+        ///     the current patched winner (bitwise OR, never removes bits). Flags paths cannot
+        ///     cross collections. Unlike ordinary Merge, flags do not use ancestry semantics.
+        ///     An empty source array selects all enabled overrides; respects OnlyIfDefault.
         /// </summary>
         Merge = IndexedByField | _merge,
     }

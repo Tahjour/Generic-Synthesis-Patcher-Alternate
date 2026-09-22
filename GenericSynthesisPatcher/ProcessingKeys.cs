@@ -37,6 +37,12 @@ namespace GenericSynthesisPatcher
         private IMajorRecord? patchRecord;
         private Random? random;
         private FilterOperation? ruleKey;
+        private RecordProcessingState? recordState;
+        internal RecordProcessingState RecordState => Parent?.RecordState ?? (recordState ??= new(Context));
+        internal IReadOnlyList<IModContext<IMajorRecordGetter>> RecordContexts =>
+            RuleBase is GSPRule rule && rule.HasForwardOption(ForwardOptions._randomMod)
+                ? Global.Game.State.LinkCache.ResolveAllSimpleContexts(Context.Record.FormKey, Type.GetterType).ToArray()
+                : RecordState.Contexts;
 
         /// <summary>
         ///     Current record context being processed
@@ -162,6 +168,7 @@ namespace GenericSynthesisPatcher
                 }
                 : Parent.GetPatchRecord();
 
+            if (Parent is null) recordState?.PatchAvailable(patchRecord);
             return patchRecord;
         }
 

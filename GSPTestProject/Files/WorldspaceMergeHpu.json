@@ -1,0 +1,107 @@
+[
+    {
+        "priority": 0,
+        "rules": [
+            {
+                "recordTypes": [
+                    "Worldspace",
+                    "EncounterZone"
+                ],
+                "ForwardOptions": [
+                    "Merge"
+                ],
+                "forward": {
+                    "Flags": [
+                        "Lux.esp",
+                        "Lux Orbis.esp"
+                    ]
+                }
+            },
+            {
+                "recordTypes": [
+                    "Worldspace"
+                ],
+                "ForwardOptions": [
+                    "Sort",
+                    "HPU"
+                ],
+                "forward": {
+                    "MaxHeight": [],
+                    "EncounterZone": [],
+                    "Location": []
+                }
+            }
+        ]
+    },
+    {
+        "priority": 0,
+        "recordTypes": [
+            "Cell"
+        ],
+        "rules": [
+            {
+                "Merge": [
+                    "Flags",
+                    "Regions"
+                ],
+                "ForwardOptions": [
+                    "Sort",
+                    "HPU"
+                ],
+                "forward": {
+                    "MaxHeightData": [],
+                    "WaterHeight": [],
+                    "EditorID": [],
+                    "Grid": [],
+                    "Water": [],
+                    "Location": [],
+                    "EncounterZone": [],
+                    "Music": [],
+                    "SkyAndWeatherFromRegion": []
+                }
+            }
+        ]
+    },
+    {
+        "priority": 0,
+        "recordTypes": "Location",
+        "rules": [
+            {
+                "Merge": {
+                    "Keywords": []
+                }
+            }
+        ]
+    },
+    {
+        "priority": 0,
+        "recordTypes": [
+            "FormList"
+        ],
+        "rules": [
+            {
+                "Merge": [
+                    "Items"
+                ]
+            }
+        ]
+    },
+    {
+        "priority": 0,
+        "recordTypes": "PlacedObject",
+        "rules": [
+            {
+                "ForwardOptions": [
+                    "Sort",
+                    "HPU"
+                ],
+                "forward": {
+                    "SkyrimMajorRecordFlags": [],
+                    "EnableParent": [],
+                    "Scale": [],
+                    "LocationReference": []
+                }
+            }
+        ]
+    }
+]

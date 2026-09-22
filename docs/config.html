@@ -301,7 +301,8 @@
                             <div class="label">Merge</div>
                             <div>
                                 Implies <font class="good">IndexedByField</font> and merges the winning list leaf with the selected sources instead of replacing it. An empty source array selects all enabled overrides.<br />
-                                It operates only on list leaves, so <code>Aliases.Conditions</code> is valid while <code>Aliases.Type</code> is not. Merge cannot be combined with HPU, Random, SelfMasterOnly, or DefaultThenSelfMasterOnly.
+                                List leaves such as <code>Aliases.Conditions</code> are supported. For a <code>[Flags]</code> enum leaf, this instead performs additive bitwise OR: preserve the current patched winner's bits and add bits from selected plugins. No bits are removed, and plugin ancestry is not used for this flags operation. Signed, unsigned, and unnamed bits are preserved. Null sources contribute nothing; a null target stays null unless a source contributes a non-null value (including zero). <code>OnlyIfDefault</code> compares the current patched field against the origin; unchanged results create no override.<br />
+                                Flags paths must not cross collections. Ordinary enums, complete structured values (including Male/Female pairs), and collection-crossing flags such as <code>Aliases.Flags</code> are unsupported. Merge cannot be combined with HPU, Random, SelfMasterOnly, or DefaultThenSelfMasterOnly.
 <pre>
 {
     "RecordTypes": "QUST",
@@ -309,6 +310,15 @@
     "Forward": { "Aliases.Conditions": [] }
 }
 </pre>
+<pre>
+{
+    "RecordTypes": ["Worldspace", "EncounterZone"],
+    "ForwardOptions": "Merge",
+    "Forward": { "Flags": ["Lux.esp", "Lux Orbis.esp"] }
+}
+</pre>
+                                This is distinct from ordinary <code>"Merge": ["Flags"]</code>, which retains its ancestry-aware addition/removal behavior. Selected-source list merging is also unchanged.<br />
+                                HPU histories remain field-specific. Override contexts and cleaned topology are reused within one processed record; creating an output override refreshes that topology. Trace topology creation appears once per generation, while per-action diagnostics remain available. Field values and HPU results are not cached, so later actions observe earlier patch edits. Random forwarding keeps its existing execution path.
                             </div>
                         </div>
                         <div class="setting">

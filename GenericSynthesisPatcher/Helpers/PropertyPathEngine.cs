@@ -129,8 +129,7 @@ namespace GenericSynthesisPatcher.Helpers
 
         public static int MergeAll (ProcessingKeys proKeys)
         {
-            var contexts = Global.Game.State.LinkCache
-                .ResolveAllSimpleContexts(proKeys.Record.FormKey, proKeys.Record.Registration.GetterType)
+            var contexts = proKeys.RecordContexts
                 .Where(x => !x.ModKey.Equals(proKeys.Record.FormKey.ModKey));
 
             return MergeSelected(proKeys, contexts);
@@ -148,6 +147,50 @@ namespace GenericSynthesisPatcher.Helpers
 
             return changes;
         }
+
+        internal static bool CanMergeFlags(PropertyPathDescriptor? descriptor)
+        {
+            if (descriptor is null || descriptor.HasCollectionBoundary || descriptor.LeafIsCollection) return false;
+            var type = descriptor.Segments[^1].Property.PropertyType;
+            type = Nullable.GetUnderlyingType(type) ?? type;
+            return type.IsEnum && type.IsDefined(typeof(FlagsAttribute), false);
+        }
+
+        internal static object? CombineFlags(Type enumType, object? current, IEnumerable<object?> sources)
+        {
+            enumType = Nullable.GetUnderlyingType(enumType) ?? enumType;
+            var code = Type.GetTypeCode(Enum.GetUnderlyingType(enumType));
+            bool signed = code is TypeCode.SByte or TypeCode.Int16 or TypeCode.Int32 or TypeCode.Int64;
+            ulong bits = 0;
+            bool hasValue = false;
+            foreach (var value in sources.Prepend(current))
+            {
+                if (value is null) continue;
+                hasValue = true;
+                bits |= signed ? unchecked((ulong)Convert.ToInt64(value, CultureInfo.InvariantCulture))
+                    : Convert.ToUInt64(value, CultureInfo.InvariantCulture);
+            }
+            return hasValue ? Enum.ToObject(enumType, bits) : null;
+        }
+
+        internal static int MergeSelectedFlags(ProcessingKeys keys, IEnumerable<IModContext<IMajorRecordGetter>> contexts)
+        {
+            var descriptor = RequireDescriptor(keys.Property);
+            if (!CanMergeFlags(descriptor)) throw new InvalidOperationException("Selected-source flags merging requires a non-collection [Flags] enum path.");
+            object? current = ReadLeaves(SelectedFlagsTarget(keys), descriptor).Values.FirstOrDefault();
+            object? combined = CombineFlags(descriptor.Segments[^1].Property.PropertyType, current,
+                contexts.SelectMany(x => ReadLeaves(x.Record, descriptor).Values));
+            if (object.Equals(current, combined)) return 0;
+            if (!Mod.TrySetProperty(keys.GetPatchRecord(), descriptor.CanonicalPath, combined, -1))
+                throw new InvalidOperationException($"Could not write selected-source flags to '{descriptor.CanonicalPath}'.");
+            return 1;
+        }
+
+        // A seed/output override may already exist before these processing keys discover it.
+        // Looking it up in the shared snapshot must not create an override on a no-op.
+        internal static IMajorRecordGetter SelectedFlagsTarget(ProcessingKeys keys)
+            => keys.HasPatchRecord ? keys.Record
+                : keys.RecordContexts.FirstOrDefault(x => x.ModKey == Global.Game.State.PatchMod.ModKey)?.Record ?? keys.Record;
 
         internal static int Merge (PropertyAction property, object source, object target)
         {

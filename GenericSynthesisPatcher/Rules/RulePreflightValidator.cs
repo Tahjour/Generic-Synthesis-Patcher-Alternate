@@ -175,8 +175,9 @@ namespace GenericSynthesisPatcher.Rules
                 return;
             }
 
-            if (requiresListLeaf && property.Descriptor?.LeafIsCollection != true)
-                failures.Add(BuildPathFailure(rule, recordType, suppliedPath, canonical, property, actionName, "Merge operates only on list leaves"));
+            if (requiresListLeaf && property.Descriptor?.LeafIsCollection != true && !PropertyPathEngine.CanMergeFlags(property.Descriptor))
+                failures.Add(BuildPathFailure(rule, recordType, suppliedPath, canonical, property, actionName,
+                    "Selected-source Merge supports list leaves or [Flags] enum leaves without collection crossings. Flags are added by bitwise OR; ordinary Merge retains its separate ancestry-aware semantics."));
 
             if (property.Descriptor?.HasCollectionBoundary == true && rule.HasForwardOption(ForwardOptions.SelfMasterOnly))
                 failures.Add(BuildPathFailure(rule, recordType, suppliedPath, canonical, property, actionName, "SelfMasterOnly cannot be applied through an implicit collection traversal"));

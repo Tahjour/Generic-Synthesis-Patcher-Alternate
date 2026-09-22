@@ -96,16 +96,10 @@ internal static class WholeRecordForward
         Global.Logger.CurrentPropertyName = UpdateName;
         try
         {
-            var sources = ReadSources(token);
-            bool excluded = sources.Any(x => x.Operation == ListLogic.NOT);
-            var eligible = Global.Game.LoadOrder.ListedOrder.Where(x => x.Enabled && x.ModKey != Global.Game.State.PatchMod.ModKey)
-                .Where(x => sources.Count == 0 || (excluded
-                    ? !sources.Any(s => s.Value == x.ModKey)
-                    : sources.Any(s => s.Value == x.ModKey)))
-                .Select(x => x.ModKey).ToHashSet();
-            var source = Global.Game.State.LinkCache.ResolveAllSimpleContexts(keys.Record.FormKey, keys.Type.GetterType)
-                .Where(x => eligible.Contains(x.ModKey))
-                .OrderByDescending(x => Global.Game.LoadOrder.IndexOf(x.ModKey)).FirstOrDefault();
+            var sources = keys.Rule.GetWholeRecordSources(token);
+            var source = keys.RecordContexts
+                .Where(x => sources.Contains(x.ModKey))
+                .OrderBy(x => sources.Rank(x.ModKey)).FirstOrDefault();
             if (source is null)
             {
                 Global.Logger.WriteLog(LogLevel.Trace, LogType.RecordProcessSkipped,

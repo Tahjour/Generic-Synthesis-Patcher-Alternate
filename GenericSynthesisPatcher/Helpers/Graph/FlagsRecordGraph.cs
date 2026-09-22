@@ -30,7 +30,7 @@ namespace GenericSynthesisPatcher.Helpers.Graph
             var master = Mod.FindOriginContext(proKeys.Context);
 
             var root = new FlagsRecordGraph(master, modKeys, proKeys.Property.PropertyName);
-            populate(root);
+            populate(root, proKeys.RecordContexts);
 
             if (Global.Logger.CurrentLogLevel == LogLevel.Trace)
             {

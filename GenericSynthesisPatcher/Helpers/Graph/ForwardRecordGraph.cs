@@ -26,7 +26,7 @@ namespace GenericSynthesisPatcher.Helpers.Graph
             var master = Mod.FindOriginContext(proKeys.Context);
 
             var root = new ForwardRecordGraph(master);
-            populate(root);
+            populate(root, proKeys.RecordContexts);
 
             if (Global.Logger.CurrentLogLevel == LogLevel.Trace)
             {

@@ -33,7 +33,7 @@ namespace GenericSynthesisPatcher.Helpers.Graph
             var master = Mod.FindOriginContext(proKeys.Context);
 
             var root = new RecordGraph<TItem>(master, modKeys, predicate, debugPredicate);
-            populate(root);
+            populate(root, proKeys.RecordContexts);
 
             if (Global.Logger.CurrentLogLevel == LogLevel.Trace)
             {

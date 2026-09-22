@@ -30,6 +30,8 @@ namespace GenericSynthesisPatcher.Rules
     public class GSPRule : GSPBase
     {
         internal List<string> WholeRecordInputErrors { get; } = [];
+        private object? forwardCacheRun;
+        private readonly Dictionary<JToken, SourceSelection> wholeRecordSources = [];
         private const int ClassLogCode = 0x1C;
         private HashSet<ListOperation>? editorIDs;
         private HashSet<FormKeyListOperation>? formIDs;
@@ -276,23 +278,41 @@ namespace GenericSynthesisPatcher.Rules
             return valid;
         }
 
+        /// <summary>Discard selections when a rule object is reused in another run.</summary>
+        private void EnsureForwardCacheRun()
+        {
+            if (!ReferenceEquals(forwardCacheRun, Global.Game.RunIdentity))
+            {
+                forwardCache.Clear();
+                wholeRecordSources.Clear();
+                forwardCacheRun = Global.Game.RunIdentity;
+            }
+        }
+
+        internal SourceSelection GetWholeRecordSources(JToken token)
+        {
+            EnsureForwardCacheRun();
+            if (!wholeRecordSources.TryGetValue(token, out var selection))
+            {
+                var sources = WholeRecordForward.ReadSources(token);
+                bool excluded = sources.Any(x => x.Operation == ListLogic.NOT);
+                var membership = sources.Select(x => x.Value).ToHashSet();
+                selection = new SourceSelection(Global.Game.LoadOrder.ListedOrder
+                    .Where(x => Global.Game.Sources.Enabled.Contains(x.ModKey) && x.ModKey != Global.Game.State.PatchMod.ModKey)
+                    .Where(x => sources.Count == 0 || (excluded ? !membership.Contains(x.ModKey) : membership.Contains(x.ModKey)))
+                    .OrderByDescending(x => Global.Game.Sources.Rank(x.ModKey)).Select(x => x.ModKey));
+                wholeRecordSources.Add(token, selection);
+            }
+            return selection;
+        }
+
         /// <summary>
-        ///     Gets forward data for current key. If indexed by field, will always have 1 field,
-        ///     but 1 or more mods outputted. If indexed by mod, will always have 1 mod, but 1 or
-        ///     more fields outputted.
+        /// Gets ordered source plugins and selected fields for a rule key. Deterministic
+        /// selections are materialized once per run/type/key; Random retains deferred evaluation.
         /// </summary>
-        /// <param name="proKeys">Used to see what order mods should be returned in.</param>
-        /// <param name="key"></param>
-        /// <param name="mods">
-        ///     Output of listed mods. List will be in order entered. If no mods were entered when
-        ///     indexed by field, then will populate with all mods.
-        /// </param>
-        /// <param name="fields">Output of field names from config for current key</param>
-        /// <returns>
-        ///     If valid combination of fields and mods found in config will return true, else false.
-        /// </returns>
         private bool tryGetForward (ProcessingKeys proKeys, FilterOperation key, [NotNullWhen(true)] out IEnumerable<ModKey>? mods, [NotNullWhen(true)] out string[]? fields)
         {
+            EnsureForwardCacheRun();
             var cacheKey = (proKeys.Type, key);
             if (forwardCache.TryGetValue(cacheKey, out var value))
             {
@@ -362,8 +382,10 @@ namespace GenericSynthesisPatcher.Rules
                 mods = sortMods
                      ? HasForwardOption(ForwardOptions._randomMod)
                          ? buildMods.OrderBy(_ => proKeys.GetRandom().Next())
-                         : buildMods.OrderByDescending(Global.Game.LoadOrder.IndexOf) // Descending so same highest to lowest priority as manually entered mod list
+                         : buildMods.OrderByDescending(Global.Game.Sources.Rank) // Descending: highest to lowest priority
                      : buildMods;
+
+                if (!HasForwardOption(ForwardOptions._randomMod)) mods = new SourceSelection(mods);
 
                 fields = [.. buildFields];
 
@@ -541,7 +563,7 @@ namespace GenericSynthesisPatcher.Rules
 
             if (Merge.Count != 0)
             {
-                int versions = Global.Game.State.LinkCache.ResolveAllSimpleContexts(proKeys.Record.FormKey, proKeys.Record.Registration.GetterType).Count();
+                int versions = proKeys.RecordContexts.Count;
                 switch (versions)
                 {
                     case < 2:
@@ -624,6 +646,16 @@ namespace GenericSynthesisPatcher.Rules
 
             bool nonDefault = HasForwardOption(ForwardOptions._nonDefaultMod);
             bool randomize = HasForwardOption(ForwardOptions._randomMod) && !HasForwardOption(ForwardOptions._sortMods);
+
+            if (!HasForwardOption(ForwardOptions._randomMod))
+            {
+                var selection = mods as SourceSelection ?? new SourceSelection(mods);
+                var history = formKey == proKeys.Context.Record.FormKey
+                    ? proKeys.RecordContexts
+                    : Global.Game.State.LinkCache.ResolveAllSimpleContexts(formKey, proKeys.Record.Registration.GetterType).ToArray();
+                return history.Where(m => (!nonDefault || m.ModKey != formKey.ModKey) && selection.Contains(m.ModKey))
+                    .OrderBy(m => selection.Rank(m.ModKey)).ToArray();
+            }
 
             var AllRecordMods = nonDefault
                 ? Global.Game.State.LinkCache.ResolveAllSimpleContexts(formKey, proKeys.Record.Registration.GetterType).Where(m => !m.ModKey.Equals(formKey.ModKey) && mods.Contains(m.ModKey))
@@ -802,8 +834,10 @@ namespace GenericSynthesisPatcher.Rules
         {
             try
             {
-                // Don't waste time if record is master with no overwrites
-                if (proKeys.Context.IsMaster())
+                // Flags may add origin bits to a seed override. Keep the original shortcut
+                // for every other action, including selected-source list merging.
+                if (proKeys.Context.IsMaster() && (!HasForwardOption(ForwardOptions._merge)
+                    || !PropertyPathEngine.CanMergeFlags(Global.Game.GetAction(proKeys.Type, ruleKey.Value).Descriptor)))
                     return -1;
 
                 if (!tryGetForward(proKeys, ruleKey, out var mods, out string[]? fields))
@@ -832,12 +866,26 @@ namespace GenericSynthesisPatcher.Rules
 
                     if (mergeSelected)
                     {
-                        if (proKeys.CheckOnlyIfDefault())
+                        bool flags = PropertyPathEngine.CanMergeFlags(proKeys.Property.Descriptor);
+                        if (flags ? OnlyIfDefault && !PropertyPathEngine.Equals(proKeys.Property, PropertyPathEngine.SelectedFlagsTarget(proKeys), proKeys.GetOriginRecord())
+                            : proKeys.CheckOnlyIfDefault())
+                        {
+                            if (flags) Global.Logger.WriteLog(LogLevel.Trace, LogType.OriginNotMatch,
+                                "OnlyIfDefault: current patched flags do not match the origin - skipping", ClassLogCode);
                             continue;
+                        }
 
-                        int merged = PropertyPathEngine.MergeSelected(proKeys, AllRecordMods);
+                        int merged = flags ? PropertyPathEngine.MergeSelectedFlags(proKeys, AllRecordMods)
+                            : PropertyPathEngine.MergeSelected(proKeys, AllRecordMods);
                         if (merged > 0)
+                        {
                             changed += merged;
+                            if (flags)
+                            {
+                                Program.RecordUpdates.Add((proKeys.Type, proKeys.Record.FormKey, this, proKeys.Property.PropertyName, merged));
+                                Global.Logger.WriteLog(LogLevel.Debug, LogType.RecordUpdated, $"Added selected-source flags to {proKeys.Property.PropertyName}.", ClassLogCode);
+                            }
+                        }
                         continue;
                     }
 
@@ -845,8 +893,9 @@ namespace GenericSynthesisPatcher.Rules
                     {
                         if (proKeys.CheckOnlyIfDefault())
                             continue;
-                        var graph = ForwardRecordGraph.Create(proKeys);
-                        var endNodes = graph?.GetEndNodes(mods);
+                        var endNodes = HasForwardOption(ForwardOptions._randomMod)
+                            ? ForwardRecordGraph.Create(proKeys)?.GetEndNodes(mods)
+                            : proKeys.RecordState.GetEndNodes(proKeys, mods);
                         if (endNodes is null)
                             continue;
 

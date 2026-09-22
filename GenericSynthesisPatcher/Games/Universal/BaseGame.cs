@@ -38,6 +38,9 @@ namespace GenericSynthesisPatcher.Games.Universal
         private readonly Dictionary<string, ILoquiRegistration> recordTypeAliases = new(StringComparer.Ordinal);
         private readonly Dictionary<ILoquiRegistration, IReadOnlyList<string>> forwardableProperties = [];
         private ReadOnlyDictionary<string, ILoquiRegistration>? _recordTypes;
+        private RunSourceIndex? sourceIndex;
+        internal RunSourceIndex Sources => sourceIndex ??= new(this);
+        internal object RunIdentity { get; } = new();
 
         /// <summary>
         ///     All known property alias mappings. Used to find aliases for documentation.

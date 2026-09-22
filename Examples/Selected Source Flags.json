@@ -1,0 +1,8 @@
+[
+  {
+    "$comment": "Add selected flags to the current patched winner; unlike ordinary Merge.Flags, never remove bits.",
+    "recordTypes": ["Worldspace", "EncounterZone"],
+    "forwardOptions": "merge",
+    "forward": { "Flags": ["Lux.esp", "Lux Orbis.esp"] }
+  }
+]
